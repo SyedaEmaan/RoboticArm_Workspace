@@ -14,7 +14,7 @@
 #include <hello_moveit_task_constructor/pick_place_task.h>
 #include <geometry_msgs/msg/pose.hpp>
 #include <tf2_eigen/tf2_eigen.hpp>
-#include "pick_place_demo_parameters.hpp"
+#include <hello_moveit_task_constructor/pick_place_demo_parameters.hpp>
 
 static const rclcpp::Logger LOGGER = rclcpp::get_logger("pick_place_demo");
 
@@ -153,10 +153,14 @@ bool PickPlaceTask::init(const rclcpp::Node::SharedPtr& node, const pick_place_d
 	/* Create planners used in various stages. Various options are available,
 	namely OMPL, Cartesian, etc. */
 	// OMPL planner
-	std::unordered_map<std::string, std::string> ompl_map_arm = {
-	{"ompl", params.arm_group_name + "[RRTConnectkConfigDefault]"}
-	};
-	auto ompl_planner_arm = std::make_shared<solvers::PipelinePlanner>(node, ompl_map_arm);
+	auto ompl_planner_arm = std::make_shared<solvers::PipelinePlanner>(node, "ompl");
+        ompl_planner_arm->setPlannerId(params.arm_group_name + "[RRTConnectkConfigDefault]");
+
+	//std::unordered_map<std::string, std::string> ompl_map_arm = {
+	//{"ompl", params.arm_group_name + "[RRTConnectkConfigDefault]"}
+	//};
+	//auto ompl_planner_arm = std::make_shared<solvers::PipelinePlanner>(node, ompl_map_arm);
+	
 	RCLCPP_INFO(LOGGER, "OMPL planner created for the arm group");
 	
 	// JointInterpolation is a basic planner that is used for simple motions 
@@ -165,10 +169,14 @@ bool PickPlaceTask::init(const rclcpp::Node::SharedPtr& node, const pick_place_d
 	RCLCPP_INFO(LOGGER, "Joint Interpolation planner created for the gripper group");
 	
 	// Create an OMPL planner for the gripper (use if JointInterpolation doesn't work)
-	std::unordered_map<std::string, std::string> ompl_map_gripper = {
-	{"ompl", params.gripper_group_name + "[RRTConnectkConfigDefault]"}
-	};
-	auto ompl_planner_gripper = std::make_shared<solvers::PipelinePlanner>(node, ompl_map_gripper);
+	
+	auto ompl_planner_gripper = std::make_shared<solvers::PipelinePlanner>(node, "ompl");
+        ompl_planner_gripper->setPlannerId(params.gripper_group_name + "[RRTConnectkConfigDefault]");
+
+	//std::unordered_map<std::string, std::string> ompl_map_gripper = {
+	//{"ompl", params.gripper_group_name + "[RRTConnectkConfigDefault]"}
+	//};
+	//auto ompl_planner_gripper = std::make_shared<solvers::PipelinePlanner>(node, ompl_map_gripper);
 	RCLCPP_INFO(LOGGER, "OMPL planner created for the gripper group");
 	
 	// Cartesian planner

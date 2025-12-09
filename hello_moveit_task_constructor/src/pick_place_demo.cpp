@@ -14,7 +14,7 @@
 
 // Include the pick/place task implementation
 #include <hello_moveit_task_constructor/pick_place_task.h>
-#include "pick_place_demo_parameters.hpp" // Automatically generated from the yaml file pick_place_demo_parameters.yaml 
+#include <hello_moveit_task_constructor/pick_place_demo_parameters.hpp> // Automatically generated from the yaml file pick_place_demo_parameters.yaml 
 
 // Set up a logger for this demo
 static const rclcpp::Logger LOGGER = rclcpp::get_logger("pick_place_demo");
