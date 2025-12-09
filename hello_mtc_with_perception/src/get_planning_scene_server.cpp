@@ -353,11 +353,14 @@ class GetPlanningSceneServer : public rclcpp::Node {
   }
 
   void createService() {
-    auto qos = rclcpp::QoS(rclcpp::KeepLast(10)).reliable();
+    rmw_qos_profile_t custom_qos = rmw_qos_profile_services_default;
+    custom_qos.reliability = RMW_QOS_POLICY_RELIABILITY_RELIABLE;
+    custom_qos.history = RMW_QOS_POLICY_HISTORY_KEEP_LAST;
+    custom_qos.depth = 10;
     service = this->create_service<mycobot_interfaces::srv::GetPlanningScene>(
       "get_planning_scene_mycobot",
      std::bind(&GetPlanningSceneServer::handleService, this, std::placeholders::_1, std::placeholders::_2),
-      qos
+      custom_qos
     );
 
     RCLCPP_INFO(this->get_logger(), "Get planning scene service created and ready to serve requests.");

@@ -41,7 +41,7 @@
 
 // Include the generated parameters header 
 // (generated from src/pick_place_demo_parameters.yaml)
-#include "pick_place_demo_parameters.hpp"
+#include <hello_moveit_task_constructor/pick_place_demo_parameters.hpp>
 
 namespace hello_moveit_task_constructor {
 
