@@ -1,0 +1,2 @@
+Invoking command in '/home/rosdev/arm_ws/build/hello_moveit_task_constructor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rosdev/arm_ws/src/mycobot_ros2/hello_moveit_task_constructor -DCMAKE_INSTALL_PREFIX=/home/rosdev/arm_ws/install/hello_moveit_task_constructor
+Invoked command in '/home/rosdev/arm_ws/build/hello_moveit_task_constructor' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rosdev/arm_ws/src/mycobot_ros2/hello_moveit_task_constructor -DCMAKE_INSTALL_PREFIX=/home/rosdev/arm_ws/install/hello_moveit_task_constructor

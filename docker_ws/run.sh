@@ -3,7 +3,7 @@
 USERNAME="rosdev"
 IMAGE_NAME="ros2_humble_gazebo:dev"
 CONTAINER_NAME="ros2_gazebo_dev"
-WORKSPACE_DIR="$(pwd)/workspace"
+WORKSPACE_DIR="/home/husaf-mp2499yv/robotic_arm/docker_ws/arm_ws"
 XAUTHORITY="$HOME/.Xauthority"
 X11_UNIX="/tmp/.X11-unix"
 
@@ -16,7 +16,7 @@ X11_UNIX="/tmp/.X11-unix"
 MOUNTS=(
     "-v$X11_UNIX:/tmp/.X11-unix:rw"
     "-v$XAUTHORITY:/home/$USERNAME/.Xauthority:rw"
-    "-v$WORKSPACE_DIR:/home/$USERNAME/workspace:rw"
+    "-v$WORKSPACE_DIR:/home/$USERNAME/arm_ws:rw"
     "-v/dev/snd:/dev/snd:rw"
 )
 
@@ -41,7 +41,7 @@ DOCKER_ARGS=(
 )
 
 # Remove existing container
-# docker rm -f "$CONTAINER_NAME" 2>/dev/null || true
+docker rm -f "$CONTAINER_NAME" 2>/dev/null || true
 
 if docker ps --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
   echo "Attaching new terminal to running container..."

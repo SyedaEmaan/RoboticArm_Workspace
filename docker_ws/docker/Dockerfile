@@ -23,6 +23,10 @@ RUN apt-get update && apt-get install -y \
     gazebo \
     libgazebo-dev \
     ros-humble-gazebo-ros-pkgs \
+    ros-humble-ros-gz \
+    ros-humble-py-binding-tools \
+    ros-humble-pcl-ros \
+    ros-humble-gazebo-ros2-control \
     && rm -rf /var/lib/apt/lists/*
 
 # Install development tools
@@ -99,12 +103,12 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 
 # Create ROS 2 workspace as root
-WORKDIR /home/$USERNAME/workspace
+WORKDIR /home/$USERNAME/arm_ws
 RUN mkdir -p src && chown -R $USERNAME:$USERNAME /home/$USERNAME
 
 # Now switch to non-root
 USER $USERNAME
-WORKDIR /home/$USERNAME/workspace
+WORKDIR /home/$USERNAME/arm_ws
 
 # Source ROS 2 and Gazebo in .bashrc
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /home/$USERNAME/.bashrc \
