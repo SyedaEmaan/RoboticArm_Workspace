@@ -45,11 +45,17 @@
 #include <moveit/robot_state/attached_body.h>
 
 #include <Eigen/Geometry>
+#if __has_include(<tf2_eigen/tf2_eigen.hpp>)
+#include <tf2_eigen/tf2_eigen.hpp>
+#else
 #include <tf2_eigen/tf2_eigen.h>
+#endif
 
 namespace moveit {
 namespace task_constructor {
 namespace stages {
+
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("GeneratePlacePose");
 
 GeneratePlacePose::GeneratePlacePose(const std::string& name) : GeneratePose(name) {
 	auto& p = properties();
@@ -78,7 +84,7 @@ void GeneratePlacePose::onNewSolution(const SolutionBase& s) {
 			solution.setComment(msg);
 			spawn(std::move(state), std::move(solution));
 		} else
-			ROS_WARN_STREAM_NAMED("GeneratePlacePose", msg);
+			RCLCPP_WARN_STREAM(LOGGER, msg);
 		return;
 	}
 
@@ -95,12 +101,12 @@ void GeneratePlacePose::compute() {
 	const auto& props = properties();
 
 	const std::string& frame_id = props.get<std::string>("object");
-	geometry_msgs::PoseStamped ik_frame;
+	geometry_msgs::msg::PoseStamped ik_frame;
 	ik_frame.header.frame_id = frame_id;
 	ik_frame.pose = tf2::toMsg(Eigen::Isometry3d::Identity());
 
 	const moveit::core::AttachedBody* object = robot_state.getAttachedBody(frame_id);
-	const geometry_msgs::PoseStamped& pose_msg = props.get<geometry_msgs::PoseStamped>("pose");
+	const geometry_msgs::msg::PoseStamped& pose_msg = props.get<geometry_msgs::msg::PoseStamped>("pose");
 	Eigen::Isometry3d target_pose;
 	tf2::fromMsg(pose_msg.pose, target_pose);
 	// target pose w.r.t. planning frame
@@ -119,7 +125,7 @@ void GeneratePlacePose::compute() {
 				    .pretranslate(pos);
 
 				// target ik_frame's pose w.r.t. planning frame
-				geometry_msgs::PoseStamped target_pose_msg;
+				geometry_msgs::msg::PoseStamped target_pose_msg;
 				target_pose_msg.header.frame_id = scene->getPlanningFrame();
 				target_pose_msg.pose = tf2::toMsg(object);
 

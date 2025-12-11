@@ -112,7 +112,7 @@ void export_core(pybind11::module& m) {
 	    .def(
 	        "toMsg",
 	        [](const SolutionBase& self, moveit::task_constructor::Introspection* introspection) {
-		        moveit_task_constructor_msgs::Solution msg;
+		        moveit_task_constructor_msgs::msg::Solution msg;
 		        self.toMsg(msg, introspection);
 		        return msg;
 	        },
@@ -162,7 +162,7 @@ void export_core(pybind11::module& m) {
 	    .def(py::init<std::map<std::string, double>>());
 	py::classh<cost::DistanceToReference, TrajectoryCostTerm>(m, "DistanceToReference",
 	                                                          "Computes joint-based distance to reference pose")
-	    .def(py::init<const moveit_msgs::RobotState&, TrajectoryCostTerm::Mode, std::map<std::string, double>>(),
+	    .def(py::init<const moveit_msgs::msg::RobotState&, TrajectoryCostTerm::Mode, std::map<std::string, double>>(),
 	         "reference"_a, "mode"_a = TrajectoryCostTerm::Mode::AUTO, "weights"_a = std::map<std::string, double>())
 	    .def(py::init<const std::map<std::string, double>&, TrajectoryCostTerm::Mode, std::map<std::string, double>>(),
 	         "reference"_a, "mode"_a = TrajectoryCostTerm::Mode::AUTO, "weights"_a = std::map<std::string, double>());
@@ -170,10 +170,6 @@ void export_core(pybind11::module& m) {
 	    .def(py::init<>());
 	py::classh<cost::LinkMotion, TrajectoryCostTerm>(m, "LinkMotion",
 	                                                 "Computes Cartesian path length of given link along trajectory")
-	    .def(py::init<std::string>(), "link_name"_a);
-
-	py::classh<cost::LinkRotation, TrajectoryCostTerm>(
-	    m, "LinkRotation", "Computes total orientation change of given link along trajectory")
 	    .def(py::init<std::string>(), "link_name"_a);
 
 	py::classh<cost::Clearance, TrajectoryCostTerm>(m, "Clearance", "Computes inverse distance to collision objects")
@@ -418,7 +414,7 @@ void export_core(pybind11::module& m) {
 	    .def_property_readonly("failures", &Task::failures, "Solutions: Failed Solutions of the stage (read-only)")
 	    .def_property("name", &Task::name, &Task::setName, "str: name of the task displayed e.g. in rviz")
 
-	    .def("loadRobotModel", &Task::loadRobotModel, "robot_description"_a = "robot_description",
+	    .def("loadRobotModel", &Task::loadRobotModel, "node"_a, "robot_description"_a = "robot_description",
 	         "Load robot model from given ROS parameter")
 	    .def("setRobotModel", &Task::setRobotModel, "robot_model"_a, "Set the robot model for the task")
 	    .def("getRobotModel", &Task::getRobotModel)
@@ -480,30 +476,7 @@ void export_core(pybind11::module& m) {
 	        "publish",
 	        [](Task& self, const SolutionBasePtr& solution) { self.introspection().publishSolution(*solution); },
 	        "solution"_a, "Publish the given solution to the ROS topic ``solution``")
-	    .def_static(
-	        "execute",
-	        [](const SolutionBasePtr& solution) {
-		        using namespace moveit::planning_interface;
-		        PlanningSceneInterface psi;
-		        MoveGroupInterface mgi(solution->start()->scene()->getRobotModel()->getJointModelGroupNames()[0]);
-
-		        MoveGroupInterface::Plan plan;
-		        moveit_task_constructor_msgs::Solution serialized;
-		        solution->toMsg(serialized);
-
-		        for (const moveit_task_constructor_msgs::SubTrajectory& traj : serialized.sub_trajectory) {
-			        if (!traj.trajectory.joint_trajectory.points.empty()) {
-				        plan.trajectory_ = traj.trajectory;
-				        if (!mgi.execute(plan)) {
-					        ROS_ERROR("Execution failed! Aborting!");
-					        return;
-				        }
-			        }
-			        psi.applyPlanningScene(traj.scene_diff);
-		        }
-		        ROS_INFO("Executed successfully");
-	        },
-	        "solution"_a, "Send given solution to ``move_group`` node for execution");
+	    .def("execute", &Task::execute, "solution"_a, "Send given solution to ``move_group`` node for execution");
 }
 }  // namespace python
 }  // namespace moveit

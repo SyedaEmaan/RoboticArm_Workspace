@@ -40,7 +40,7 @@
 
 #include <moveit/task_constructor/storage.h>
 #include <moveit/task_constructor/utils.h>
-#include <moveit_msgs/RobotState.h>
+#include <moveit_msgs/msg/robot_state.h>
 
 namespace moveit {
 namespace task_constructor {
@@ -144,7 +144,7 @@ public:
 class DistanceToReference : public TrajectoryCostTerm
 {
 public:
-	DistanceToReference(const moveit_msgs::RobotState& ref, Mode m = Mode::AUTO,
+	DistanceToReference(const moveit_msgs::msg::RobotState& ref, Mode m = Mode::AUTO,
 	                    std::map<std::string, double> w = std::map<std::string, double>());
 	DistanceToReference(const std::map<std::string, double>& ref, Mode m = Mode::AUTO,
 	                    std::map<std::string, double> w = std::map<std::string, double>());
@@ -152,7 +152,7 @@ public:
 	using TrajectoryCostTerm::operator();
 	double operator()(const SubTrajectory& s, std::string& comment) const override;
 
-	moveit_msgs::RobotState reference;
+	moveit_msgs::msg::RobotState reference;
 	std::map<std::string, double> weights;
 	Mode mode;
 };
@@ -170,18 +170,6 @@ class LinkMotion : public TrajectoryCostTerm
 {
 public:
 	LinkMotion(std::string link_name);
-
-	std::string link_name;
-
-	using TrajectoryCostTerm::operator();
-	double operator()(const SubTrajectory& s, std::string& comment) const override;
-};
-
-/** total orientation change of a link through the trajectory */
-class LinkRotation : public TrajectoryCostTerm
-{
-public:
-	LinkRotation(std::string link_name);
 
 	std::string link_name;
 

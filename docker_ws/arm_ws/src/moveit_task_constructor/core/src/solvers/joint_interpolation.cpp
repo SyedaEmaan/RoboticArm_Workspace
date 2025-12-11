@@ -46,6 +46,8 @@ namespace moveit {
 namespace task_constructor {
 namespace solvers {
 
+static const auto LOGGER = rclcpp::get_logger("JointInterpolationPlanner");
+
 using namespace trajectory_processing;
 
 JointInterpolationPlanner::JointInterpolationPlanner() {
@@ -61,7 +63,7 @@ PlannerInterface::Result JointInterpolationPlanner::plan(const planning_scene::P
                                                          const planning_scene::PlanningSceneConstPtr& to,
                                                          const moveit::core::JointModelGroup* jmg, double /*timeout*/,
                                                          robot_trajectory::RobotTrajectoryPtr& result,
-                                                         const moveit_msgs::Constraints& /*path_constraints*/) {
+                                                         const moveit_msgs::msg::Constraints& /*path_constraints*/) {
 	const auto& props = properties();
 
 	// Get maximum joint distance
@@ -124,10 +126,13 @@ PlannerInterface::Result JointInterpolationPlanner::plan(const planning_scene::P
 	return { true, "" };
 }
 
-PlannerInterface::Result JointInterpolationPlanner::plan(
-    const planning_scene::PlanningSceneConstPtr& from, const moveit::core::LinkModel& link,
-    const Eigen::Isometry3d& offset, const Eigen::Isometry3d& target, const moveit::core::JointModelGroup* jmg,
-    double timeout, robot_trajectory::RobotTrajectoryPtr& result, const moveit_msgs::Constraints& path_constraints) {
+PlannerInterface::Result JointInterpolationPlanner::plan(const planning_scene::PlanningSceneConstPtr& from,
+                                                         const moveit::core::LinkModel& link,
+                                                         const Eigen::Isometry3d& offset,
+                                                         const Eigen::Isometry3d& target,
+                                                         const moveit::core::JointModelGroup* jmg, double timeout,
+                                                         robot_trajectory::RobotTrajectoryPtr& result,
+                                                         const moveit_msgs::msg::Constraints& path_constraints) {
 	timeout = std::min(timeout, properties().get<double>("timeout"));
 	const auto deadline = std::chrono::steady_clock::now() + std::chrono::duration<double, std::ratio<1>>(timeout);
 

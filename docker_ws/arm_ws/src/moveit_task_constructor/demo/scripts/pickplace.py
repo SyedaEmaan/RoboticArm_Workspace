@@ -1,14 +1,15 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from py_binding_tools import roscpp_init
+import rclcpp
 from moveit.task_constructor import core, stages
 from moveit_commander import PlanningSceneInterface
 from geometry_msgs.msg import PoseStamped, TwistStamped
 from moveit_msgs.msg import Constraints, OrientationConstraint
 import math, time
 
-roscpp_init("mtc_tutorial")
+rclcpp.init()
+node = rclcpp.Node("mtc_tutorial")
 
 # [pickAndPlaceTut1]
 # Specify robot parameters
@@ -52,7 +53,7 @@ task.add(stages.CurrentState("current"))
 # [initAndConfigConnect]
 # Create a planner instance that is used to connect
 # the current state to the grasp approach pose
-pipeline = core.PipelinePlanner()
+pipeline = core.PipelinePlanner(node)
 pipeline.planner = "RRTConnectkConfigDefault"
 planners = [(arm, pipeline)]
 
@@ -97,8 +98,6 @@ approach = TwistStamped()
 approach.header.frame_id = "world"
 approach.twist.linear.z = -1.0
 pick.setApproachMotion(approach, 0.03, 0.1)
-
-pick.cartesian_solver.max_velocity_scaling_factor = 0.1
 
 # Twist to lift the object
 lift = TwistStamped()

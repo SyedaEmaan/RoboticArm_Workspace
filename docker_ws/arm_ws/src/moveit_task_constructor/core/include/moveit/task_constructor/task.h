@@ -42,12 +42,16 @@
 #include "container.h"
 
 #include <moveit/task_constructor/introspection.h>
-#include <moveit_task_constructor_msgs/Solution.h>
+#include <moveit_task_constructor_msgs/msg/solution.hpp>
+#include <moveit_task_constructor_msgs/action/execute_task_solution.hpp>
 
 #include <moveit/macros/class_forward.h>
 
-#include <moveit_msgs/MoveItErrorCodes.h>
+#include <moveit_msgs/msg/move_it_error_codes.hpp>
 #include <moveit/utils/moveit_error_code.h>
+
+#include <rclcpp/node.hpp>
+#include <rclcpp_action/rclcpp_action.hpp>
 
 namespace moveit {
 namespace core {
@@ -92,7 +96,7 @@ public:
 	/// setting the robot model also resets the task
 	void setRobotModel(const moveit::core::RobotModelConstPtr& robot_model);
 	/// load robot model from given parameter
-	void loadRobotModel(const std::string& robot_description = "robot_description");
+	void loadRobotModel(const rclcpp::Node::SharedPtr& node, const std::string& robot_description = "robot_description");
 
 	void add(Stage::pointer&& stage);
 	void insert(Stage::pointer&& stage, int before = -1) override;
@@ -165,6 +169,9 @@ protected:
 
 private:
 	using WrapperBase::init;
+	// persistent node and client to call the ExecuteTaskSolution action and is only created if execute() is called
+	rclcpp::Node::SharedPtr execute_solution_node_;
+	std::shared_ptr<rclcpp_action::Client<moveit_task_constructor_msgs::action::ExecuteTaskSolution>> execute_ac_;
 };
 
 inline std::ostream& operator<<(std::ostream& os, const Task& task) {

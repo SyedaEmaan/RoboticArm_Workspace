@@ -44,15 +44,21 @@
 #include <moveit/robot_state/robot_state.h>
 
 #include <Eigen/Geometry>
+#if __has_include(<tf2_eigen/tf2_eigen.hpp>)
+#include <tf2_eigen/tf2_eigen.hpp>
+#else
 #include <tf2_eigen/tf2_eigen.h>
+#endif
 #include <chrono>
 #include <functional>
 #include <iterator>
-#include <ros/console.h>
+#include <rclcpp/logging.hpp>
 
 namespace moveit {
 namespace task_constructor {
 namespace stages {
+
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("ComputeIK");
 
 ComputeIK::ComputeIK(const std::string& name, Stage::pointer&& child) : WrapperBase(name, std::move(child)) {
 	auto& p = properties();
@@ -63,22 +69,23 @@ ComputeIK::ComputeIK(const std::string& name, Stage::pointer&& child) : WrapperB
 	p.declare<bool>("ignore_collisions", false);
 	p.declare<double>("min_solution_distance", 0.1,
 	                  "minimum distance between seperate IK solutions for the same target");
-	p.declare<moveit_msgs::Constraints>("constraints", moveit_msgs::Constraints(), "additional constraints to obey");
+	p.declare<moveit_msgs::msg::Constraints>("constraints", moveit_msgs::msg::Constraints(),
+	                                         "additional constraints to obey");
 
 	// ik_frame and target_pose are read from the interface
-	p.declare<geometry_msgs::PoseStamped>("ik_frame", "frame to be moved towards goal pose");
-	p.declare<geometry_msgs::PoseStamped>("target_pose", "goal pose for ik frame");
+	p.declare<geometry_msgs::msg::PoseStamped>("ik_frame", "frame to be moved towards goal pose");
+	p.declare<geometry_msgs::msg::PoseStamped>("target_pose", "goal pose for ik frame");
 }
 
 void ComputeIK::setIKFrame(const Eigen::Isometry3d& pose, const std::string& link) {
-	geometry_msgs::PoseStamped pose_msg;
+	geometry_msgs::msg::PoseStamped pose_msg;
 	pose_msg.header.frame_id = link;
 	pose_msg.pose = tf2::toMsg(pose);
 	setIKFrame(pose_msg);
 }
 
 void ComputeIK::setTargetPose(const Eigen::Isometry3d& pose, const std::string& frame) {
-	geometry_msgs::PoseStamped pose_msg;
+	geometry_msgs::msg::PoseStamped pose_msg;
 	pose_msg.header.frame_id = frame;
 	pose_msg.pose = tf2::toMsg(pose);
 	setTargetPose(pose_msg);
@@ -89,7 +96,7 @@ void ComputeIK::setTargetPose(const Eigen::Isometry3d& pose, const std::string& 
 struct IKSolution
 {
 	std::vector<double> joint_positions;
-	collision_detection::CollisionResult::ContactMap contacts;
+	collision_detection::Contact contact;
 	bool collision_free;
 	bool satisfies_constraints;
 };
@@ -141,7 +148,7 @@ bool isTargetPoseCollidingInEEF(const planning_scene::PlanningSceneConstPtr& sce
 }
 
 std::string listCollisionPairs(const collision_detection::CollisionResult::ContactMap& contacts,
-                               const std::string& separator = ", ") {
+                               const std::string& separator) {
 	std::string result;
 	for (const auto& contact : contacts) {
 		if (!result.empty())
@@ -273,7 +280,7 @@ void ComputeIK::compute() {
 	properties().property("timeout").setDefaultValue(jmg->getDefaultIKTimeout());
 
 	// extract target_pose
-	geometry_msgs::PoseStamped target_pose_msg = props.get<geometry_msgs::PoseStamped>("target_pose");
+	geometry_msgs::msg::PoseStamped target_pose_msg = props.get<geometry_msgs::msg::PoseStamped>("target_pose");
 	if (target_pose_msg.header.frame_id.empty())  // if not provided, assume planning frame
 		target_pose_msg.header.frame_id = scene->getPlanningFrame();
 
@@ -290,7 +297,7 @@ void ComputeIK::compute() {
 
 	// determine IK link from ik_frame
 	const moveit::core::LinkModel* link = nullptr;
-	geometry_msgs::PoseStamped ik_pose_msg;
+	geometry_msgs::msg::PoseStamped ik_pose_msg;
 	const boost::any& value = props.get("ik_frame");
 	if (value.empty()) {  // property undefined
 		//  determine IK link from eef/group
@@ -302,7 +309,7 @@ void ComputeIK::compute() {
 		ik_pose_msg.header.frame_id = link->getName();
 		ik_pose_msg.pose.orientation.w = 1.0;
 	} else {
-		ik_pose_msg = boost::any_cast<geometry_msgs::PoseStamped>(value);
+		ik_pose_msg = boost::any_cast<geometry_msgs::msg::PoseStamped>(value);
 		Eigen::Isometry3d ik_pose;
 		tf2::fromMsg(ik_pose_msg.pose, ik_pose);
 
@@ -325,13 +332,13 @@ void ComputeIK::compute() {
 	    !ignore_collisions && isTargetPoseCollidingInEEF(scene, sandbox_state, target_pose, link, jmg, &collisions);
 
 	// frames at target pose and ik frame
-	std::deque<visualization_msgs::Marker> frame_markers;
+	std::deque<visualization_msgs::msg::Marker> frame_markers;
 	rviz_marker_tools::appendFrame(frame_markers, target_pose_msg, 0.1, "target frame");
 	rviz_marker_tools::appendFrame(frame_markers, ik_pose_msg, 0.1, "ik frame");
 	// end-effector markers
-	std::deque<visualization_msgs::Marker> eef_markers;
+	std::deque<visualization_msgs::msg::Marker> eef_markers;
 	// visualize placed end-effector
-	auto appender = [&eef_markers](visualization_msgs::Marker& marker, const std::string& /*name*/) {
+	auto appender = [&eef_markers](visualization_msgs::msg::Marker& marker, const std::string& /*name*/) {
 		marker.ns = "ik target";
 		marker.color.a *= 0.5;
 		eef_markers.push_back(marker);
@@ -345,8 +352,8 @@ void ComputeIK::compute() {
 		generateCollisionMarkers(sandbox_state, appender, links_to_visualize);
 		std::copy(eef_markers.begin(), eef_markers.end(), std::back_inserter(solution.markers()));
 		solution.markAsFailure();
-		solution.setComment(s.comment() + " eef in collision: " + listCollisionPairs(collisions.contacts));
-		utils::addCollisionMarkers(solution.markers(), scene->getPlanningFrame(), collisions.contacts);
+		// TODO: visualize collisions
+		solution.setComment(s.comment() + " eef in collision: " + listCollisionPairs(collisions.contacts, ", "));
 		auto colliding_scene{ scene->diff() };
 		colliding_scene->setCurrentState(sandbox_state);
 		spawn(InterfaceState(colliding_scene), std::move(solution));
@@ -367,7 +374,7 @@ void ComputeIK::compute() {
 	double min_solution_distance = props.get<double>("min_solution_distance");
 
 	kinematic_constraints::KinematicConstraintSet constraint_set(robot_model);
-	constraint_set.add(props.get<moveit_msgs::Constraints>("constraints"), scene->getTransforms());
+	constraint_set.add(props.get<moveit_msgs::msg::Constraints>("constraints"), scene->getTransforms());
 
 	IKSolutions ik_solutions;
 	auto is_valid = [scene, ignore_collisions, min_solution_distance, &constraint_set = std::as_const(constraint_set),
@@ -395,7 +402,9 @@ void ComputeIK::compute() {
 		req.group_name = jmg->getName();
 		scene->checkCollision(req, res, *state);
 		solution.collision_free = ignore_collisions || !res.collision;
-		solution.contacts = std::move(res.contacts);
+		if (!res.contacts.empty()) {
+			solution.contact = res.contacts.begin()->second.front();
+		}
 
 		return solution.satisfies_constraints && solution.collision_free;
 	};
@@ -413,8 +422,7 @@ void ComputeIK::compute() {
 		tried_current_state_as_seed = true;
 
 		size_t previous = ik_solutions.size();
-		auto iteration_timeout = std::min(remaining_time, jmg->getDefaultIKTimeout());
-		bool succeeded = sandbox_state.setFromIK(jmg, target_pose, link->getName(), iteration_timeout, is_valid);
+		bool succeeded = sandbox_state.setFromIK(jmg, target_pose, link->getName(), remaining_time, is_valid);
 
 		auto now = std::chrono::steady_clock::now();
 		remaining_time -= std::chrono::duration<double>(now - start_time).count();
@@ -432,8 +440,10 @@ void ComputeIK::compute() {
 				// compute cost as distance to compare_pose
 				solution.setCost(s.cost() + jmg->distance(ik_solutions[i].joint_positions.data(), compare_pose.data()));
 			else if (!ik_solutions[i].collision_free) {  // solution was in collision
-				solution.markAsFailure("Collision between " + listCollisionPairs(ik_solutions[i].contacts));
-				utils::addCollisionMarkers(solution.markers(), scene->getPlanningFrame(), ik_solutions[i].contacts);
+				std::stringstream ss;
+				ss << "Collision between '" << ik_solutions[i].contact.body_name_1 << "' and '"
+				   << ik_solutions[i].contact.body_name_2 << "'";
+				solution.markAsFailure(ss.str());
 			} else if (!ik_solutions[i].satisfies_constraints) {  // solution was violating constraints
 				solution.markAsFailure("Constraints violated");
 			}
@@ -467,7 +477,7 @@ void ComputeIK::compute() {
 		std::copy(frame_markers.begin(), frame_markers.end(), std::back_inserter(solution.markers()));
 
 		// ik target link placement
-		std_msgs::ColorRGBA tint_color;
+		std_msgs::msg::ColorRGBA tint_color;
 		tint_color.r = 1.0;
 		tint_color.g = 0.0;
 		tint_color.b = 0.0;

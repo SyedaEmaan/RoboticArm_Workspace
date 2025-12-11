@@ -38,10 +38,8 @@
 #include <moveit/task_constructor/container_p.h>
 #include <moveit/task_constructor/task_p.h>
 #include <moveit/task_constructor/introspection.h>
-#include <moveit_task_constructor_msgs/ExecuteTaskSolutionAction.h>
 
-#include <ros/ros.h>
-#include <actionlib/client/simple_action_client.h>
+#include <rclcpp/rclcpp.hpp>
 
 #include <moveit/robot_model_loader/robot_model_loader.h>
 #include <moveit/planning_pipeline/planning_pipeline.h>
@@ -49,6 +47,9 @@
 #include <scope_guard/scope_guard.hpp>
 
 #include <functional>
+
+using namespace std::chrono_literals;
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("moveit_task_constructor.task");
 
 namespace {
 std::string rosNormalizeName(const std::string& name) {
@@ -100,7 +101,7 @@ Task::Task(const std::string& ns, bool introspection, ContainerBase::pointer&& c
 	// monitor state on commandline
 	// addTaskCallback(std::bind(&Task::printState, this, std::ref(std::cout)));
 	// enable introspection by default, but only if ros::init() was called
-	if (ros::isInitialized() && introspection)
+	if (rclcpp::ok() && introspection)
 		enableIntrospection(true);
 }
 
@@ -126,7 +127,7 @@ Task::~Task() {
 
 void Task::setRobotModel(const core::RobotModelConstPtr& robot_model) {
 	if (!robot_model) {
-		ROS_ERROR_STREAM(name() << ": received invalid robot model");
+		RCLCPP_ERROR_STREAM(LOGGER, name() << ": received invalid robot model");
 		return;
 	}
 	auto impl = pimpl();
@@ -135,9 +136,9 @@ void Task::setRobotModel(const core::RobotModelConstPtr& robot_model) {
 	impl->robot_model_ = robot_model;
 }
 
-void Task::loadRobotModel(const std::string& robot_description) {
+void Task::loadRobotModel(const rclcpp::Node::SharedPtr& node, const std::string& robot_description) {
 	auto impl = pimpl();
-	impl->robot_model_loader_ = std::make_shared<robot_model_loader::RobotModelLoader>(robot_description);
+	impl->robot_model_loader_ = std::make_shared<robot_model_loader::RobotModelLoader>(node, robot_description);
 	setRobotModel(impl->robot_model_loader_->getModel());
 	if (!impl->robot_model_)
 		throw Exception("Task failed to construct RobotModel");
@@ -201,7 +202,7 @@ void Task::reset() {
 void Task::init() {
 	auto impl = pimpl();
 	if (!impl->robot_model_)
-		loadRobotModel();
+		throw std::runtime_error("You need to call loadRobotModel or setRobotModel before initializing the task");
 
 	// initialize push connections of wrapped child
 	StagePrivate* child = wrapped()->pimpl();
@@ -280,18 +281,61 @@ void Task::resetPreemptRequest() {
 }
 
 moveit::core::MoveItErrorCode Task::execute(const SolutionBase& s) {
-	actionlib::SimpleActionClient<moveit_task_constructor_msgs::ExecuteTaskSolutionAction> ac("execute_task_solution");
-	if (!ac.waitForServer(ros::Duration(0.5))) {
-		ROS_ERROR("Failed to connect to the 'execute_task_solution' action server");
+	// If this is the first call to execute create a persistent node that can be used to call the action server
+	if (!execute_solution_node_) {
+		execute_solution_node_ = rclcpp::Node::make_shared("moveit_task_constructor_executor_" +
+		                                                   std::to_string(reinterpret_cast<std::size_t>(this)));
+		execute_ac_ = rclcpp_action::create_client<moveit_task_constructor_msgs::action::ExecuteTaskSolution>(
+		    execute_solution_node_, "execute_task_solution");
+	}
+	if (!execute_ac_->wait_for_action_server(0.5s)) {
+		RCLCPP_ERROR(execute_solution_node_->get_logger(),
+		             "Failed to connect to the 'execute_task_solution' action server");
 		return moveit::core::MoveItErrorCode::FAILURE;
 	}
 
-	moveit_task_constructor_msgs::ExecuteTaskSolutionGoal goal;
+	moveit_task_constructor_msgs::action::ExecuteTaskSolution::Goal goal;
 	s.toMsg(goal.solution, pimpl()->introspection_.get());
 
-	ac.sendGoal(goal);
-	ac.waitForResult();
-	return ac.getResult()->error_code;
+	moveit_msgs::msg::MoveItErrorCodes error_code;
+	error_code.val = moveit_msgs::msg::MoveItErrorCodes::FAILURE;
+	auto goal_handle_future = execute_ac_->async_send_goal(goal);
+	if (rclcpp::spin_until_future_complete(execute_solution_node_, goal_handle_future) !=
+	    rclcpp::FutureReturnCode::SUCCESS) {
+		RCLCPP_ERROR(execute_solution_node_->get_logger(), "Send goal call failed");
+		return error_code;
+	}
+
+	const auto& goal_handle = goal_handle_future.get();
+	if (!goal_handle) {
+		RCLCPP_ERROR(execute_solution_node_->get_logger(), "Goal was rejected by server");
+		return error_code;
+	}
+
+	auto result_future = execute_ac_->async_get_result(goal_handle);
+	while (result_future.wait_for(std::chrono::milliseconds(10)) != std::future_status::ready) {
+		if (pimpl()->preempt_requested_) {
+			auto cancel_future = execute_ac_->async_cancel_goal(goal_handle);
+			this->resetPreemptRequest();
+			if (rclcpp::spin_until_future_complete(execute_solution_node_, cancel_future) !=
+			    rclcpp::FutureReturnCode::SUCCESS) {
+				RCLCPP_ERROR(execute_solution_node_->get_logger(), "Could not preempt execution");
+				return error_code;
+			} else {
+				error_code.val = moveit_msgs::msg::MoveItErrorCodes::PREEMPTED;
+				return error_code;
+			}
+		}
+		rclcpp::spin_some(execute_solution_node_);
+	}
+
+	auto result = result_future.get();
+	if (result.code != rclcpp_action::ResultCode::SUCCEEDED) {
+		RCLCPP_ERROR(execute_solution_node_->get_logger(), "Goal was aborted or canceled");
+		return error_code;
+	}
+
+	return result.result->error_code;
 }
 
 void Task::publishAllSolutions(bool wait) {

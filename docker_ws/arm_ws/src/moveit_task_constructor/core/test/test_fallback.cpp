@@ -10,6 +10,7 @@
 #include "gtest_value_printers.h"
 
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include <initializer_list>
 #include <chrono>
 #include <thread>

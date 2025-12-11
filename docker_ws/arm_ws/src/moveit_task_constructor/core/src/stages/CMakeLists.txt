@@ -1,4 +1,4 @@
-add_library(${PROJECT_NAME}_stages
+add_library(${PROJECT_NAME}_stages SHARED
 	${PROJECT_INCLUDE}/stages/modify_planning_scene.h
 	${PROJECT_INCLUDE}/stages/fix_collision_objects.h
 
@@ -13,7 +13,6 @@ add_library(${PROJECT_NAME}_stages
 	${PROJECT_INCLUDE}/stages/passthrough.h
 	${PROJECT_INCLUDE}/stages/noop.h
 	${PROJECT_INCLUDE}/stages/predicate_filter.h
-	${PROJECT_INCLUDE}/stages/limit_solutions.h
 
 	${PROJECT_INCLUDE}/stages/connect.h
 	${PROJECT_INCLUDE}/stages/move_to.h
@@ -35,7 +34,6 @@ add_library(${PROJECT_NAME}_stages
 	compute_ik.cpp
 	passthrough.cpp
 	predicate_filter.cpp
-	limit_solutions.cpp
 
 	connect.cpp
 	move_to.cpp
@@ -44,13 +42,24 @@ add_library(${PROJECT_NAME}_stages
 	simple_grasp.cpp
 	pick.cpp
 )
-target_link_libraries(${PROJECT_NAME}_stages PUBLIC ${PROJECT_NAME} ${catkin_LIBRARIES})
-
-add_library(${PROJECT_NAME}_stage_plugins
-   plugins.cpp
+target_link_libraries(${PROJECT_NAME}_stages ${PROJECT_NAME})
+ament_target_dependencies(${PROJECT_NAME}_stages
+	moveit_core
+	geometry_msgs
+	moveit_ros_planning
+	moveit_ros_planning_interface
+	moveit_task_constructor_msgs
+	rclcpp
+	tf2_eigen
+	visualization_msgs
 )
-target_link_libraries(${PROJECT_NAME}_stage_plugins ${PROJECT_NAME}_stages ${catkin_LIBRARIES})
+
+add_library(${PROJECT_NAME}_stage_plugins SHARED
+	plugins.cpp
+)
+target_link_libraries(${PROJECT_NAME}_stage_plugins ${PROJECT_NAME}_stages)
 
 install(TARGETS ${PROJECT_NAME}_stages ${PROJECT_NAME}_stage_plugins
-	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+        EXPORT ${PROJECT_NAME}Targets
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib)

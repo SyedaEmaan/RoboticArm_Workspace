@@ -31,47 +31,48 @@
  *********************************************************************/
 
 /* Author: Henning Kayser, Simon Goldstein
-   Desc:   A demo to show MoveIt Task Constructor in action
+  Desc:   A demo to show MoveIt Task Constructor in action
 */
 
 // ROS
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 // MTC pick/place demo implementation
 #include <moveit_task_constructor_demo/pick_place_task.h>
 
-constexpr char LOGNAME[] = "moveit_task_constructor_demo";
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("moveit_task_constructor_demo");
 
 int main(int argc, char** argv) {
-	ros::init(argc, argv, "mtc_tutorial");
-	ros::NodeHandle nh, pnh("~");
+	rclcpp::init(argc, argv);
+	rclcpp::NodeOptions node_options;
+	node_options.automatically_declare_parameters_from_overrides(true);
+	auto node = rclcpp::Node::make_shared("moveit_task_constructor_demo", node_options);
+	std::thread spinning_thread([node] { rclcpp::spin(node); });
 
-	// Handle Task introspection requests from RViz & feedback during execution
-	ros::AsyncSpinner spinner(1);
-	spinner.start();
-
-	moveit_task_constructor_demo::setupDemoScene(pnh);
+	const auto param_listener = std::make_shared<pick_place_task_demo::ParamListener>(node);
+	const auto params = param_listener->get_params();
+	moveit_task_constructor_demo::setupDemoScene(params);
 
 	// Construct and run pick/place task
-	moveit_task_constructor_demo::PickPlaceTask pick_place_task("pick_place_task", pnh);
-	if (!pick_place_task.init()) {
-		ROS_INFO_NAMED(LOGNAME, "Initialization failed");
+	moveit_task_constructor_demo::PickPlaceTask pick_place_task("pick_place_task");
+	if (!pick_place_task.init(node, params)) {
+		RCLCPP_INFO(LOGGER, "Initialization failed");
 		return 1;
 	}
 
-	if (pick_place_task.plan()) {
-		ROS_INFO_NAMED(LOGNAME, "Planning succeded");
-		if (pnh.param("execute", false)) {
+	if (pick_place_task.plan(params.max_solutions)) {
+		RCLCPP_INFO(LOGGER, "Planning succeded");
+		if (params.execute) {
 			pick_place_task.execute();
-			ROS_INFO_NAMED(LOGNAME, "Execution complete");
+			RCLCPP_INFO(LOGGER, "Execution complete");
 		} else {
-			ROS_INFO_NAMED(LOGNAME, "Execution disabled");
+			RCLCPP_INFO(LOGGER, "Execution disabled");
 		}
 	} else {
-		ROS_INFO_NAMED(LOGNAME, "Planning failed");
+		RCLCPP_INFO(LOGGER, "Planning failed");
 	}
 
 	// Keep introspection alive
-	ros::waitForShutdown();
+	spinning_thread.join();
 	return 0;
 }

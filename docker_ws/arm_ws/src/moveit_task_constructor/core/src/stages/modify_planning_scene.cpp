@@ -47,6 +47,8 @@ namespace moveit {
 namespace task_constructor {
 namespace stages {
 
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("ModifyPlanningScene");
+
 ModifyPlanningScene::ModifyPlanningScene(const std::string& name) : PropagatingEitherWay(name) {
 	setCostTerm(std::make_unique<cost::Constant>(0.0));
 }
@@ -57,10 +59,10 @@ void ModifyPlanningScene::attachObjects(const Names& objects, const std::string&
 	o.insert(o.end(), objects.begin(), objects.end());
 }
 
-void ModifyPlanningScene::addObject(const moveit_msgs::CollisionObject& collision_object) {
-	if (collision_object.operation != moveit_msgs::CollisionObject::ADD) {
-		ROS_ERROR_STREAM_NAMED(
-		    "ModifyPlanningScene",
+void ModifyPlanningScene::addObject(const moveit_msgs::msg::CollisionObject& collision_object) {
+	if (collision_object.operation != moveit_msgs::msg::CollisionObject::ADD) {
+		RCLCPP_ERROR_STREAM(
+		    LOGGER,
 		    fmt::format("{}: addObject is called with object's operation not set to ADD -- ignoring the object", name()));
 		return;
 	}
@@ -68,19 +70,10 @@ void ModifyPlanningScene::addObject(const moveit_msgs::CollisionObject& collisio
 }
 
 void ModifyPlanningScene::removeObject(const std::string& object_name) {
-	moveit_msgs::CollisionObject obj;
+	moveit_msgs::msg::CollisionObject obj;
 	obj.id = object_name;
-	obj.operation = moveit_msgs::CollisionObject::REMOVE;
+	obj.operation = moveit_msgs::msg::CollisionObject::REMOVE;
 	collision_objects_.push_back(obj);
-}
-
-void ModifyPlanningScene::moveObject(const moveit_msgs::CollisionObject& collision_object) {
-	if (collision_object.operation != moveit_msgs::CollisionObject::MOVE) {
-		ROS_ERROR_STREAM_NAMED("ModifyPlanningScene", name() << ": moveObject is called with object's operation not set "
-		                                                        "to MOVE -- ignoring the object");
-		return;
-	}
-	collision_objects_.push_back(collision_object);
 }
 
 void ModifyPlanningScene::allowCollisions(const Names& first, const Names& second, bool allow) {
@@ -106,13 +99,13 @@ void ModifyPlanningScene::computeBackward(const InterfaceState& to) {
 
 void ModifyPlanningScene::attachObjects(planning_scene::PlanningScene& scene,
                                         const std::pair<std::string, std::pair<Names, bool> >& pair, bool invert) {
-	moveit_msgs::AttachedCollisionObject obj;
+	moveit_msgs::msg::AttachedCollisionObject obj;
 	obj.link_name = pair.first;
 	bool attach = pair.second.second;
 	if (invert)
 		attach = !attach;
-	obj.object.operation = attach ? static_cast<int8_t>(moveit_msgs::CollisionObject::ADD) :
-	                                static_cast<int8_t>(moveit_msgs::CollisionObject::REMOVE);
+	obj.object.operation = attach ? static_cast<int8_t>(moveit_msgs::msg::CollisionObject::ADD) :
+	                                static_cast<int8_t>(moveit_msgs::msg::CollisionObject::REMOVE);
 	for (const std::string& name : pair.second.first) {
 		obj.object.id = name;
 		scene.processAttachedCollisionObjectMsg(obj);
@@ -139,7 +132,7 @@ std::pair<InterfaceState, SubTrajectory> ModifyPlanningScene::apply(const Interf
 	InterfaceState state(scene);
 	SubTrajectory traj;
 	try {
-		// add/remove/move objects
+		// add/remove objects
 		for (auto& collision_object : collision_objects_)
 			processCollisionObject(*scene, collision_object, invert);
 
@@ -163,7 +156,6 @@ std::pair<InterfaceState, SubTrajectory> ModifyPlanningScene::apply(const Interf
 		if (res.collision) {
 			const auto contact = res.contacts.begin()->second.front();
 			traj.markAsFailure(contact.body_name_1 + " colliding with " + contact.body_name_2);
-			utils::addCollisionMarkers(traj.markers(), scene->getPlanningFrame(), res.contacts);
 		}
 	} catch (const std::exception& e) {
 		traj.markAsFailure(e.what());
@@ -172,21 +164,19 @@ std::pair<InterfaceState, SubTrajectory> ModifyPlanningScene::apply(const Interf
 }
 
 void ModifyPlanningScene::processCollisionObject(planning_scene::PlanningScene& scene,
-                                                 const moveit_msgs::CollisionObject& object, bool invert) {
+                                                 const moveit_msgs::msg::CollisionObject& object, bool invert) {
 	const auto op = object.operation;
 	if (invert) {
-		if (op == moveit_msgs::CollisionObject::ADD)
+		if (op == moveit_msgs::msg::CollisionObject::ADD)
 			// (temporarily) change operation to REMOVE to revert adding the object
-			const_cast<moveit_msgs::CollisionObject&>(object).operation = moveit_msgs::CollisionObject::REMOVE;
-		else if (op == moveit_msgs::CollisionObject::REMOVE)
+			const_cast<moveit_msgs::msg::CollisionObject&>(object).operation = moveit_msgs::msg::CollisionObject::REMOVE;
+		else if (op == moveit_msgs::msg::CollisionObject::REMOVE)
 			throw std::runtime_error("cannot apply removeObject() backwards");
-		else if (op == moveit_msgs::CollisionObject::MOVE)
-			throw std::runtime_error("cannot apply moveObject() backwards");
 	}
 
 	scene.processCollisionObjectMsg(object);
 	// restore previous operation (for next call)
-	const_cast<moveit_msgs::CollisionObject&>(object).operation = op;
+	const_cast<moveit_msgs::msg::CollisionObject&>(object).operation = op;
 }
 }  // namespace stages
 }  // namespace task_constructor

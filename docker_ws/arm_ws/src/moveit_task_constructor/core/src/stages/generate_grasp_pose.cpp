@@ -43,11 +43,17 @@
 #include <moveit/robot_state/conversions.h>
 
 #include <Eigen/Geometry>
+#if __has_include(<tf2_eigen/tf2_eigen.hpp>)
+#include <tf2_eigen/tf2_eigen.hpp>
+#else
 #include <tf2_eigen/tf2_eigen.h>
+#endif
 
 namespace moveit {
 namespace task_constructor {
 namespace stages {
+
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("GenerateGraspPose");
 
 GenerateGraspPose::GenerateGraspPose(const std::string& name) : GeneratePose(name) {
 	auto& p = properties();
@@ -74,7 +80,8 @@ static void applyPreGrasp(moveit::core::RobotState& state, const moveit::core::J
 
 	try {
 		// try RobotState
-		const moveit_msgs::RobotState& robot_state_msg = boost::any_cast<moveit_msgs::RobotState>(diff_property.value());
+		const moveit_msgs::msg::RobotState& robot_state_msg =
+		    boost::any_cast<moveit_msgs::msg::RobotState>(diff_property.value());
 		if (!robot_state_msg.is_diff)
 			throw moveit::Exception{ "RobotState message must be a diff" };
 		const auto& accepted = jmg->getJointModelNames();
@@ -159,7 +166,7 @@ void GenerateGraspPose::compute() {
 		return;
 	}
 
-	geometry_msgs::PoseStamped target_pose_msg;
+	geometry_msgs::msg::PoseStamped target_pose_msg;
 	target_pose_msg.header.frame_id = props.get<std::string>("object");
 	Eigen::Vector3d rotation_axis = props.get<Eigen::Vector3d>("rotation_axis");
 

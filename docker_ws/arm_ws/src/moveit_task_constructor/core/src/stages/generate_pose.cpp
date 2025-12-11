@@ -46,11 +46,13 @@ namespace moveit {
 namespace task_constructor {
 namespace stages {
 
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("GeneratePose");
+
 GeneratePose::GeneratePose(const std::string& name) : MonitoringGenerator(name) {
 	setCostTerm(std::make_unique<cost::Constant>(0.0));
 
 	auto& p = properties();
-	p.declare<geometry_msgs::PoseStamped>("pose", "target pose to pass on in spawned states");
+	p.declare<geometry_msgs::msg::PoseStamped>("pose", "target pose to pass on in spawned states");
 }
 
 void GeneratePose::reset() {
@@ -74,7 +76,7 @@ void GeneratePose::compute() {
 	const SolutionBase& s = *upstream_solutions_.pop();
 	planning_scene::PlanningSceneConstPtr scene = s.end()->scene()->diff();
 
-	geometry_msgs::PoseStamped target_pose = properties().get<geometry_msgs::PoseStamped>("pose");
+	geometry_msgs::msg::PoseStamped target_pose = properties().get<geometry_msgs::msg::PoseStamped>("pose");
 	if (target_pose.header.frame_id.empty())
 		target_pose.header.frame_id = scene->getPlanningFrame();
 	else if (!scene->knowsFrameTransform(target_pose.header.frame_id)) {
@@ -83,7 +85,7 @@ void GeneratePose::compute() {
 			trajectory.markAsFailure(fmt::format("Unknown frame: '{}'", target_pose.header.frame_id));
 			spawn(InterfaceState(scene), std::move(trajectory));
 		} else
-			ROS_WARN_NAMED("GeneratePose", "Unknown frame: '%s'", target_pose.header.frame_id.c_str());
+			RCLCPP_WARN(LOGGER, "Unknown frame: '%s'", target_pose.header.frame_id.c_str());
 		return;
 	}
 

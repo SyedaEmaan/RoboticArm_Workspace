@@ -1,54 +1,47 @@
 cmake_minimum_required(VERSION 3.16)
 project(rviz_marker_tools)
 
-find_package(catkin REQUIRED COMPONENTS
+find_package(ament_cmake REQUIRED)
+find_package(moveit_common REQUIRED)
+moveit_package()
+
+set(THIS_PACKAGE_INCLUDE_DEPENDS
+	eigen3_cmake_module
+	Eigen3
 	geometry_msgs
-	roscpp
-	std_msgs
+	rclcpp
 	tf2_eigen
+	urdfdom_headers
+	std_msgs
 	visualization_msgs
 )
-find_package(Eigen3 REQUIRED)
 
-# lint ignore is needed to support ROS distributions which also define urdfdom_headers in rosdep (e.g., Debian ROS packages)
-#catkin_lint: ignore missing_depend[pkg=urdfdom_headers]
-find_package(urdfdom_headers REQUIRED)
+foreach(dependency IN ITEMS ${THIS_PACKAGE_INCLUDE_DEPENDS})
+	find_package(${dependency} REQUIRED)
+endforeach()
 
-catkin_package(
-	LIBRARIES
-		${PROJECT_NAME}
-	INCLUDE_DIRS
-		include
-	CATKIN_DEPENDS
-		geometry_msgs
-		std_msgs
-		visualization_msgs
-	DEPENDS
-		EIGEN3
-)
+if(NOT CMAKE_CXX_STANDARD)
+	set(CMAKE_CXX_STANDARD 17)
+endif()
 
-set(PROJECT_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME})
-
-set(HEADERS
-	${PROJECT_INCLUDE}/marker_creation.h
-)
-
-add_library(${PROJECT_NAME}
-	${HEADERS}
+add_library(${PROJECT_NAME} SHARED
 	src/marker_creation.cpp
 )
 
-target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
-target_include_directories(${PROJECT_NAME} PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>)
-target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE
-   ${catkin_INCLUDE_DIRS}
-   ${urdfdom_headers_INCLUDE_DIRS}
-   ${EIGEN3_INCLUDE_DIR}
+ament_target_dependencies(${PROJECT_NAME} ${THIS_PACKAGE_INCLUDE_DEPENDS})
+target_include_directories(${PROJECT_NAME}
+	PUBLIC
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+	$<INSTALL_INTERFACE:include>
 )
-add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
 
-install(DIRECTORY include/ DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION})
+install(DIRECTORY include/ DESTINATION include)
 
 install(TARGETS ${PROJECT_NAME}
-	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+        EXPORT ${PROJECT_NAME}Targets
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib)
+
+ament_export_targets(${PROJECT_NAME}Targets HAS_LIBRARY_TARGET)
+ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
+ament_package()

@@ -42,8 +42,9 @@
 
 #include <moveit/planning_scene/planning_scene.h>
 
-#include <ros/console.h>
+#include <rclcpp/logging.hpp>
 
+#include <fmt/core.h>
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
@@ -85,7 +86,7 @@ void InitStageException::append(InitStageException& other) {
 }
 
 const char* InitStageException::what() const noexcept {
-	static const char* msg = "Error initializing stage(s). ROS_ERROR_STREAM(e) for details.";
+	static const char* msg = "Error initializing stage(s). RCLCPP_ERROR_STREAM(e) for details.";
 	return msg;
 }
 
@@ -357,7 +358,7 @@ void Stage::init(const moveit::core::RobotModelConstPtr& /* robot_model */) {
 	impl->properties_.reset();
 	if (impl->parent()) {
 		try {
-			ROS_DEBUG_STREAM_NAMED("Properties", fmt::format("init '{}'", name()));
+			RCLCPP_DEBUG_STREAM(rclcpp::get_logger("Properties"), fmt::format("init '{}'", name()));
 			impl->properties_.performInitFrom(PARENT, impl->parent()->properties());
 		} catch (const Property::error& e) {
 			std::ostringstream oss;
@@ -909,7 +910,7 @@ bool Connecting::compatible(const InterfaceState& from_state, const InterfaceSta
 	const planning_scene::PlanningSceneConstPtr& to = to_state.scene();
 
 	auto false_with_debug = [](auto... args) {
-		ROS_DEBUG_STREAM_NAMED("Connecting", fmt::format(args...));
+		RCLCPP_DEBUG_STREAM(rclcpp::get_logger("Connecting"), fmt::format(args...));
 		return false;
 	};
 

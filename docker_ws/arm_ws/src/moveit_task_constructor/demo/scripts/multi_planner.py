@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from moveit.task_constructor import core, stages
-from py_binding_tools import roscpp_init
+import rclcpp
 import time
 
-roscpp_init("mtc_tutorial")
+rclcpp.init()
+node = rclcpp.Node("mtc_tutorial")
 
-ompl_planner = core.PipelinePlanner("ompl")
+ompl_planner = core.PipelinePlanner(node, "ompl")
 ompl_planner.planner = "RRTConnectkConfigDefault"
-pilz_planner = core.PipelinePlanner("pilz_industrial_motion_planner")
+pilz_planner = core.PipelinePlanner(node, "pilz_industrial_motion_planner")
 pilz_planner.planner = "PTP"
 multiPlanner = core.MultiPlanner()
 multiPlanner.add(pilz_planner, ompl_planner)
@@ -17,6 +18,7 @@ multiPlanner.add(pilz_planner, ompl_planner)
 # Create a task
 task = core.Task()
 task.name = "multi planner"
+task.loadRobotModel(node)
 
 # Start from current robot state
 currentState = stages.CurrentState("current state")

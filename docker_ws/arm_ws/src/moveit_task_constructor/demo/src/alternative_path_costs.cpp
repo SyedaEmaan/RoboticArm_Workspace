@@ -1,4 +1,4 @@
-#include <ros/ros.h>
+#include <rclcpp/rclcpp.hpp>
 
 #include <moveit/planning_scene/planning_scene.h>
 
@@ -16,11 +16,15 @@ using namespace moveit::task_constructor;
 
 /* FixedState - Connect - FixedState */
 int main(int argc, char** argv) {
-	ros::init(argc, argv, "mtc_tutorial");
+	rclcpp::init(argc, argv);
+	rclcpp::NodeOptions node_options;
+	node_options.automatically_declare_parameters_from_overrides(true);
+	auto node = rclcpp::Node::make_shared("mtc_tutorial", node_options);
+	std::thread spinning_thread([node] { rclcpp::spin(node); });
 
 	Task t;
 	t.stages()->setName("alternative path costs");
-	t.loadRobotModel();
+	t.loadRobotModel(node);
 
 	assert(t.getRobotModel()->getName() == "panda");
 
@@ -33,7 +37,7 @@ int main(int argc, char** argv) {
 	initial->setState(scene);
 	t.add(std::move(initial));
 
-	auto pipeline{ std::make_shared<solvers::PipelinePlanner>() };
+	auto pipeline{ std::make_shared<solvers::PipelinePlanner>(node) };
 
 	auto alternatives{ std::make_unique<Alternatives>("connect") };
 	{
@@ -61,12 +65,6 @@ int main(int argc, char** argv) {
 		connect->setCostTerm(std::make_unique<cost::LinkMotion>("panda_link4"));
 		alternatives->add(std::move(connect));
 	}
-	{
-		auto connect{ std::make_unique<stages::Connect>(
-			 "eef rotation", stages::Connect::GroupPlannerVector{ { "panda_arm", pipeline } }) };
-		connect->setCostTerm(std::make_unique<cost::LinkRotation>("panda_hand"));
-		alternatives->add(std::move(connect));
-	}
 
 	t.add(std::move(alternatives));
 
@@ -82,7 +80,8 @@ int main(int argc, char** argv) {
 		std::cout << e << '\n';
 	}
 
-	ros::spin();
+	// keep alive for interactive inspection in rviz
+	spinning_thread.join();
 
 	return 0;
 }

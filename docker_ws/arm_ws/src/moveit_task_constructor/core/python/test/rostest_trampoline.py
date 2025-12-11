@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import unittest
-import rostest
-from py_binding_tools import roscpp_init
+import rclcpp
 from moveit.task_constructor import core, stages
 from moveit.core.planning_scene import PlanningScene
 from geometry_msgs.msg import Vector3Stamped, Vector3, PoseStamped
@@ -13,7 +12,20 @@ PLANNING_GROUP = "manipulator"
 
 
 def setUpModule():
-    roscpp_init("test_mtc")
+    rclcpp.init()
+
+
+def pybind11_versions():
+    try:
+        keys = __builtins__.keys()  # for use with pytest
+    except AttributeError:
+        keys = __builtins__.__dict__.keys()  # use from cmdline
+    return [k for k in keys if k.startswith("__pybind11_internals_v")]
+
+
+incompatible_pybind11_msg = "MoveIt and MTC use incompatible pybind11 versions: " + "\n- ".join(
+    pybind11_versions()
+)
 
 
 class PyGenerator(core.Generator):
@@ -87,29 +99,29 @@ class TestTrampolines(unittest.TestCase):
     def setUp(self):
         self.cartesian = core.CartesianPath()
         self.jointspace = core.JointInterpolationPlanner()
+        self.node = rclcpp.Node("test_mtc")
 
     def create(self, *stages):
         task = core.Task()
+        task.loadRobotModel(self.node)
         task.enableIntrospection()
         for stage in stages:
             task.add(stage)
         return task
 
     def plan(self, task, expected_solutions=None, wait=False):
-        try:
-            task.plan()
-        except TypeError as e:
-            self.fail(f"{e}\nMoveIt and MTC use ABI-incompatible pybind11 versions")
-
+        task.plan()
         if expected_solutions is not None:
             self.assertEqual(len(task.solutions), expected_solutions)
         if wait:
             input("Waiting for any key (allows inspection in rviz)")
 
+    @unittest.skipIf(len(pybind11_versions()) > 1, incompatible_pybind11_msg)
     def test_generator(self):
         task = self.create(PyGenerator())
         self.plan(task, expected_solutions=PyGenerator.max_calls)
 
+    @unittest.skipIf(len(pybind11_versions()) > 1, incompatible_pybind11_msg)
     def test_monitoring_generator(self):
         task = self.create(
             stages.CurrentState("current"),
@@ -129,4 +141,4 @@ class TestTrampolines(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    rostest.rosrun("mtc", "trampoline", TestTrampolines)
+    unittest.main()

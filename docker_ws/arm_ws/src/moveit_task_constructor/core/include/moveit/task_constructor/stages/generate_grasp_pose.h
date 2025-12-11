@@ -58,9 +58,9 @@ public:
 	void setRotationAxis(const Eigen::Vector3d& axis) { setProperty("rotation_axis", axis); }
 
 	void setPreGraspPose(const std::string& pregrasp) { properties().set("pregrasp", pregrasp); }
-	void setPreGraspPose(const moveit_msgs::RobotState& pregrasp) { properties().set("pregrasp", pregrasp); }
+	void setPreGraspPose(const moveit_msgs::msg::RobotState& pregrasp) { properties().set("pregrasp", pregrasp); }
 	void setGraspPose(const std::string& grasp) { properties().set("grasp", grasp); }
-	void setGraspPose(const moveit_msgs::RobotState& grasp) { properties().set("grasp", grasp); }
+	void setGraspPose(const moveit_msgs::msg::RobotState& grasp) { properties().set("grasp", grasp); }
 
 protected:
 	void onNewSolution(const SolutionBase& s) override;

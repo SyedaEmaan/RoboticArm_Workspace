@@ -119,12 +119,15 @@ py::object PropertyConverterRegistry::toPython(const boost::any& value) {
 
 std::string rosMsgName(PyObject* object) {
 	py::object o = py::reinterpret_borrow<py::object>(object);
-	try {
-		return o.attr("_type").cast<std::string>();
-	} catch (const py::error_already_set& e) {
+	auto cls = o.attr("__class__");
+	auto name = cls.attr("__name__").cast<std::string>();
+	auto module = cls.attr("__module__").cast<std::string>();
+	auto pos = module.find(".msg");
+	if (pos == std::string::npos)
 		// object is not a ROS message type, return it's class name instead
-		return o.attr("__class__").attr("__name__").cast<std::string>();
-	}
+		return module + "." + name;
+	else
+		return module.substr(0, pos) + "/msg/" + name;
 }
 
 boost::any PropertyConverterRegistry::fromPython(const py::object& po) {
@@ -155,7 +158,6 @@ bool PropertyConverterBase::insert(const std::type_index& type_index, const std:
 	return REGISTRY_SINGLETON.insert(type_index, ros_msg_name, to, from);
 }
 
-__attribute__((visibility("default"))) // export this symbol as visible in the shared library
 void export_properties(py::module& m) {
 	// clang-format off
 	py::classh<Property>(m, "Property", "Holds an arbitrarily typed value and a default value")

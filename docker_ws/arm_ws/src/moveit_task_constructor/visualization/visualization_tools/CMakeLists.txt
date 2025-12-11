@@ -9,7 +9,7 @@ set(HEADERS
 	${PROJECT_INCLUDE}/task_solution_visualization.h
 )
 
-add_library(${MOVEIT_LIB_NAME}
+add_library(${MOVEIT_LIB_NAME} SHARED
 	${HEADERS}
 
 	src/display_solution.cpp
@@ -18,24 +18,28 @@ add_library(${MOVEIT_LIB_NAME}
 	src/task_solution_visualization.cpp
 )
 set_target_properties(${MOVEIT_LIB_NAME} PROPERTIES VERSION "${${PROJECT_NAME}_VERSION}")
-
 target_link_libraries(${MOVEIT_LIB_NAME}
-	${catkin_LIBRARIES}
-	${rviz_DEFAULT_PLUGIN_LIBRARIES}
-	${OGRE_LIBRARIES}
 	${QT_LIBRARIES}
-	${Boost_LIBRARIES}
+	rviz_ogre_vendor::OgreMain
 	fmt::fmt
 )
-target_include_directories(${MOVEIT_LIB_NAME} PUBLIC include)
-target_include_directories(${MOVEIT_LIB_NAME} SYSTEM
-	PRIVATE ${catkin_INCLUDE_DIRS}
-	PUBLIC ${rviz_OGRE_INCLUDE_DIRS}
+target_include_directories(${MOVEIT_LIB_NAME}
+	PUBLIC include
 )
-add_dependencies(${MOVEIT_LIB_NAME} ${catkin_EXPORTED_TARGETS})
+ament_target_dependencies(${MOVEIT_LIB_NAME}
+	Boost
+	pluginlib
+	moveit_task_constructor_msgs
+	moveit_ros_visualization
+	moveit_core
+	rclcpp
+	rviz_common
+	rviz_default_plugins
+)
 
-install(DIRECTORY include/ DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION})
+install(DIRECTORY include/ DESTINATION include)
 
 install(TARGETS ${MOVEIT_LIB_NAME}
-	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+	EXPORT export_${MOVEIT_LIB_NAME}
+	ARCHIVE DESTINATION lib
+	LIBRARY DESTINATION lib)

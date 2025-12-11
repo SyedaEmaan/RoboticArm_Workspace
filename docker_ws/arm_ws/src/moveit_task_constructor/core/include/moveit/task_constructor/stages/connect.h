@@ -41,7 +41,7 @@
 #include <moveit/task_constructor/stage.h>
 #include <moveit/task_constructor/solvers/planner_interface.h>
 
-#include <moveit_msgs/Constraints.h>
+#include <moveit_msgs/msg/constraints.hpp>
 
 namespace moveit {
 namespace core {
@@ -73,11 +73,17 @@ public:
 		WAYPOINTS = 1
 	};
 
-	using GroupPlannerVector = std::vector<std::pair<std::string, solvers::PlannerInterfacePtr> >;
+	struct PlannerIdTrajectoryPair
+	{
+		std::string planner_id;
+		robot_trajectory::RobotTrajectoryConstPtr trajectory;
+	};
+
+	using GroupPlannerVector = std::vector<std::pair<std::string, solvers::PlannerInterfacePtr>>;
 	Connect(const std::string& name = "connect", const GroupPlannerVector& planners = {});
 
 	void setMaxDistance(double max_distance) { setProperty("max_distance", max_distance); }
-	void setPathConstraints(moveit_msgs::Constraints path_constraints) {
+	void setPathConstraints(moveit_msgs::msg::Constraints path_constraints) {
 		setProperty("path_constraints", std::move(path_constraints));
 	}
 
@@ -86,10 +92,10 @@ public:
 	void compute(const InterfaceState& from, const InterfaceState& to) override;
 
 protected:
-	SolutionSequencePtr makeSequential(const std::vector<robot_trajectory::RobotTrajectoryConstPtr>& sub_trajectories,
+	SolutionSequencePtr makeSequential(const std::vector<PlannerIdTrajectoryPair>& sub_trajectories,
 	                                   const std::vector<planning_scene::PlanningSceneConstPtr>& intermediate_scenes,
 	                                   const InterfaceState& from, const InterfaceState& to);
-	SubTrajectoryPtr merge(const std::vector<robot_trajectory::RobotTrajectoryConstPtr>& sub_trajectories,
+	SubTrajectoryPtr merge(const std::vector<PlannerIdTrajectoryPair>& sub_trajectories,
 	                       const std::vector<planning_scene::PlanningSceneConstPtr>& intermediate_scenes,
 	                       const moveit::core::RobotState& state);
 

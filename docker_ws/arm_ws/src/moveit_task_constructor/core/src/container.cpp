@@ -41,7 +41,8 @@
 #include <moveit/planning_scene/planning_scene.h>
 #include <moveit/trajectory_processing/time_optimal_trajectory_generation.h>
 
-#include <ros/console.h>
+#include <rclcpp/logger.hpp>
+#include <rclcpp/logging.hpp>
 
 #include <memory>
 #include <iostream>
@@ -235,7 +236,7 @@ void ContainerBasePrivate::onNewFailure(const Stage& child, const InterfaceState
 	if (!static_cast<ContainerBase*>(me_)->pruning())
 		return;
 
-	ROS_DEBUG_STREAM_NAMED("Pruning", fmt::format("'{}' generated a failure", child.name()));
+	RCLCPP_DEBUG_STREAM(rclcpp::get_logger("Pruning"), fmt::format("'{}' generated a failure", child.name()));
 	switch (child.pimpl()->interfaceFlags()) {
 		case GENERATE:
 			// just ignore: the pair of (new) states isn't known to us anyway
@@ -512,8 +513,8 @@ struct SolutionCollector
 };
 
 void SerialContainer::onNewSolution(const SolutionBase& current) {
-	ROS_DEBUG_STREAM_NAMED("SerialContainer", fmt::format("'{}' received solution of child stage '{}'", this->name(),
-	                                                      current.creator()->name()));
+	RCLCPP_DEBUG_STREAM(rclcpp::get_logger("SerialContainer"), fmt::format("'{}' received solution of child stage '{}'",
+	                                                                       this->name(), current.creator()->name()));
 
 	// failures should never trigger this callback
 	assert(!current.isFailure());
@@ -951,7 +952,8 @@ void FallbacksPrivateCommon::compute() {
 
 inline void FallbacksPrivateCommon::nextChild() {
 	if (std::next(current_) != children().end())
-		ROS_DEBUG_STREAM_NAMED("Fallbacks", fmt::format("Child '{}' failed, trying next one.", (*current_)->name()));
+		RCLCPP_DEBUG_STREAM(rclcpp::get_logger("Fallbacks"),
+		                    fmt::format("Child '{}' failed, trying next one.", (*current_)->name()));
 	++current_;  // advance to next child
 }
 
@@ -1168,7 +1170,7 @@ void Merger::onNewSolution(const SolutionBase& s) {
 void MergerPrivate::onNewPropagateSolution(const SolutionBase& s) {
 	const SubTrajectory* trajectory = dynamic_cast<const SubTrajectory*>(&s);
 	if (!trajectory || !trajectory->trajectory()) {
-		ROS_ERROR_NAMED("Merger", "Only simple, valid trajectories are supported");
+		RCLCPP_ERROR(rclcpp::get_logger("Merger"), "Only simple, valid trajectories are supported");
 		return;
 	}
 

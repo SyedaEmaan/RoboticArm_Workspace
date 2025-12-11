@@ -43,7 +43,7 @@
 #include <moveit/task_constructor/cost_terms.h>
 #include <moveit/task_constructor/cost_queue.h>
 
-#include <ros/console.h>
+#include <rclcpp/rclcpp.hpp>
 #include <fmt/core.h>
 
 #include <ostream>
@@ -156,7 +156,7 @@ public:
 	void newSolution(const SolutionBasePtr& solution);
 	bool storeFailures() const { return introspection_ != nullptr; }
 	void runCompute() {
-		ROS_DEBUG_STREAM_NAMED("Stage", fmt::format("Computing stage '{}'", name()));
+		RCLCPP_DEBUG_STREAM(LOGGER, fmt::format("Computing stage '{}'", name()));
 
 		if (preempted())
 			throw PreemptStageException();
@@ -217,8 +217,9 @@ private:
 	InterfaceWeakPtr next_starts_;  // interface to be used for sendForward()
 
 	Introspection* introspection_;  // task's introspection instance
-
 	const std::atomic<bool>* preempt_requested_;
+
+	inline static const rclcpp::Logger LOGGER = rclcpp::get_logger("stage");
 };
 PIMPL_FUNCTIONS(Stage)
 std::ostream& operator<<(std::ostream& os, const StagePrivate& stage);

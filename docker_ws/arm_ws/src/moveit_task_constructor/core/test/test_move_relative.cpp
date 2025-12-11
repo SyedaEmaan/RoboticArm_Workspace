@@ -4,14 +4,13 @@
 #include <moveit/task_constructor/stages/move_relative.h>
 #include <moveit/task_constructor/stages/fixed_state.h>
 #include <moveit/task_constructor/solvers/cartesian_path.h>
-#include <moveit/task_constructor/solvers/joint_interpolation.h>
 #include <moveit/task_constructor/solvers/pipeline_planner.h>
 
 #include <moveit/planning_scene/planning_scene.h>
 #include <moveit/robot_trajectory/robot_trajectory.h>
 
-#include <geometry_msgs/PoseStamped.h>
-#include <geometry_msgs/TwistStamped.h>
+#include <geometry_msgs/msg/pose_stamped.hpp>
+#include <geometry_msgs/msg/twist_stamped.hpp>
 
 #include <gtest/gtest.h>
 
@@ -27,18 +26,14 @@ constexpr double TAU{ 2 * M_PI };
 constexpr double EPS{ 5e-5 };
 
 template <typename Planner>
-std::shared_ptr<Planner> create();
+std::shared_ptr<Planner> create(const rclcpp::Node::SharedPtr&);
 template <>
-solvers::CartesianPathPtr create<solvers::CartesianPath>() {
+solvers::CartesianPathPtr create<solvers::CartesianPath>(const rclcpp::Node::SharedPtr& /*unused*/) {
 	return std::make_shared<solvers::CartesianPath>();
 }
 template <>
-solvers::JointInterpolationPlannerPtr create<solvers::JointInterpolationPlanner>() {
-	return std::make_shared<solvers::JointInterpolationPlanner>();
-}
-template <>
-solvers::PipelinePlannerPtr create<solvers::PipelinePlanner>() {
-	auto p = std::make_shared<solvers::PipelinePlanner>("pilz_industrial_motion_planner");
+solvers::PipelinePlannerPtr create<solvers::PipelinePlanner>(const rclcpp::Node::SharedPtr& node) {
+	auto p = std::make_shared<solvers::PipelinePlanner>(node, "pilz_industrial_motion_planner");
 	p->setPlannerId("LIN");
 	p->setProperty("max_velocity_scaling_factor", 0.1);
 	p->setProperty("max_acceleration_scaling_factor", 0.1);
@@ -56,14 +51,14 @@ struct PandaMoveRelative : public testing::Test
 
 	const JointModelGroup* group;
 
-	PandaMoveRelative() : planner(create<Planner>()) {
-		t.setRobotModel(loadModel());
+	PandaMoveRelative() : planner(create<Planner>(rclcpp::Node::make_shared("panda_move_relative"))) {
+		t.loadRobotModel(rclcpp::Node::make_shared("panda_move_relative"));
 
 		group = t.getRobotModel()->getJointModelGroup("panda_arm");
 
 		scene = std::make_shared<PlanningScene>(t.getRobotModel());
 		scene->getCurrentStateNonConst().setToDefaultValues();
-		scene->getCurrentStateNonConst().setToDefaultValues(t.getRobotModel()->getJointModelGroup("panda_arm"), "ready");
+		scene->getCurrentStateNonConst().setToDefaultValues(group, "ready");
 		t.add(std::make_unique<stages::FixedState>("start", scene));
 
 		auto move_relative = std::make_unique<stages::MoveRelative>("move", planner);
@@ -73,15 +68,14 @@ struct PandaMoveRelative : public testing::Test
 	}
 };
 using PandaMoveRelativeCartesian = PandaMoveRelative<solvers::CartesianPath>;
-using PandaMoveRelativeJoint = PandaMoveRelative<solvers::JointInterpolationPlanner>;
 
-moveit_msgs::CollisionObject createObject(const std::string& id, const geometry_msgs::Pose& pose) {
-	moveit_msgs::CollisionObject co;
+moveit_msgs::msg::CollisionObject createObject(const std::string& id, const geometry_msgs::msg::Pose& pose) {
+	moveit_msgs::msg::CollisionObject co;
 	co.header.frame_id = "panda_hand";
 	co.operation = co.ADD;
 	co.id = id;
 	co.primitives.resize(1, [] {
-		shape_msgs::SolidPrimitive p;
+		shape_msgs::msg::SolidPrimitive p;
 		p.type = p.SPHERE;
 		p.dimensions.resize(1);
 		p.dimensions[p.SPHERE_RADIUS] = 0.01;
@@ -92,16 +86,16 @@ moveit_msgs::CollisionObject createObject(const std::string& id, const geometry_
 	return co;
 }
 
-moveit_msgs::CollisionObject createObject(const std::string& id) {
-	geometry_msgs::Pose p;
+moveit_msgs::msg::CollisionObject createObject(const std::string& id) {
+	geometry_msgs::msg::Pose p;
 	p.position.x = 0.1;
 	p.orientation.w = 1.0;
 
 	return createObject(id, p);
 }
 
-moveit_msgs::AttachedCollisionObject createAttachedObject(const std::string& id) {
-	moveit_msgs::AttachedCollisionObject aco;
+moveit_msgs::msg::AttachedCollisionObject createAttachedObject(const std::string& id) {
+	moveit_msgs::msg::AttachedCollisionObject aco;
 	aco.link_name = "panda_hand";
 	aco.object = createObject(id);
 
@@ -128,7 +122,7 @@ void expect_const_position(const SolutionBaseConstPtr& solution, const std::stri
 
 TEST_F(PandaMoveRelativeCartesian, cartesianRotateEEF) {
 	move->setDirection([] {
-		geometry_msgs::TwistStamped twist;
+		geometry_msgs::msg::TwistStamped twist;
 		twist.header.frame_id = "world";
 		twist.twist.angular.z = TAU / 8.0;
 		return twist;
@@ -143,7 +137,7 @@ TEST_F(PandaMoveRelativeCartesian, cartesianCircular) {
 	auto offset = Eigen::Translation3d(0, 0, 0.1);
 	move->setIKFrame(offset, tip);
 	move->setDirection([] {
-		geometry_msgs::TwistStamped twist;
+		geometry_msgs::msg::TwistStamped twist;
 		twist.header.frame_id = "world";
 		twist.twist.angular.x = TAU / 4.0;
 		return twist;
@@ -159,7 +153,7 @@ TEST_F(PandaMoveRelativeCartesian, cartesianRotateAttachedIKFrame) {
 	move->setIKFrame(attached_object);
 
 	move->setDirection([] {
-		geometry_msgs::TwistStamped twist;
+		geometry_msgs::msg::TwistStamped twist;
 		twist.header.frame_id = "world";
 		twist.twist.angular.z = TAU / 8.0;
 		return twist;
@@ -169,25 +163,6 @@ TEST_F(PandaMoveRelativeCartesian, cartesianRotateAttachedIKFrame) {
 	EXPECT_CONST_POSITION(move->solutions().front(), attached_object);
 }
 
-// https://github.com/moveit/moveit_task_constructor/issues/664
-TEST_F(PandaMoveRelativeJoint, jointOutsideBound) {
-	// move joint inside limit
-	auto initial_jpos = scene->getCurrentState().getJointPositions("panda_joint7");
-	move->setDirection([initial_jpos] {
-		return std::map<std::string, double>{ { "panda_joint7", 2.0 - *initial_jpos } };
-	}());
-	EXPECT_TRUE(this->t.plan()) << "Plan should succeed, joint inside limit";
-
-	this->t.reset();
-
-	// move joint outside limit: 2.8973
-	move->setDirection([initial_jpos] {
-		return std::map<std::string, double>{ { "panda_joint7", 3.0 - *initial_jpos } };
-	}());
-
-	EXPECT_FALSE(this->t.plan()) << "Plan should fail, joint outside limit";
-}
-
 using PlannerTypes = ::testing::Types<solvers::CartesianPath, solvers::PipelinePlanner>;
 TYPED_TEST_SUITE(PandaMoveRelative, PlannerTypes);
 TYPED_TEST(PandaMoveRelative, cartesianCollisionMinMaxDistance) {
@@ -195,14 +170,14 @@ TYPED_TEST(PandaMoveRelative, cartesianCollisionMinMaxDistance) {
 		GTEST_SKIP();  // Pilz PipelinePlanner current fails this test (see #538)
 
 	const std::string object{ "object" };
-	geometry_msgs::Pose object_pose;
+	geometry_msgs::msg::Pose object_pose;
 	object_pose.position.z = 0.4;
 	object_pose.orientation.w = 1.0;
 
 	this->scene->processCollisionObjectMsg(createObject(object, object_pose));
 
 	this->move->setIKFrame("panda_hand");
-	geometry_msgs::Vector3Stamped v;
+	geometry_msgs::msg::Vector3Stamped v;
 	v.header.frame_id = "panda_hand";
 	v.vector.z = 0.5;
 	this->move->setDirection(v);
@@ -219,9 +194,7 @@ TYPED_TEST(PandaMoveRelative, cartesianCollisionMinMaxDistance) {
 
 int main(int argc, char** argv) {
 	testing::InitGoogleTest(&argc, argv);
-	ros::init(argc, argv, "move_relative_test");
-	ros::AsyncSpinner spinner(1);
-	spinner.start();
+	rclcpp::init(argc, argv);
 
 	return RUN_ALL_TESTS();
 }

@@ -38,17 +38,24 @@
 
 #include <moveit/planning_scene/planning_scene.h>
 #include <moveit/robot_state/conversions.h>
-#include <tf2_eigen/tf2_eigen.h>
 
 #include <moveit/task_constructor/stages/move_to.h>
 #include <moveit/task_constructor/cost_terms.h>
 #include <moveit/task_constructor/utils.h>
 
 #include <rviz_marker_tools/marker_creation.h>
+#if __has_include(<tf2_eigen/tf2_eigen.hpp>)
+#include <tf2_eigen/tf2_eigen.hpp>
+#else
+#include <tf2_eigen/tf2_eigen.h>
+#endif
+#include <moveit/robot_state/conversions.h>
 
 namespace moveit {
 namespace task_constructor {
 namespace stages {
+
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("MoveTo");
 
 MoveTo::MoveTo(const std::string& name, const solvers::PlannerInterfacePtr& planner)
   : PropagatingEitherWay(name), planner_(planner) {
@@ -57,27 +64,27 @@ MoveTo::MoveTo(const std::string& name, const solvers::PlannerInterfacePtr& plan
 	auto& p = properties();
 	p.property("timeout").setDefaultValue(1.0);
 	p.declare<std::string>("group", "name of planning group");
-	p.declare<geometry_msgs::PoseStamped>("ik_frame", "frame to be moved towards goal pose");
+	p.declare<geometry_msgs::msg::PoseStamped>("ik_frame", "frame to be moved towards goal pose");
 	p.declare<boost::any>("goal", "goal specification");
 	// register actual types
 	PropertySerializer<std::string>();
-	PropertySerializer<moveit_msgs::RobotState>();
-	PropertySerializer<geometry_msgs::PointStamped>();
-	PropertySerializer<geometry_msgs::PoseStamped>();
+	PropertySerializer<moveit_msgs::msg::RobotState>();
+	PropertySerializer<geometry_msgs::msg::PointStamped>();
+	PropertySerializer<geometry_msgs::msg::PoseStamped>();
 
-	p.declare<moveit_msgs::Constraints>("path_constraints", moveit_msgs::Constraints(),
-	                                    "constraints to maintain during trajectory");
+	p.declare<moveit_msgs::msg::Constraints>("path_constraints", moveit_msgs::msg::Constraints(),
+	                                         "constraints to maintain during trajectory");
 }
 
 void MoveTo::setIKFrame(const Eigen::Isometry3d& pose, const std::string& link) {
-	geometry_msgs::PoseStamped pose_msg;
+	geometry_msgs::msg::PoseStamped pose_msg;
 	pose_msg.header.frame_id = link;
 	pose_msg.pose = tf2::toMsg(pose);
 	setIKFrame(pose_msg);
 }
 
 void MoveTo::setGoal(const std::map<std::string, double>& joints) {
-	moveit_msgs::RobotState robot_state;
+	moveit_msgs::msg::RobotState robot_state;
 	robot_state.joint_state.name.reserve(joints.size());
 	robot_state.joint_state.position.reserve(joints.size());
 
@@ -108,7 +115,7 @@ bool MoveTo::getJointStateGoal(const boost::any& goal, const moveit::core::Joint
 
 	try {
 		// try RobotState
-		const moveit_msgs::RobotState& msg = boost::any_cast<moveit_msgs::RobotState>(goal);
+		const moveit_msgs::msg::RobotState& msg = boost::any_cast<moveit_msgs::msg::RobotState>(goal);
 		if (!msg.is_diff)
 			throw InitStageException(*this, "Expecting a diff state");
 
@@ -146,8 +153,9 @@ bool MoveTo::getJointStateGoal(const boost::any& goal, const moveit::core::Joint
 bool MoveTo::getPoseGoal(const boost::any& goal, const planning_scene::PlanningScenePtr& scene,
                          Eigen::Isometry3d& target) {
 	try {
-		const geometry_msgs::PoseStamped& msg = boost::any_cast<geometry_msgs::PoseStamped>(goal);
+		const geometry_msgs::msg::PoseStamped& msg = boost::any_cast<geometry_msgs::msg::PoseStamped>(goal);
 		tf2::fromMsg(msg.pose, target);
+
 		// transform target into global frame
 		target = scene->getFrameTransform(msg.header.frame_id) * target;
 	} catch (const boost::bad_any_cast&) {
@@ -159,7 +167,7 @@ bool MoveTo::getPoseGoal(const boost::any& goal, const planning_scene::PlanningS
 bool MoveTo::getPointGoal(const boost::any& goal, const Eigen::Isometry3d& ik_pose,
                           const planning_scene::PlanningScenePtr& scene, Eigen::Isometry3d& target_eigen) {
 	try {
-		const geometry_msgs::PointStamped& target = boost::any_cast<geometry_msgs::PointStamped>(goal);
+		const geometry_msgs::msg::PointStamped& target = boost::any_cast<geometry_msgs::msg::PointStamped>(goal);
 		Eigen::Vector3d target_point;
 		tf2::fromMsg(target.point, target_point);
 		// transform target into global frame
@@ -194,25 +202,23 @@ bool MoveTo::compute(const InterfaceState& state, planning_scene::PlanningSceneP
 		return false;
 	}
 
-	const auto& path_constraints = props.get<moveit_msgs::Constraints>("path_constraints");
+	const auto& path_constraints = props.get<moveit_msgs::msg::Constraints>("path_constraints");
 	robot_trajectory::RobotTrajectoryPtr robot_trajectory;
 	bool success = false;
-	bool has_potential_collisions = false;
 	std::string comment = "";
 
 	if (getJointStateGoal(goal, jmg, scene->getCurrentStateNonConst())) {
 		// plan to joint-space target
 		auto result = planner_->plan(state.scene(), scene, jmg, timeout, robot_trajectory, path_constraints);
 		success = bool(result);
-		if (!success) {
+		if (!success)
 			comment = result.message;
-			has_potential_collisions = robot_trajectory && utils::hints_at_collisions(result);
-		}
+		solution.setPlannerId(planner_->getPlannerId());
 	} else {  // Cartesian goal
 		// Where to go?
 		Eigen::Isometry3d target;
 		// What frame+offset in the robot should go there?
-		geometry_msgs::PoseStamped ik_pose_msg;
+		geometry_msgs::msg::PoseStamped ik_pose_msg;
 
 		const moveit::core::LinkModel* link;
 		Eigen::Isometry3d ik_pose_world;
@@ -229,7 +235,7 @@ bool MoveTo::compute(const InterfaceState& state, planning_scene::PlanningSceneP
 		}
 
 		auto add_frame{ [&](const Eigen::Isometry3d& pose, const char name[]) {
-			geometry_msgs::PoseStamped msg;
+			geometry_msgs::msg::PoseStamped msg;
 			msg.header.frame_id = scene->getPlanningFrame();
 			msg.pose = tf2::toMsg(pose);
 			rviz_marker_tools::appendFrame(solution.markers(), msg, 0.1, name);
@@ -246,10 +252,9 @@ bool MoveTo::compute(const InterfaceState& state, planning_scene::PlanningSceneP
 		const auto result =
 		    planner_->plan(state.scene(), *link, offset, target, jmg, timeout, robot_trajectory, path_constraints);
 		success = bool(result);
-		if (!success) {
+		if (!success)
 			comment = result.message;
-			has_potential_collisions = robot_trajectory && utils::hints_at_collisions(result);
-		}
+		solution.setPlannerId(planner_->getPlannerId());
 	}
 
 	// store result
@@ -264,11 +269,9 @@ bool MoveTo::compute(const InterfaceState& state, planning_scene::PlanningSceneP
 			robot_trajectory->reverse();
 		solution.setTrajectory(robot_trajectory);
 
-		if (!success) {
+		if (!success)
 			solution.markAsFailure(comment);
-			if (has_potential_collisions)
-				utils::addCollisionMarkers(solution.markers(), *robot_trajectory, scene);
-		}
+
 		return true;
 	}
 	return false;

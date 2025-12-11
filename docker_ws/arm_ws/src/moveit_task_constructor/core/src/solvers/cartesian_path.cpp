@@ -40,10 +40,13 @@
 #include <moveit/task_constructor/utils.h>
 #include <moveit/planning_scene/planning_scene.h>
 #include <moveit/trajectory_processing/time_parameterization.h>
-#include <moveit/trajectory_processing/limit_cartesian_speed.h>
 #include <moveit/kinematics_base/kinematics_base.h>
 #include <moveit/robot_state/cartesian_interpolator.h>
+#if __has_include(<tf2_eigen/tf2_eigen.hpp>)
+#include <tf2_eigen/tf2_eigen.hpp>
+#else
 #include <tf2_eigen/tf2_eigen.h>
+#endif
 
 using namespace trajectory_processing;
 
@@ -51,21 +54,24 @@ namespace moveit {
 namespace task_constructor {
 namespace solvers {
 
+static const rclcpp::Logger LOGGER = rclcpp::get_logger("CartesianPath");
+
 CartesianPath::CartesianPath() {
 	auto& p = properties();
-	p.declare<geometry_msgs::PoseStamped>("ik_frame", "frame to move linearly (use for joint-space target)");
+	p.declare<geometry_msgs::msg::PoseStamped>("ik_frame", "frame to move linearly (use for joint-space target)");
 	p.declare<double>("step_size", 0.01, "step size between consecutive waypoints");
-	p.declare<moveit::core::CartesianPrecision>("precision", moveit::core::CartesianPrecision(),
-	                                            "precision of linear path");
+	p.declare<double>("jump_threshold", 1.5, "acceptable fraction of mean joint motion per step");
 	p.declare<double>("min_fraction", 1.0, "fraction of motion required for success");
 	p.declare<kinematics::KinematicsQueryOptions>("kinematics_options", kinematics::KinematicsQueryOptions(),
 	                                              "KinematicsQueryOptions to pass to CartesianInterpolator");
+	p.declare<kinematics::KinematicsBase::IKCostFn>("kinematics_cost_fn", kinematics::KinematicsBase::IKCostFn(),
+	                                                "Cost function to pass to IK solver");
 }
 
 void CartesianPath::init(const core::RobotModelConstPtr& /*robot_model*/) {}
 
 void CartesianPath::setIKFrame(const Eigen::Isometry3d& pose, const std::string& link) {
-	geometry_msgs::PoseStamped pose_msg;
+	geometry_msgs::msg::PoseStamped pose_msg;
 	pose_msg.header.frame_id = link;
 	pose_msg.pose = tf2::toMsg(pose);
 	setIKFrame(pose_msg);
@@ -75,7 +81,7 @@ PlannerInterface::Result CartesianPath::plan(const planning_scene::PlanningScene
                                              const planning_scene::PlanningSceneConstPtr& to,
                                              const moveit::core::JointModelGroup* jmg, double timeout,
                                              robot_trajectory::RobotTrajectoryPtr& result,
-                                             const moveit_msgs::Constraints& path_constraints) {
+                                             const moveit_msgs::msg::Constraints& path_constraints) {
 	const auto& props = properties();
 	const moveit::core::LinkModel* link;
 	std::string error_msg;
@@ -95,7 +101,7 @@ PlannerInterface::Result CartesianPath::plan(const planning_scene::PlanningScene
                                              const moveit::core::LinkModel& link, const Eigen::Isometry3d& offset,
                                              const Eigen::Isometry3d& target, const moveit::core::JointModelGroup* jmg,
                                              double /*timeout*/, robot_trajectory::RobotTrajectoryPtr& result,
-                                             const moveit_msgs::Constraints& path_constraints) {
+                                             const moveit_msgs::msg::Constraints& path_constraints) {
 	const auto& props = properties();
 	planning_scene::PlanningScenePtr sandbox_scene = from->diff();
 
@@ -114,27 +120,17 @@ PlannerInterface::Result CartesianPath::plan(const planning_scene::PlanningScene
 	double achieved_fraction = moveit::core::CartesianInterpolator::computeCartesianPath(
 	    &(sandbox_scene->getCurrentStateNonConst()), jmg, trajectory, &link, target, true,
 	    moveit::core::MaxEEFStep(props.get<double>("step_size")),
-	    props.get<moveit::core::CartesianPrecision>("precision"), is_valid,
-	    props.get<kinematics::KinematicsQueryOptions>("kinematics_options"), offset);
+	    moveit::core::JumpThreshold(props.get<double>("jump_threshold")), is_valid,
+	    props.get<kinematics::KinematicsQueryOptions>("kinematics_options"),
+	    props.get<kinematics::KinematicsBase::IKCostFn>("kinematics_cost_fn"), offset);
 
 	assert(!trajectory.empty());  // there should be at least the start state
 	result = std::make_shared<robot_trajectory::RobotTrajectory>(sandbox_scene->getRobotModel(), jmg);
 	for (const auto& waypoint : trajectory)
 		result->addSuffixWayPoint(waypoint, 0.0);
 
-	double max_cartesian_speed = props.get<double>("max_cartesian_speed");
 	auto timing = props.get<TimeParameterizationPtr>("time_parameterization");
-	// compute timing to move the eef with constant speed
-	if (max_cartesian_speed > 0.0) {
-		if (trajectory_processing::limitMaxCartesianLinkSpeed(*result, max_cartesian_speed,
-		                                                      props.get<std::string>("cartesian_speed_limited_link"))) {
-			ROS_INFO_STREAM("successfully set max " << max_cartesian_speed << " [m/s] for link "
-			                                        << props.get<std::string>("cartesian_speed_limited_link"));
-		} else {
-			ROS_ERROR_STREAM("failed to set max speed for link_ "
-			                 << props.get<std::string>("cartesian_speed_limited_link"));
-		}
-	} else if (timing)
+	if (timing)
 		timing->computeTimeStamps(*result, props.get<double>("max_velocity_scaling_factor"),
 		                          props.get<double>("max_acceleration_scaling_factor"));
 

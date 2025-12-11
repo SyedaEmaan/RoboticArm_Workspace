@@ -37,9 +37,8 @@
 #include <moveit/task_constructor/stages.h>
 #include <moveit/task_constructor/stages/pick.h>
 #include <moveit/task_constructor/stages/simple_grasp.h>
-#include <moveit/task_constructor/solvers/cartesian_path.h>
 #include <moveit/planning_scene/planning_scene.h>
-#include <moveit_msgs/PlanningScene.h>
+#include <moveit_msgs/msg/planning_scene.hpp>
 #include <pybind11/stl.h>
 #include <py_binding_tools/ros_msg_typecasters.h>
 
@@ -47,6 +46,24 @@ namespace py = pybind11;
 using namespace py::literals;
 using namespace moveit::task_constructor;
 using namespace moveit::task_constructor::stages;
+
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(ModifyPlanningScene)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(CurrentState)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(FixedState)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(ComputeIK)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(MoveTo)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(MoveRelative)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(Connect)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(FixCollisionObjects)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(GenerateGraspPose)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(GeneratePlacePose)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(GenerateRandomPose)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(GeneratePose)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(Pick)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(Place)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(SimpleGraspBase)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(SimpleGrasp)
+PYBIND11_SMART_HOLDER_TYPE_CASTERS(SimpleUnGrasp)
 
 namespace moveit {
 namespace python {
@@ -171,21 +188,25 @@ void export_stages(pybind11::module& m) {
 			str: Default joint pose of the active group
 			(defines cost of the inverse kinematics).
 		)")
+	    .property<uint32_t>("max_ik_solutions", R"(
+			int: Set the maximum number of inverse
+			kinematic solutions thats should be generated.
+		)")
 	    .property<uint32_t>("max_ik_solutions", "uint: max number of solutions to return")
 	    .property<bool>("ignore_collisions", R"(
 			bool: Specify if collisions with other members of
 			the planning scene are allowed.
 		)")
 	    .property<double>("min_solution_distance", "reject solution that are closer than this to previously found solutions")
-	    .property<moveit_msgs::Constraints>("constraints", "additional constraints to obey")
-	    .property<geometry_msgs::PoseStamped>("ik_frame", R"(
+	    .property<moveit_msgs::msg::Constraints>("constraints", "additional constraints to obey")
+	    .property<geometry_msgs::msg::PoseStamped>("ik_frame", R"(
 			PoseStamped_: Specify the frame with respect
 			to which the inverse kinematics
 			should be calculated.
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
 		)")
-	    .property<geometry_msgs::PoseStamped>("target_pose", R"(
+	    .property<geometry_msgs::msg::PoseStamped>("target_pose", R"(
 			PoseStamped_: Specify the pose on which
 			the inverse kinematics should be
 			calculated on. Since this property should
@@ -210,29 +231,29 @@ void export_stages(pybind11::module& m) {
 	    .property<std::string>("group", R"(
 			str: Planning group which should be utilized for planning and execution.
 		)")
-	    .property<geometry_msgs::PoseStamped>("ik_frame", R"(
+	    .property<geometry_msgs::msg::PoseStamped>("ik_frame", R"(
 			PoseStamped_: IK reference frame for the goal pose
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
 
 		)")
-	    .property<moveit_msgs::Constraints>("path_constraints", R"(
+	    .property<moveit_msgs::msg::Constraints>("path_constraints", R"(
 			Constraints_: Set path constraints via the corresponding moveit message type
 
 			.. _Constraints: https://docs.ros.org/en/api/moveit_msgs/html/msg/Constraints.html
 		)")
 	    .def(py::init<const std::string&, const solvers::PlannerInterfacePtr&>(), "name"_a, "planner"_a)
-	    .def("setGoal", py::overload_cast<const geometry_msgs::PoseStamped&>(&MoveTo::setGoal), R"(
+	    .def("setGoal", py::overload_cast<const geometry_msgs::msg::PoseStamped&>(&MoveTo::setGoal), R"(
 			Move link to a given PoseStamped_
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
 		)", "goal"_a)
-	    .def("setGoal", py::overload_cast<const geometry_msgs::PointStamped&>(&MoveTo::setGoal), R"(
+	    .def("setGoal", py::overload_cast<const geometry_msgs::msg::PointStamped&>(&MoveTo::setGoal), R"(
 			Move link to given PointStamped_, keeping current orientation
 
 			.. _PointStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PointStamped.html
 		)", "goal"_a)
-	    .def("setGoal", py::overload_cast<const moveit_msgs::RobotState&>(&MoveTo::setGoal), R"(
+	    .def("setGoal", py::overload_cast<const moveit_msgs::msg::RobotState&>(&MoveTo::setGoal), R"(
 			Move joints specified in RobotState_ to their target values
 
 			.. _RobotState: https://docs.ros.org/en/noetic/api/moveit_msgs/html/msg/RobotState.html
@@ -256,25 +277,25 @@ void export_stages(pybind11::module& m) {
 	    .property<std::string>("group", R"(
 			str: Planning group which should be utilized for planning and execution.
 		)")
-	    .property<geometry_msgs::PoseStamped>("ik_frame", R"(
+	    .property<geometry_msgs::msg::PoseStamped>("ik_frame", R"(
 			PoseStamped_: IK reference frame for the goal pose.
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
 		)")
 	    .property<double>("min_distance", "float: Set the minimum distance to move")
 	    .property<double>("max_distance", "float: Set the maximum distance to move")
-	    .property<moveit_msgs::Constraints>("path_constraints", R"(
+	    .property<moveit_msgs::msg::Constraints>("path_constraints", R"(
 			Constraints_: These are the path constraints.
 
 			.. _Constraints: https://docs.ros.org/en/api/moveit_msgs/html/msg/Constraints.html
 		)")
 	    .def(py::init<const std::string&, const solvers::PlannerInterfacePtr&>(), "name"_a, "planner"_a)
-	    .def("setDirection", py::overload_cast<const geometry_msgs::TwistStamped&>(&MoveRelative::setDirection), R"(
+	    .def("setDirection", py::overload_cast<const geometry_msgs::msg::TwistStamped&>(&MoveRelative::setDirection), R"(
 			Perform twist motion on specified link.
 
 			.. _Twist: https://docs.ros.org/en/api/geometry_msgs/html/msg/Twist.html
 		)", "twist"_a)
-	    .def("setDirection", py::overload_cast<const geometry_msgs::Vector3Stamped&>(&MoveRelative::setDirection), R"(
+	    .def("setDirection", py::overload_cast<const geometry_msgs::msg::Vector3Stamped&>(&MoveRelative::setDirection), R"(
 			Translate link along given direction.
 
 			.. _Vector3Stamped: https://docs.ros.org/en/noetic/api/geometry_msgs/html/msg/Vector3Stamped.html
@@ -308,7 +329,7 @@ void export_stages(pybind11::module& m) {
 		)")
 	    .property<stages::Connect::MergeMode>("merge_mode", "Defines the merge strategy to use")
 	    .property<double>("max_distance", "maximally accepted distance between end and goal sate")
-	    .property<moveit_msgs::Constraints>("path_constraints", R"(
+	    .property<moveit_msgs::msg::Constraints>("path_constraints", R"(
 			Constraints_: These are the path constraints.
 
 			.. _Constraints: https://docs.ros.org/en/api/moveit_msgs/html/msg/Constraints.html
@@ -342,7 +363,7 @@ void export_stages(pybind11::module& m) {
 			str: Name of the object in the planning scene, attached to the robot which should be placed
 		)")
 		.property<std::string>("eef", "str: Name of the end effector that should be used for grasping")
-		.property<geometry_msgs::PoseStamped>("pose", R"(
+		.property<geometry_msgs::msg::PoseStamped>("pose", R"(
 			PoseStamped_: The pose where the object should be placed, i.e. states should be sampled
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
@@ -378,7 +399,7 @@ void export_stages(pybind11::module& m) {
 			for an implementation of a task hierarchy that makes use of the
 			``GeneratePose`` stage.
 		)")
-	    .property<geometry_msgs::PoseStamped>("pose", R"(
+	    .property<geometry_msgs::msg::PoseStamped>("pose", R"(
 			PoseStamped_: Set the pose, which should be spawned on each new solution of the monitored stage.
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
@@ -431,7 +452,6 @@ void export_stages(pybind11::module& m) {
 	    .property<std::string>("eef_parent_group", "str: Joint model group of the eef's parent")
 	    .def(py::init<Stage::pointer&&, const std::string&>(), "grasp_generator"_a,
 	         "name"_a = std::string("pick"))
-	    .def_property_readonly("cartesian_solver", &Pick::cartesianSolver)
 	    .def("setApproachMotion", &Pick::setApproachMotion, R"(
 			The approaching motion towards the grasping state is represented
 			by a twist message.
@@ -439,7 +459,7 @@ void export_stages(pybind11::module& m) {
 
 			.. _Twist: https://docs.ros.org/en/api/geometry_msgs/html/msg/Twist.html
 		)", "motion"_a, "min_distance"_a, "max_distance"_a)
-	    .def("setLiftMotion", py::overload_cast<const geometry_msgs::TwistStamped&, double, double>(&Pick::setLiftMotion), R"(
+	    .def("setLiftMotion", py::overload_cast<const geometry_msgs::msg::TwistStamped&, double, double>(&Pick::setLiftMotion), R"(
 			The lifting motion away from the grasping state is represented by a twist message.
 			Additionally specify the minimum and maximum allowed distances to travel.
 
@@ -480,7 +500,7 @@ void export_stages(pybind11::module& m) {
 
 			.. _Twist: https://docs.ros.org/en/api/geometry_msgs/html/msg/Twist.html
 		)", "motion"_a, "min_distance"_a, "max_distance"_a)
-	    .def("setPlaceMotion", py::overload_cast<const geometry_msgs::TwistStamped&, double, double>(&Place::setPlaceMotion), R"(
+	    .def("setPlaceMotion", py::overload_cast<const geometry_msgs::msg::TwistStamped&, double, double>(&Place::setPlaceMotion), R"(
 			The object-placing motion towards the final state is represented by a twist message.
 			Additionally specify the minimum and maximum allowed distances to travel.
 
@@ -495,13 +515,13 @@ void export_stages(pybind11::module& m) {
 	properties::class_<SimpleGraspBase, SerialContainer>(m, "SimpleGraspBase", "Abstract base class for grasping and releasing")
 		.property<std::string>("eef", "str: The end effector of the robot")
 		.property<std::string>("object", "str: The object to grasp (Must be present in the planning scene)")
-		.property<geometry_msgs::PoseStamped>("ik_frame", R"(
+		.property<geometry_msgs::msg::PoseStamped>("ik_frame", R"(
 			PoseStamped_: Set the frame for which the inverse kinematics is calculated
 			with respect to each pose generated by the pose_generator.
 
 			.. _PoseStamped: https://docs.ros.org/en/api/geometry_msgs/html/msg/PoseStamped.html
 		)")
-		.def<void (SimpleGraspBase::*)(const geometry_msgs::PoseStamped&)>("setIKFrame", &SimpleGraspBase::setIKFrame, R"(
+		.def<void (SimpleGraspBase::*)(const geometry_msgs::msg::PoseStamped&)>("setIKFrame", &SimpleGraspBase::setIKFrame, R"(
 			Set the frame as a PoseStamped_ for which the inverse kinematics are calculated with respect to
 			each pose generated by the pose_generator.
 
@@ -544,23 +564,6 @@ void export_stages(pybind11::module& m) {
 		.property<std::string>("grasp", "str: Name of the grasp pose")
 		.def(py::init<Stage::pointer&&, const std::string&>(), "pose_generator"_a,
 		     "name"_a = std::string("ungrasp"));
-
-	properties::class_<PassThrough, Stage>(m, "PassThrough", R"(
-			Wrapper which simply forwards all solutions of a child stage,
-			allowing the wrapper to redefine costs, w/o loosing original costs.
-		)")
-	    .def(py::init<const std::string&, Stage::pointer&&>(), "name"_a, "stage"_a);
-
-	properties::class_<LimitSolutions, Stage>(m, "LimitSolutions", R"(
-			Wrapper for any stage to limit the total number of solutions returned.
-
-			The wrapper stores solutions of its child stage, and on each compute will
-			pass on the lowest cost solution available, until the maximum number of solutions
-			is reached.
-		)")
-	    .property<uint32_t>("max_solutions", "uint: maximum number of solutions that should be passed on")
-	    .def(py::init<const std::string&, Stage::pointer&&>(), "name"_a, "stage"_a);
-
 }
 }  // namespace python
 }  // namespace moveit

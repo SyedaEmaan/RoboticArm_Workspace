@@ -1,0 +1,19 @@
+[0.000000] (-) TimerEvent: {}
+[0.000446] (-) JobUnselected: {'identifier': 'hello_moveit'}
+[0.000469] (-) JobUnselected: {'identifier': 'hello_moveit_task_constructor'}
+[0.000482] (-) JobUnselected: {'identifier': 'hello_mtc_with_perception'}
+[0.000502] (-) JobUnselected: {'identifier': 'moveit_task_constructor_core'}
+[0.000512] (-) JobUnselected: {'identifier': 'moveit_task_constructor_demo'}
+[0.000522] (-) JobUnselected: {'identifier': 'moveit_task_constructor_msgs'}
+[0.000532] (-) JobUnselected: {'identifier': 'moveit_task_constructor_visualization'}
+[0.000542] (-) JobUnselected: {'identifier': 'mycobot_description'}
+[0.000551] (-) JobUnselected: {'identifier': 'mycobot_gazebo'}
+[0.000561] (-) JobUnselected: {'identifier': 'mycobot_interfaces'}
+[0.000570] (-) JobUnselected: {'identifier': 'mycobot_moveit_config'}
+[0.000580] (-) JobUnselected: {'identifier': 'mycobot_moveit_config_manual_setup'}
+[0.000590] (-) JobUnselected: {'identifier': 'mycobot_ros2'}
+[0.000599] (-) JobUnselected: {'identifier': 'rviz_marker_tools'}
+[0.000610] (moveit_task_constructor_capabilities) JobQueued: {'identifier': 'moveit_task_constructor_capabilities', 'dependencies': OrderedDict([('moveit_task_constructor_msgs', '/home/rosdev/arm_ws/install/moveit_task_constructor_msgs'), ('rviz_marker_tools', '/home/rosdev/arm_ws/install/rviz_marker_tools'), ('moveit_task_constructor_core', '/home/rosdev/arm_ws/install/moveit_task_constructor_core')])}
+[0.000629] (moveit_task_constructor_capabilities) JobStarted: {'identifier': 'moveit_task_constructor_capabilities'}
+[0.011621] (moveit_task_constructor_capabilities) JobEnded: {'identifier': 'moveit_task_constructor_capabilities', 'rc': 1}
+[0.021826] (-) EventReactorShutdown: {}
