@@ -1,7 +1,7 @@
 .vscode/
-build/
-install/
-log/
+docker_ws/arm_ws/build/
+docker_ws/arm_ws/install/
+docker_ws/arm_ws/log/
 *.o
 *.so
 *.a
