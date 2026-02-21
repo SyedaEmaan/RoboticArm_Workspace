@@ -1,0 +1,206 @@
+[INFO] [launch]: All log files can be found below /home/rosdev/.ros/log/2026-02-10-06-24-49-286591-emaan-930MBE-7330
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [7333]
+[INFO] [robot_state_publisher-2]: process started with pid [7335]
+[INFO] [spawn_entity.py-3]: process started with pid [7337]
+[robot_state_publisher-2] [INFO] [1770704690.385950788] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1770704690.386258998] [robot_state_publisher]: got segment gripper_base
+[robot_state_publisher-2] [INFO] [1770704690.386297892] [robot_state_publisher]: got segment gripper_left1
+[robot_state_publisher-2] [INFO] [1770704690.386319065] [robot_state_publisher]: got segment gripper_left2
+[robot_state_publisher-2] [INFO] [1770704690.386335952] [robot_state_publisher]: got segment gripper_left3
+[robot_state_publisher-2] [INFO] [1770704690.386352085] [robot_state_publisher]: got segment gripper_right1
+[robot_state_publisher-2] [INFO] [1770704690.386368063] [robot_state_publisher]: got segment gripper_right2
+[robot_state_publisher-2] [INFO] [1770704690.386384677] [robot_state_publisher]: got segment gripper_right3
+[robot_state_publisher-2] [INFO] [1770704690.386400881] [robot_state_publisher]: got segment link1
+[robot_state_publisher-2] [INFO] [1770704690.386417492] [robot_state_publisher]: got segment link2
+[robot_state_publisher-2] [INFO] [1770704690.386433745] [robot_state_publisher]: got segment link3
+[robot_state_publisher-2] [INFO] [1770704690.386450394] [robot_state_publisher]: got segment link4
+[robot_state_publisher-2] [INFO] [1770704690.386466571] [robot_state_publisher]: got segment link5
+[robot_state_publisher-2] [INFO] [1770704690.386482557] [robot_state_publisher]: got segment link6
+[robot_state_publisher-2] [INFO] [1770704690.386498509] [robot_state_publisher]: got segment link6_flange
+[robot_state_publisher-2] [INFO] [1770704690.386514795] [robot_state_publisher]: got segment world
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[spawn_entity.py-3] [INFO] [1770704691.835078795] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1770704691.836590494] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-3] [INFO] [1770704691.842758779] [spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-3] [INFO] [1770704691.855344515] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1770704691.856883513] [spawn_entity]: Waiting for service /spawn_entity
+[gazebo-1] [INFO] [1770704692.742363698] [gazebo_ros_node]: ROS was initialized without arguments.
+[gazebo-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.30.3.153[0m[1;32m
+[gazebo-1] [1;33m[Wrn] [GuiIface.cc:120] [0m[1;33mQStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'[0m[1;33m
+[spawn_entity.py-3] [INFO] [1770704693.119113189] [spawn_entity]: Calling service /spawn_entity
+[INFO] [spawner-4]: process started with pid [7471]
+[spawn_entity.py-3] [INFO] [1770704693.840853514] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [mycobot_280]
+[INFO] [spawn_entity.py-3]: process has finished cleanly [pid 7337]
+[INFO] [spawner-5]: process started with pid [7474]
+[INFO] [spawner-6]: process started with pid [7476]
+[spawner-4] [INFO] [1770704694.553192563] [spawner_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-5] [INFO] [1770704695.723426070] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-6] [INFO] [1770704695.776102568] [spawner_grip_action_controller]: waiting for service /controller_manager/list_controllers to become available...
+[INFO] [move_group-7]: process started with pid [7520]
+[move_group-7] [INFO] [1770704696.260524364] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0 seconds
+[move_group-7] [INFO] [1770704696.260682930] [moveit_robot_model.robot_model]: Loading robot model 'mycobot_280'...
+[INFO] [rviz2-8]: process started with pid [7533]
+[rviz2-8] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'
+[rviz2-8] [INFO] [1770704697.276842977] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-8] [INFO] [1770704697.277448863] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-8] [INFO] [1770704697.366374090] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-8] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-8]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[move_group-7] [ERROR] [1770704698.091128915] [moveit_kinematics_base.kinematics_base]: Group 'arm_with_gripper' is not a chain
+[move_group-7] [ERROR] [1770704698.091206779] [kinematics_plugin_loader]: Kinematics solver of type 'kdl_kinematics_plugin/KDLKinematicsPlugin' could not be initialized for group 'arm_with_gripper'
+[move_group-7] [ERROR] [1770704698.091244324] [moveit_ros.robot_model_loader]: Kinematics solver could not be instantiated for joint group arm_with_gripper.
+[move_group-7] [INFO] [1770704700.708451750] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[move_group-7] [INFO] [1770704700.708873806] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states
+[move_group-7] [INFO] [1770704700.711068778] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[move_group-7] [INFO] [1770704700.712530000] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects
+[move_group-7] [INFO] [1770704700.712589268] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[move_group-7] [INFO] [1770704700.713961066] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'
+[move_group-7] [INFO] [1770704700.714016090] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[move_group-7] [INFO] [1770704700.715715589] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'
+[move_group-7] [INFO] [1770704700.716961863] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[move_group-7] [WARN] [1770704700.717658738] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[move_group-7] [ERROR] [1770704700.717902631] [moveit.ros.occupancy_map_monitor.middleware_handle]: Exception while loading octomap updater 'occupancy_map_monitor/PointCloudOctomapUpdater': According to the loaded plugin descriptions the class occupancy_map_monitor/PointCloudOctomapUpdater with base class type occupancy_map_monitor::OccupancyMapUpdater does not exist. Declared types are 
+[move_group-7] 
+[move_group-7] [ERROR] [1770704700.717973111] [moveit.ros.occupancy_map_monitor]: Failed to load sensor: `default_sensor` of type: `occupancy_map_monitor/PointCloudOctomapUpdater`
+[rviz2-8] [ERROR] [1770704700.863029925] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[rviz2-8] [INFO] [1770704700.912180770] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[rviz2-8] [INFO] [1770704701.136893095] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0 seconds
+[rviz2-8] [INFO] [1770704701.137014544] [moveit_robot_model.robot_model]: Loading robot model 'mycobot_280'...
+[gazebo-1] [0m[1;33m[0m[1;33m[0m[INFO] [1770704701.626485401] [gazebo_ros2_control]: Loading gazebo_ros2_control plugin
+[gazebo-1] [INFO] [1770704701.645147480] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in namespace: /
+[gazebo-1] [INFO] [1770704701.646433938] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in ros 2 node: gazebo_ros2_control
+[gazebo-1] [INFO] [1770704701.666065467] [gazebo_ros2_control]: connected to service!! robot_state_publisher
+[gazebo-1] [INFO] [1770704701.668341959] [gazebo_ros2_control]: Received urdf from param server, parsing...
+[gazebo-1] [ERROR] [1770704701.668574791] [gazebo_ros2_control]: No parameter file provided. Configuration might be wrong
+[gazebo-1] [rcutils|error_handling.c:65] an error string (message, file name, or formatted message) will be truncated
+[gazebo-1] [ERROR] [1770704701.671257048] [gazebo_ros2_control]: parser error Couldn't parse parameter override rule: '--param robot_description:=<?xml version="1.0" ?>
+[gazebo-1] <!-- =================================================================================== -->
+[gazebo-1] <!-- |    This document was autogenerated by xacro from /home/rosdev/arm_ws/install/mycobot_gazebo/share/mycobot_gazebo/urdf/ros2_control/classic_gazebo/mycobot_280_with_torque.urdf.xacro | -->
+[gazebo-1] <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
+[gazebo-1] <!-- =================================================================================== -->
+[gazebo-1] <robot name="mycobot_280">
+[gazebo-1]   <!-- NO gazebo_ros2_control plugin - using direct PID control instead -->
+[gazebo-1]   <!-- NEW: ros2_control with effort/torque state interfaces -->
+[gazebo-1]   <ros2_control name="RobotSystemWi, at ./src/rcl/arguments.c:343
+[gazebo-1] 
+[rviz2-8] [ERROR] [1770704702.969453682] [moveit_kinematics_base.kinematics_base]: Group 'arm_with_gripper' is not a chain
+[rviz2-8] [ERROR] [1770704702.969564531] [kinematics_plugin_loader]: Kinematics solver of type 'kdl_kinematics_plugin/KDLKinematicsPlugin' could not be initialized for group 'arm_with_gripper'
+[rviz2-8] [ERROR] [1770704702.969684726] [moveit_ros.robot_model_loader]: Kinematics solver could not be instantiated for joint group arm_with_gripper.
+[spawner-4] [WARN] [1770704704.573639673] [spawner_arm_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-4] [INFO] [1770704704.576589959] [spawner_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-5] [WARN] [1770704705.742230175] [spawner_joint_state_broadcaster]: Could not contact service /controller_manager/list_controllers
+[spawner-5] [INFO] [1770704705.745211209] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-6] [WARN] [1770704705.794508084] [spawner_grip_action_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-6] [INFO] [1770704705.797548908] [spawner_grip_action_controller]: waiting for service /controller_manager/list_controllers to become available...
+[rviz2-8] [INFO] [1770704707.277073504] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[rviz2-8] [INFO] [1770704707.280577122] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[gazebo-1] gzclient: ./OgreMain/include/OgreAxisAlignedBox.h:251: void Ogre::AxisAlignedBox::setExtents(const Ogre::Vector3&, const Ogre::Vector3&): Assertion `(min.x <= max.x && min.y <= max.y && min.z <= max.z) && "The minimum corner of the box must be less than or equal to maximum corner"' failed.
+[move_group-7] [INFO] [1770704708.375632599] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'
+[move_group-7] [INFO] [1770704708.433531432] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'
+[move_group-7] [INFO] [1770704708.446720883] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000
+[move_group-7] [INFO] [1770704708.446788321] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000
+[move_group-7] [INFO] [1770704708.446808444] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000
+[move_group-7] [INFO] [1770704708.446881451] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-7] [INFO] [1770704708.446934959] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000
+[move_group-7] [INFO] [1770704708.446956237] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-7] [INFO] [1770704708.446997005] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-7] [INFO] [1770704708.447015773] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000
+[move_group-7] [INFO] [1770704708.447033833] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100
+[move_group-7] [INFO] [1770704708.447073298] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-7] [INFO] [1770704708.447202979] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-7] [INFO] [1770704708.447241251] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-7] [INFO] [1770704708.447274484] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-7] [INFO] [1770704708.447302693] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-7] [INFO] [1770704708.447322259] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-7] [INFO] [1770704708.461343600] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'
+[move_group-7] [INFO] [1770704708.476747045] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'
+[move_group-7] [INFO] [1770704708.484786920] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000
+[move_group-7] [INFO] [1770704708.484857649] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000
+[move_group-7] [INFO] [1770704708.484885837] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000
+[move_group-7] [INFO] [1770704708.485010039] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-7] [INFO] [1770704708.485100305] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000
+[move_group-7] [INFO] [1770704708.485135329] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-7] [INFO] [1770704708.485244101] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-7] [INFO] [1770704708.485283296] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000
+[move_group-7] [INFO] [1770704708.485313524] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100
+[move_group-7] [INFO] [1770704708.485387767] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-7] [INFO] [1770704708.485414927] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-7] [INFO] [1770704708.485434886] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-7] [INFO] [1770704708.485454488] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-7] [INFO] [1770704708.485473970] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-7] [INFO] [1770704708.485493388] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-7] [INFO] [1770704708.488515589] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'
+[move_group-7] [INFO] [1770704708.502411102] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[move_group-7] [INFO] [1770704708.523976561] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP 
+[move_group-7] [INFO] [1770704708.524055867] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC
+[move_group-7] [INFO] [1770704708.530317512] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC]
+[move_group-7] [INFO] [1770704708.530383746] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN
+[move_group-7] [INFO] [1770704708.535190833] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN]
+[move_group-7] [INFO] [1770704708.535328772] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP
+[move_group-7] [INFO] [1770704708.540051107] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP]
+[move_group-7] [INFO] [1770704708.540139184] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'
+[move_group-7] [INFO] [1770704708.733554080] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller
+[move_group-7] [INFO] [1770704708.733702979] [moveit.plugins.moveit_simple_controller_manager]: Max effort set to 0.0
+[move_group-7] [INFO] [1770704708.750940066] [moveit.plugins.moveit_simple_controller_manager]: Added GripperCommand controller for grip_action_controller
+[move_group-7] [INFO] [1770704708.752035388] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-7] [INFO] [1770704708.752206259] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-7] [INFO] [1770704708.757416899] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers
+[move_group-7] [INFO] [1770704708.757516124] [move_group.move_group]: MoveGroup debug mode is ON
+[move_group-7] [INFO] [1770704708.872376465] [move_group.move_group]: 
+[move_group-7] 
+[move_group-7] ********************************************************
+[move_group-7] * MoveGroup using: 
+[move_group-7] *     - ApplyPlanningSceneService
+[move_group-7] *     - ClearOctomapService
+[move_group-7] *     - CartesianPathService
+[move_group-7] *     - ExecuteTrajectoryAction
+[move_group-7] *     - GetPlanningSceneService
+[move_group-7] *     - KinematicsService
+[move_group-7] *     - MoveAction
+[move_group-7] *     - MotionPlanService
+[move_group-7] *     - QueryPlannersService
+[move_group-7] *     - StateValidationService
+[move_group-7] ********************************************************
+[move_group-7] 
+[move_group-7] [INFO] [1770704708.872614501] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner
+[move_group-7] [INFO] [1770704708.872689392] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete
+[move_group-7] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-7] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-7] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-7] [0m[92m
+[move_group-7] You can start planning now!
+[move_group-7] 
+[rviz2-8] [INFO] [1770704709.834198877] [interactive_marker_display_103189123223136]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[rviz2-8] [INFO] [1770704709.915585568] [interactive_marker_display_103189123223136]: Sending request for interactive markers
+[rviz2-8] [INFO] [1770704709.950040844] [interactive_marker_display_103189123223136]: Service response received for initialization
+[rviz2-8] [INFO] [1770704709.968348595] [moveit_ros_visualization.motion_planning_frame]: group arm
+[rviz2-8] [INFO] [1770704709.968468603] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[rviz2-8] [INFO] [1770704710.021216552] [move_group_interface]: Ready to take commands for planning group arm.
+[rviz2-8] [INFO] [1770704710.026295042] [moveit_ros_visualization.motion_planning_frame]: group arm
+[spawner-4] [WARN] [1770704714.599874365] [spawner_arm_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-4] [INFO] [1770704714.602605599] [spawner_arm_controller]: waiting for service /controller_manager/list_controllers to become available...
+[ERROR] [gazebo-1]: process has died [pid 7333, exit code 255, cmd 'gazebo --verbose -s libgazebo_ros_factory.so'].
+[gazebo-1] [0m[1;32m[0m[1;32m[0m
+[spawner-5] [WARN] [1770704715.764752433] [spawner_joint_state_broadcaster]: Could not contact service /controller_manager/list_controllers
+[spawner-5] [INFO] [1770704715.766928902] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[spawner-6] [WARN] [1770704715.817964484] [spawner_grip_action_controller]: Could not contact service /controller_manager/list_controllers
+[spawner-6] [INFO] [1770704715.820891510] [spawner_grip_action_controller]: waiting for service /controller_manager/list_controllers to become available...

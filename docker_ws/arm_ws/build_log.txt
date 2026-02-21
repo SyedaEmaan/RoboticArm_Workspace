@@ -1,0 +1,4 @@
+Starting >>> mycobot_gazebo
+Finished <<< mycobot_gazebo [1.26s]
+
+Summary: 1 package finished [1.92s]

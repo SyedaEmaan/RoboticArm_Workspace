@@ -21,7 +21,7 @@ def generate_launch_description():
   gazebo_launch_file_path = 'launch'
   gazebo_models_path = 'models'
   rviz_config_file_path = 'rviz/mycobot_280_arduino_view_description.rviz'
-  urdf_file_path = 'urdf/mycobot_280_classic_gazebo.urdf.xacro'
+  urdf_file_path = 'urdf/Kera_urdf.urdf.xacro'
   world_file_path = 'worlds/empty_classic.world' # Example: 'worlds/house_classic.world', 'worlds/empty_classic.world'
 
   # Set the path to different files and folders.  

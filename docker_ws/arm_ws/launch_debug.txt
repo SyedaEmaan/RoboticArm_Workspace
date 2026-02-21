@@ -1,0 +1,36 @@
+[INFO] [launch]: All log files can be found below /home/rosdev/.ros/log/2026-02-17-06-42-52-142703-emaan-930MBE-3103
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [3105]
+[INFO] [robot_state_publisher-2]: process started with pid [3107]
+[INFO] [spawn_entity.py-3]: process started with pid [3109]
+[robot_state_publisher-2] [INFO] [1771310573.464474800] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1771310573.464811259] [robot_state_publisher]: got segment gripper_base
+[robot_state_publisher-2] [INFO] [1771310573.464853149] [robot_state_publisher]: got segment gripper_left1
+[robot_state_publisher-2] [INFO] [1771310573.464878587] [robot_state_publisher]: got segment gripper_left2
+[robot_state_publisher-2] [INFO] [1771310573.464899285] [robot_state_publisher]: got segment gripper_left3
+[robot_state_publisher-2] [INFO] [1771310573.464918224] [robot_state_publisher]: got segment gripper_right1
+[robot_state_publisher-2] [INFO] [1771310573.464937062] [robot_state_publisher]: got segment gripper_right2
+[robot_state_publisher-2] [INFO] [1771310573.464956261] [robot_state_publisher]: got segment gripper_right3
+[robot_state_publisher-2] [INFO] [1771310573.464975079] [robot_state_publisher]: got segment link1
+[robot_state_publisher-2] [INFO] [1771310573.464994462] [robot_state_publisher]: got segment link2
+[robot_state_publisher-2] [INFO] [1771310573.465012557] [robot_state_publisher]: got segment link3
+[robot_state_publisher-2] [INFO] [1771310573.465030999] [robot_state_publisher]: got segment link4
+[robot_state_publisher-2] [INFO] [1771310573.465049706] [robot_state_publisher]: got segment link5
+[robot_state_publisher-2] [INFO] [1771310573.465067770] [robot_state_publisher]: got segment link6
+[robot_state_publisher-2] [INFO] [1771310573.465085562] [robot_state_publisher]: got segment link6_flange
+[robot_state_publisher-2] [INFO] [1771310573.465104202] [robot_state_publisher]: got segment world
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[robot_state_publisher-2] [INFO] [1771310574.488223973] [rclcpp]: signal_handler(signum=2)
+[spawn_entity.py-3] Traceback (most recent call last):
+[spawn_entity.py-3]   File "/opt/ros/humble/lib/gazebo_ros/spawn_entity.py", line 33, in <module>
+[spawn_entity.py-3]     from rclpy.node import Node
+[spawn_entity.py-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 64, in <module>
+[spawn_entity.py-3]     from rclpy.parameter_service import ParameterService
+[spawn_entity.py-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/parameter_service.py", line 18, in <module>
+[spawn_entity.py-3]     from rcl_interfaces.srv import DescribeParameters, GetParameters, GetParameterTypes
+[spawn_entity.py-3]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rcl_interfaces/srv/__init__.py", line 2, in <module>
+[spawn_entity.py-3]     from rcl_interfaces.srv._get_parameter_types import GetParameterTypes  # noqa: F401
+[spawn_entity.py-3] KeyboardInterrupt
+[INFO] [gazebo-1]: process has finished cleanly [pid 3105]
+[ERROR] [spawn_entity.py-3]: process has died [pid 3109, exit code -2, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -entity mycobot_280 -topic robot_description -z 0.5 --ros-args'].
+[INFO] [robot_state_publisher-2]: process has finished cleanly [pid 3107]

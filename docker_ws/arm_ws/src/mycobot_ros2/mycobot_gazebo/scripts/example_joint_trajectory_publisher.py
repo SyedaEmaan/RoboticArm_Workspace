@@ -54,8 +54,9 @@ class ExampleJointTrajectoryPublisherPy(Node):
         # Desired time from the trajectory start to arrive at the trajectory point.
         # Needs to be less than or equal to the self.timer_period above to allow
         # the robotic arm to smoothly transition between points.
-        self.duration_sec = 2 
-        self.duration_nanosec = 0.5 * 1e9 # (seconds * 1e9)
+        
+        self.duration_sec = 0
+        self.duration_nanosec = 0.1 * 1e9 # (seconds * 1e9)
 
         # Set the desired goal poses for the robotic arm.
         self.arm_positions = []

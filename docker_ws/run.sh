@@ -3,7 +3,7 @@
 USERNAME="rosdev"
 IMAGE_NAME="ros2_humble_gazebo:dev"
 CONTAINER_NAME="ros2_gazebo_dev"
-WORKSPACE_DIR="/home/husaf-mp2499yv/robotic_arm/docker_ws/arm_ws"
+WORKSPACE_DIR="/home/emaan/robotic_arm/docker_ws/arm_ws"
 XAUTHORITY="$HOME/.Xauthority"
 X11_UNIX="/tmp/.X11-unix"
 

@@ -1,0 +1,781 @@
+[INFO] [launch]: All log files can be found below /home/rosdev/.ros/log/2026-02-10-06-46-09-535933-emaan-930MBE-9700
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [9703]
+[INFO] [robot_state_publisher-2]: process started with pid [9705]
+[INFO] [spawn_entity.py-3]: process started with pid [9707]
+[robot_state_publisher-2] [INFO] [1770705970.572387323] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1770705970.572669693] [robot_state_publisher]: got segment gripper_base
+[robot_state_publisher-2] [INFO] [1770705970.572705856] [robot_state_publisher]: got segment gripper_left1
+[robot_state_publisher-2] [INFO] [1770705970.572725861] [robot_state_publisher]: got segment gripper_left2
+[robot_state_publisher-2] [INFO] [1770705970.572742652] [robot_state_publisher]: got segment gripper_left3
+[robot_state_publisher-2] [INFO] [1770705970.572759457] [robot_state_publisher]: got segment gripper_right1
+[robot_state_publisher-2] [INFO] [1770705970.572776209] [robot_state_publisher]: got segment gripper_right2
+[robot_state_publisher-2] [INFO] [1770705970.572792408] [robot_state_publisher]: got segment gripper_right3
+[robot_state_publisher-2] [INFO] [1770705970.572809324] [robot_state_publisher]: got segment link1
+[robot_state_publisher-2] [INFO] [1770705970.572825767] [robot_state_publisher]: got segment link2
+[robot_state_publisher-2] [INFO] [1770705970.572842596] [robot_state_publisher]: got segment link3
+[robot_state_publisher-2] [INFO] [1770705970.572858816] [robot_state_publisher]: got segment link4
+[robot_state_publisher-2] [INFO] [1770705970.572874728] [robot_state_publisher]: got segment link5
+[robot_state_publisher-2] [INFO] [1770705970.572890225] [robot_state_publisher]: got segment link6
+[robot_state_publisher-2] [INFO] [1770705970.572906241] [robot_state_publisher]: got segment link6_flange
+[robot_state_publisher-2] [INFO] [1770705970.572923028] [robot_state_publisher]: got segment world
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[spawn_entity.py-3] [INFO] [1770705971.693878576] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1770705971.695322004] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-3] [INFO] [1770705971.700581241] [spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-3] [INFO] [1770705971.713693542] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1770705971.715064643] [spawn_entity]: Waiting for service /spawn_entity
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[gazebo-1] [INFO] [1770705972.863256605] [gazebo_ros_node]: ROS was initialized without arguments.
+[gazebo-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.30.3.153[0m[1;32m
+[gazebo-1] [1;33m[Wrn] [GuiIface.cc:120] [0m[1;33mQStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'[0m[1;33m
+[spawn_entity.py-3] [INFO] [1770705973.229621404] [spawn_entity]: Calling service /spawn_entity
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.30.3.153[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/usr/share/gazebo-11/worlds/empty.world[0m[1;32m][0m[1;32m
+[gazebo-1] [0m[1;33m[0m[1;33m[0m[1;31m[Err] [Plugin.hh:212] [0m[1;31mFailed to load plugin gz_ros2_control-system: gz_ros2_control-system: cannot open shared object file: No such file or directory
+[spawn_entity.py-3] [INFO] [1770705973.886078421] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [mycobot_280]
+[gazebo-1] [0m[INFO] [1770705973.932596963] [gazebo_ros_joint_state_publisher]: Going to publish joint [link1_to_link2]
+[gazebo-1] [INFO] [1770705973.934530502] [gazebo_ros_joint_state_publisher]: Going to publish joint [link2_to_link3]
+[gazebo-1] [INFO] [1770705973.934610926] [gazebo_ros_joint_state_publisher]: Going to publish joint [link3_to_link4]
+[gazebo-1] [INFO] [1770705973.936516951] [gazebo_ros_joint_state_publisher]: Going to publish joint [link4_to_link5]
+[gazebo-1] [INFO] [1770705973.936620387] [gazebo_ros_joint_state_publisher]: Going to publish joint [link5_to_link6]
+[gazebo-1] [INFO] [1770705973.936681441] [gazebo_ros_joint_state_publisher]: Going to publish joint [link6_to_link6flange]
+[INFO] [spawn_entity.py-3]: process has finished cleanly [pid 9707]
+[INFO] [move_group-4]: process started with pid [9857]
+[move_group-4] [INFO] [1770705976.434770972] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0 seconds
+[move_group-4] [INFO] [1770705976.434982698] [moveit_robot_model.robot_model]: Loading robot model 'mycobot_280'...
+[move_group-4] [ERROR] [1770705976.451595343] [moveit_kinematics_base.kinematics_base]: Group 'arm_with_gripper' is not a chain
+[move_group-4] [ERROR] [1770705976.451657087] [kinematics_plugin_loader]: Kinematics solver of type 'kdl_kinematics_plugin/KDLKinematicsPlugin' could not be initialized for group 'arm_with_gripper'
+[move_group-4] [ERROR] [1770705976.451721829] [moveit_ros.robot_model_loader]: Kinematics solver could not be instantiated for joint group arm_with_gripper.
+[move_group-4] [INFO] [1770705976.525564213] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[move_group-4] [INFO] [1770705976.526014196] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states
+[move_group-4] [INFO] [1770705976.528195720] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[move_group-4] [INFO] [1770705976.529372746] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects
+[move_group-4] [INFO] [1770705976.529434127] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[move_group-4] [INFO] [1770705976.530286724] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'
+[move_group-4] [INFO] [1770705976.530340477] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[move_group-4] [INFO] [1770705976.531321952] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'
+[move_group-4] [INFO] [1770705976.532420304] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[move_group-4] [WARN] [1770705976.533016180] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[move_group-4] [ERROR] [1770705976.533247445] [moveit.ros.occupancy_map_monitor.middleware_handle]: Exception while loading octomap updater 'occupancy_map_monitor/PointCloudOctomapUpdater': According to the loaded plugin descriptions the class occupancy_map_monitor/PointCloudOctomapUpdater with base class type occupancy_map_monitor::OccupancyMapUpdater does not exist. Declared types are 
+[move_group-4] 
+[move_group-4] [ERROR] [1770705976.533311152] [moveit.ros.occupancy_map_monitor]: Failed to load sensor: `default_sensor` of type: `occupancy_map_monitor/PointCloudOctomapUpdater`
+[move_group-4] [INFO] [1770705976.536720709] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'
+[move_group-4] [INFO] [1770705976.586857991] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'
+[move_group-4] [INFO] [1770705976.596320689] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1770705976.596370772] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1770705976.596387655] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000
+[move_group-4] [INFO] [1770705976.596454346] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-4] [INFO] [1770705976.596499893] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000
+[move_group-4] [INFO] [1770705976.596517502] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1770705976.596553712] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1770705976.596571589] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000
+[move_group-4] [INFO] [1770705976.596588349] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100
+[move_group-4] [INFO] [1770705976.596623692] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-4] [INFO] [1770705976.596697722] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-4] [INFO] [1770705976.596713137] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-4] [INFO] [1770705976.596724961] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-4] [INFO] [1770705976.596735687] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-4] [INFO] [1770705976.596746381] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-4] [INFO] [1770705976.604829521] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'
+[move_group-4] [INFO] [1770705976.618448237] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'
+[move_group-4] [INFO] [1770705976.623932563] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1770705976.623984264] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1770705976.624009607] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000
+[move_group-4] [INFO] [1770705976.624224167] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-4] [INFO] [1770705976.624288206] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000
+[move_group-4] [INFO] [1770705976.624308006] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1770705976.624350028] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1770705976.624369287] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000
+[move_group-4] [INFO] [1770705976.624385208] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100
+[move_group-4] [INFO] [1770705976.624424595] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-4] [INFO] [1770705976.624440089] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-4] [INFO] [1770705976.624452416] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-4] [INFO] [1770705976.624464810] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-4] [INFO] [1770705976.624476714] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-4] [INFO] [1770705976.624488536] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-4] [INFO] [1770705976.626657189] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'
+[move_group-4] [INFO] [1770705976.636111902] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[move_group-4] [INFO] [1770705976.653697047] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP 
+[move_group-4] [INFO] [1770705976.653763197] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC
+[move_group-4] [INFO] [1770705976.659797550] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC]
+[move_group-4] [INFO] [1770705976.659880583] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN
+[move_group-4] [INFO] [1770705976.664108014] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN]
+[move_group-4] [INFO] [1770705976.664248501] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP
+[move_group-4] [INFO] [1770705976.667097582] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP]
+[move_group-4] [INFO] [1770705976.667142921] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'
+[move_group-4] [INFO] [1770705976.802887063] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller
+[move_group-4] [INFO] [1770705976.803019123] [moveit.plugins.moveit_simple_controller_manager]: Max effort set to 0.0
+[move_group-4] [INFO] [1770705976.811849094] [moveit.plugins.moveit_simple_controller_manager]: Added GripperCommand controller for grip_action_controller
+[move_group-4] [INFO] [1770705976.812449264] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1770705976.812538806] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1770705976.817967166] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers
+[move_group-4] [INFO] [1770705976.818205274] [move_group.move_group]: MoveGroup debug mode is ON
+[INFO] [rviz2-5]: process started with pid [9878]
+[move_group-4] [INFO] [1770705976.900777825] [move_group.move_group]: 
+[move_group-4] 
+[move_group-4] ********************************************************
+[move_group-4] * MoveGroup using: 
+[move_group-4] *     - ApplyPlanningSceneService
+[move_group-4] *     - ClearOctomapService
+[move_group-4] *     - CartesianPathService
+[move_group-4] *     - ExecuteTrajectoryAction
+[move_group-4] *     - GetPlanningSceneService
+[move_group-4] *     - KinematicsService
+[move_group-4] *     - MoveAction
+[move_group-4] *     - MotionPlanService
+[move_group-4] *     - QueryPlannersService
+[move_group-4] *     - StateValidationService
+[move_group-4] ********************************************************
+[move_group-4] 
+[move_group-4] [INFO] [1770705976.900925622] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner
+[move_group-4] [INFO] [1770705976.900972473] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete
+[move_group-4] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-4] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-4] [0m[92m
+[move_group-4] You can start planning now!
+[move_group-4] 
+[rviz2-5] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'
+[rviz2-5] [INFO] [1770705977.551523129] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-5] [INFO] [1770705977.551941817] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-5] [INFO] [1770705977.617502502] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-5] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-5]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[rviz2-5] [ERROR] [1770705981.019291095] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[rviz2-5] [INFO] [1770705981.059556761] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[rviz2-5] [INFO] [1770705981.244208399] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0 seconds
+[rviz2-5] [INFO] [1770705981.244374583] [moveit_robot_model.robot_model]: Loading robot model 'mycobot_280'...
+[rviz2-5] [ERROR] [1770705981.271214217] [moveit_kinematics_base.kinematics_base]: Group 'arm_with_gripper' is not a chain
+[rviz2-5] [ERROR] [1770705981.271285453] [kinematics_plugin_loader]: Kinematics solver of type 'kdl_kinematics_plugin/KDLKinematicsPlugin' could not be initialized for group 'arm_with_gripper'
+[rviz2-5] [ERROR] [1770705981.271356933] [moveit_ros.robot_model_loader]: Kinematics solver could not be instantiated for joint group arm_with_gripper.
+[rviz2-5] [INFO] [1770705981.348959914] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[rviz2-5] [INFO] [1770705981.350383949] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[rviz2-5] [INFO] [1770705983.781343792] [interactive_marker_display_102582026230192]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[rviz2-5] [INFO] [1770705983.880106029] [moveit_ros_visualization.motion_planning_frame]: group arm
+[rviz2-5] [INFO] [1770705983.880219907] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[rviz2-5] [INFO] [1770705983.943831838] [interactive_marker_display_102582026230192]: Sending request for interactive markers
+[rviz2-5] [INFO] [1770705983.944582914] [move_group_interface]: Ready to take commands for planning group arm.
+[rviz2-5] [INFO] [1770705983.952044008] [moveit_ros_visualization.motion_planning_frame]: group arm
+[rviz2-5] [INFO] [1770705984.016354807] [interactive_marker_display_102582026230192]: Service response received for initialization
+[rviz2-5] [INFO] [1770706027.142061606] [move_group_interface]: MoveGroup action client/server ready
+[move_group-4] [INFO] [1770706027.144375119] [moveit_move_group_default_capabilities.move_action_capability]: Received request
+[rviz2-5] [INFO] [1770706027.145898801] [move_group_interface]: Planning request accepted
+[move_group-4] [INFO] [1770706027.146736479] [moveit_move_group_default_capabilities.move_action_capability]: executing..
+[move_group-4] [INFO] [1770706027.147439754] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.
+[move_group-4] [INFO] [1770706027.147497459] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'
+[move_group-4] [INFO] [1770706027.148885659] [moveit_ros.fix_start_state_bounds]: Starting state is just outside bounds (joint 'link5_to_link6'). Assuming within bounds.
+[move_group-4] [INFO] [1770706027.149647179] [moveit_collision_detection_fcl.collision_common]: Found a contact between 'link1' (type 'Robot link') and 'link3' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[move_group-4] [INFO] [1770706027.149710319] [moveit_collision_detection_fcl.collision_common]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[move_group-4] [INFO] [1770706027.149769852] [moveit_ros.fix_start_state_collision]: Start state appears to be in collision with respect to group arm
+[move_group-4] [WARN] [1770706027.233864673] [moveit_ros.fix_start_state_collision]: Unable to find a valid state nearby the start state (using jiggle fraction of 0.050000 and 100 sampling attempts). Passing the original planning request to the planner.
+[move_group-4] [INFO] [1770706027.354412049] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [WARN] [1770706027.394058876] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.394347784] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.394434047] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706027.394589129] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.394922317] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706027.395021955] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.395102865] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.395269846] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.395439828] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002547 seconds
+[move_group-4] [WARN] [1770706027.395967115] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.396130408] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.396368217] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.396582953] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.396650919] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706027.396812965] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.396956543] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706027.397054111] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.397241073] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001551 seconds
+[move_group-4] [WARN] [1770706027.397624270] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706027.397735204] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706027.397889151] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706027.398063236] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706027.398256333] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.000837 seconds
+[move_group-4] [INFO] [1770706027.398487929] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[move_group-4] [INFO] [1770706027.398728348] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure
+[rviz2-5] [INFO] [1770706027.402989573] [move_group_interface]: Planning request aborted
+[rviz2-5] [ERROR] [1770706027.403142948] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[rviz2-5] [INFO] [1770706028.419628712] [move_group_interface]: MoveGroup action client/server ready
+[move_group-4] [INFO] [1770706028.420356317] [moveit_move_group_default_capabilities.move_action_capability]: Received request
+[move_group-4] [INFO] [1770706028.420664553] [moveit_move_group_default_capabilities.move_action_capability]: executing..
+[move_group-4] [INFO] [1770706028.420845318] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.
+[move_group-4] [INFO] [1770706028.420882359] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'
+[rviz2-5] [INFO] [1770706028.421011301] [move_group_interface]: Planning request accepted
+[move_group-4] [INFO] [1770706028.421370892] [moveit_ros.fix_start_state_bounds]: Starting state is just outside bounds (joint 'link5_to_link6'). Assuming within bounds.
+[move_group-4] [INFO] [1770706028.421965717] [moveit_collision_detection_fcl.collision_common]: Found a contact between 'link1' (type 'Robot link') and 'link3' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[move_group-4] [INFO] [1770706028.422082485] [moveit_collision_detection_fcl.collision_common]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[move_group-4] [INFO] [1770706028.422126584] [moveit_ros.fix_start_state_collision]: Start state appears to be in collision with respect to group arm
+[move_group-4] [WARN] [1770706028.491352987] [moveit_ros.fix_start_state_collision]: Unable to find a valid state nearby the start state (using jiggle fraction of 0.050000 and 100 sampling attempts). Passing the original planning request to the planner.
+[move_group-4] [INFO] [1770706028.492397125] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [WARN] [1770706028.493325904] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706028.493472700] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706028.493587238] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706028.493695796] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706028.493984440] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706028.494043872] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706028.494151292] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706028.494385414] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706028.494583924] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001715 seconds
+[move_group-4] [WARN] [1770706028.495360627] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706028.495894315] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706028.496284100] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706028.496474810] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706028.496619114] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706028.496831102] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706028.496939495] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706028.497077904] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706028.497284125] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002370 seconds
+[move_group-4] [WARN] [1770706028.497666623] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706028.497767184] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706028.497871629] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706028.497943659] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706028.498205596] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.000737 seconds
+[move_group-4] [WARN] [1770706028.502650178] [ompl]: ./src/ompl/base/goals/src/GoalLazySamples.cpp:129 - Goal sampling thread never did any work.
+[move_group-4] [INFO] [1770706028.502895725] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[move_group-4] [INFO] [1770706028.502974075] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure
+[rviz2-5] [INFO] [1770706028.504688509] [move_group_interface]: Planning request aborted
+[rviz2-5] [ERROR] [1770706028.508103138] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[rviz2-5] [INFO] [1770706029.212686592] [move_group_interface]: MoveGroup action client/server ready
+[move_group-4] [INFO] [1770706029.213463713] [moveit_move_group_default_capabilities.move_action_capability]: Received request
+[move_group-4] [INFO] [1770706029.213786490] [moveit_move_group_default_capabilities.move_action_capability]: executing..
+[move_group-4] [INFO] [1770706029.214016040] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.
+[move_group-4] [INFO] [1770706029.214063227] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'
+[move_group-4] [INFO] [1770706029.214839856] [moveit_ros.fix_start_state_bounds]: Starting state is just outside bounds (joint 'link5_to_link6'). Assuming within bounds.
+[rviz2-5] [INFO] [1770706029.214052983] [move_group_interface]: Planning request accepted
+[move_group-4] [INFO] [1770706029.215698893] [moveit_collision_detection_fcl.collision_common]: Found a contact between 'link1' (type 'Robot link') and 'link3' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[move_group-4] [INFO] [1770706029.215853655] [moveit_collision_detection_fcl.collision_common]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[move_group-4] [INFO] [1770706029.215906783] [moveit_ros.fix_start_state_collision]: Start state appears to be in collision with respect to group arm
+[move_group-4] [WARN] [1770706029.286706267] [moveit_ros.fix_start_state_collision]: Unable to find a valid state nearby the start state (using jiggle fraction of 0.050000 and 100 sampling attempts). Passing the original planning request to the planner.
+[move_group-4] [INFO] [1770706029.287827338] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [WARN] [1770706029.289083397] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706029.289208874] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706029.289383515] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.289472991] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.289519513] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.289623377] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706029.289707762] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706029.289797382] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.289898621] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001451 seconds
+[move_group-4] [WARN] [1770706029.290251043] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706029.290535356] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.290680128] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.290792154] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.290936046] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706029.291275047] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.291423530] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.291528428] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.291670945] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001605 seconds
+[move_group-4] [WARN] [1770706029.292735441] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.292921726] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.293012463] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706029.293132429] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706029.293369056] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.000990 seconds
+[move_group-4] [WARN] [1770706029.298133632] [ompl]: ./src/ompl/base/goals/src/GoalLazySamples.cpp:129 - Goal sampling thread never did any work.
+[move_group-4] [INFO] [1770706029.298771039] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[move_group-4] [INFO] [1770706029.299025339] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure
+[rviz2-5] [INFO] [1770706029.301038628] [move_group_interface]: Planning request aborted
+[rviz2-5] [ERROR] [1770706029.301320241] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[rviz2-5] [INFO] [1770706036.659805460] [move_group_interface]: MoveGroup action client/server ready
+[move_group-4] [INFO] [1770706036.660588369] [moveit_move_group_default_capabilities.move_action_capability]: Received request
+[move_group-4] [INFO] [1770706036.660907659] [moveit_move_group_default_capabilities.move_action_capability]: executing..
+[move_group-4] [INFO] [1770706036.661136795] [moveit_move_group_default_capabilities.move_action_capability]: Planning request received for MoveGroup action. Forwarding to planning pipeline.
+[move_group-4] [INFO] [1770706036.661229037] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'
+[rviz2-5] [INFO] [1770706036.661316502] [move_group_interface]: Planning request accepted
+[move_group-4] [INFO] [1770706036.661597526] [moveit_ros.fix_start_state_bounds]: Starting state is just outside bounds (joint 'link5_to_link6'). Assuming within bounds.
+[move_group-4] [INFO] [1770706036.661993483] [moveit_collision_detection_fcl.collision_common]: Found a contact between 'link1' (type 'Robot link') and 'link3' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[move_group-4] [INFO] [1770706036.662042603] [moveit_collision_detection_fcl.collision_common]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[move_group-4] [INFO] [1770706036.662086544] [moveit_ros.fix_start_state_collision]: Start state appears to be in collision with respect to group arm
+[move_group-4] [WARN] [1770706036.732456711] [moveit_ros.fix_start_state_collision]: Unable to find a valid state nearby the start state (using jiggle fraction of 0.050000 and 100 sampling attempts). Passing the original planning request to the planner.
+[move_group-4] [INFO] [1770706036.733138849] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [WARN] [1770706036.734296751] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.734563987] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.734654879] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.734848565] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.735273384] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.735569291] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.735748496] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.735944031] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.736234612] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002477 seconds
+[move_group-4] [WARN] [1770706036.737505141] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.737732098] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.737796449] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.737943242] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.738062924] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.738244530] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.738353780] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.738468780] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.738666594] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002135 seconds
+[move_group-4] [WARN] [1770706036.739197952] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.739418003] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.739547427] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.739850019] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.739935012] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.740073433] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.740203864] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.740379045] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.740554905] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001651 seconds
+[move_group-4] [WARN] [1770706036.741129709] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.741351329] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.741441394] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.741620812] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.741952093] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.742058879] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.742229295] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.742370442] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.742522267] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001722 seconds
+[move_group-4] [WARN] [1770706036.743254333] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.743516194] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.743630585] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.743777359] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.743832264] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.743924870] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.743981150] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.744137968] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.744345616] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001609 seconds
+[move_group-4] [WARN] [1770706036.745068185] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.745231630] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.745393457] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.745492975] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.745692714] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.745797581] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.745969783] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.746099188] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.746357203] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001825 seconds
+[move_group-4] [WARN] [1770706036.746988516] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.747260765] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.747376250] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.747518093] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.747554605] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.747731551] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.747798682] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.747936883] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.748097604] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001331 seconds
+[move_group-4] [WARN] [1770706036.748601948] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.748825224] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.749057980] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.749270445] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.749340597] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.749477410] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.749545802] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.749695577] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.749943354] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001579 seconds
+[move_group-4] [WARN] [1770706036.750572510] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.750817965] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.751229309] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.751522003] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.751699899] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.751787233] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.751903104] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.751977372] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.752142961] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002016 seconds
+[move_group-4] [WARN] [1770706036.752830737] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.752928576] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.753091165] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.753216770] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.753338840] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.753422554] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.753619593] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.753806649] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.753947363] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001613 seconds
+[move_group-4] [WARN] [1770706036.754531255] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.754645562] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.754881480] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.755005202] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.755316846] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.755446549] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.755944249] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.756081863] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.756281248] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002143 seconds
+[move_group-4] [WARN] [1770706036.756808954] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.756997596] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.757199140] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.757322316] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.757499760] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.757618452] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.757795965] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.757937121] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.758085506] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001560 seconds
+[move_group-4] [WARN] [1770706036.759679672] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.759928257] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.760100611] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.760227426] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.760395768] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.760483890] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.760737238] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.760833020] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.761001884] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002697 seconds
+[move_group-4] [WARN] [1770706036.762050905] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.762450581] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.762805698] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.762927156] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.763223941] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.763327132] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.763598837] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.763718819] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.763892265] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002617 seconds
+[move_group-4] [WARN] [1770706036.764418566] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.764609602] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.764657690] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.764804839] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.765000778] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.765121181] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.765260834] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.765391954] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.765574109] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001404 seconds
+[move_group-4] [WARN] [1770706036.766093228] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.766427903] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.766561385] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.766893800] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.767049520] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.767249424] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.767397545] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.768261586] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.768456041] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002667 seconds
+[move_group-4] [WARN] [1770706036.769503921] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.769628771] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.769911554] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.770033221] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.770356532] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.770505165] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.770779295] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.770894950] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.771104449] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002416 seconds
+[move_group-4] [WARN] [1770706036.772730179] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.773081949] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.773631947] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.773943455] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.774495934] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.774759462] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.775012557] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.775119985] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.775338406] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.003896 seconds
+[move_group-4] [WARN] [1770706036.776224302] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.776417437] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.776688062] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.776829382] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.777138344] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.777289164] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.777974649] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.778263777] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.778531194] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002947 seconds
+[move_group-4] [WARN] [1770706036.779259481] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.779512113] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.779726798] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.779835278] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.779993361] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.780095005] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.780360117] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.780466979] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.780577800] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001823 seconds
+[move_group-4] [WARN] [1770706036.781266101] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.781401013] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.781712317] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.781875990] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.782056335] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.782378167] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.782521016] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.782904931] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.783058757] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002260 seconds
+[move_group-4] [WARN] [1770706036.783677791] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.783930356] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.784105093] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.784398070] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.784652265] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.784767152] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.784910621] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.785015090] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.785594402] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002268 seconds
+[move_group-4] [WARN] [1770706036.786080050] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.786495733] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.786700462] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.786822124] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.787003121] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.787101581] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.787260462] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.787457025] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.787582787] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001806 seconds
+[move_group-4] [WARN] [1770706036.788698008] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.788855018] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.789035841] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.789111820] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.789260064] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.789417027] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.789591264] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.789703910] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.789856073] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002065 seconds
+[move_group-4] [WARN] [1770706036.790396823] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.790575643] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.790755662] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706036.790878492] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.791045209] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.791099020] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706036.791340103] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706036.791456983] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706036.791686584] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001665 seconds
+[move_group-4] [INFO] [1770706036.791831529] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[move_group-4] [INFO] [1770706036.791911709] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure
+[rviz2-5] [INFO] [1770706036.794466295] [move_group_interface]: Planning request aborted
+[rviz2-5] [ERROR] [1770706036.795010266] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[move_group-4] [INFO] [1770706038.034687471] [moveit_move_group_default_capabilities.move_action_capability]: Received request
+[move_group-4] [INFO] [1770706038.035222567] [moveit_move_group_default_capabilities.move_action_capability]: executing..
+[move_group-4] [INFO] [1770706038.035638483] [moveit_move_group_default_capabilities.move_action_capability]: Combined planning and execution request received for MoveGroup action. Forwarding to planning and execution pipeline.
+[move_group-4] [INFO] [1770706038.036051648] [moveit_ros.plan_execution]: Planning attempt 1 of at most 1
+[move_group-4] [INFO] [1770706038.036194370] [moveit_move_group_capabilities_base.move_group_capability]: Using planning pipeline 'ompl'
+[move_group-4] [INFO] [1770706038.036763050] [moveit_ros.fix_start_state_bounds]: Starting state is just outside bounds (joint 'link2_to_link3'). Assuming within bounds.
+[move_group-4] [INFO] [1770706038.036869638] [moveit_ros.fix_start_state_bounds]: Starting state is just outside bounds (joint 'link5_to_link6'). Assuming within bounds.
+[rviz2-5] [INFO] [1770706038.035618847] [move_group_interface]: Plan and Execute request accepted
+[move_group-4] [INFO] [1770706038.038435578] [moveit_collision_detection_fcl.collision_common]: Found a contact between 'link1' (type 'Robot link') and 'link3' (type 'Robot link'), which constitutes a collision. Contact information is not stored.
+[move_group-4] [INFO] [1770706038.038547553] [moveit_collision_detection_fcl.collision_common]: Collision checking is considered complete (collision was found and 0 contacts are stored)
+[move_group-4] [INFO] [1770706038.038618496] [moveit_ros.fix_start_state_collision]: Start state appears to be in collision with respect to group arm
+[move_group-4] [WARN] [1770706038.120409136] [moveit_ros.fix_start_state_collision]: Unable to find a valid state nearby the start state (using jiggle fraction of 0.050000 and 100 sampling attempts). Passing the original planning request to the planner.
+[move_group-4] [INFO] [1770706038.122831074] [moveit.ompl_planning.model_based_planning_context]: Planner configuration 'arm' will use planner 'geometric::RRTConnect'. Additional configuration parameters will be set when the planner is constructed.
+[move_group-4] [WARN] [1770706038.124129038] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.124471376] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.124615109] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.124691666] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.124847133] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.124950439] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.125123560] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.125286540] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.125462872] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001742 seconds
+[move_group-4] [WARN] [1770706038.125865216] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.126045863] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.126209447] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.126397602] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.126545514] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.126683123] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.126798888] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.126860915] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.127046906] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001414 seconds
+[move_group-4] [WARN] [1770706038.127544246] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.127712171] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.127860062] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.127921155] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.128038998] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.128123551] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.128396510] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.128518220] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.128656358] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001417 seconds
+[move_group-4] [WARN] [1770706038.129050218] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.129277550] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.129466189] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.129628110] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.129723290] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.129876714] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.130006511] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.130113489] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.130437249] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001558 seconds
+[move_group-4] [WARN] [1770706038.131519797] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.131746880] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.132040005] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.132926758] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.134959163] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.135140424] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.135316321] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.135398070] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.135619373] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.004818 seconds
+[move_group-4] [WARN] [1770706038.136306686] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.136706127] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.137006087] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.137114808] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.137275145] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.137388378] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.138044690] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.138221533] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.138475611] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002623 seconds
+[move_group-4] [WARN] [1770706038.138928646] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.139056424] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.139103049] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.139299349] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.139578508] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.139750735] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.139807470] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.139937138] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.140044786] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001323 seconds
+[move_group-4] [WARN] [1770706038.140445640] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.140602757] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.141086817] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.141237823] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.141526423] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.141632766] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.142185486] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.142305491] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.142453274] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002217 seconds
+[move_group-4] [WARN] [1770706038.143016331] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.143131463] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.143480162] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.143730423] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.143873335] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.144087200] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.144268152] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.144405068] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.145130690] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002513 seconds
+[move_group-4] [WARN] [1770706038.145798052] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.145943471] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.146120212] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.146277253] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.146470172] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.146594501] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.146776125] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.146838393] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.147029422] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001678 seconds
+[move_group-4] [WARN] [1770706038.147474967] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.147645734] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.147793435] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.147889194] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.148548523] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.148866825] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.149201157] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.149460256] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.149774684] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002479 seconds
+[move_group-4] [WARN] [1770706038.151279810] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.151422729] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.151649532] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.151739598] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.151932640] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.152030041] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.152315222] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.152448970] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.152584195] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002436 seconds
+[move_group-4] [WARN] [1770706038.153008844] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.153321238] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.153490607] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.153559350] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.153709628] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.153814777] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.153960871] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.154051855] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.154309171] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001536 seconds
+[move_group-4] [WARN] [1770706038.154972168] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.155323244] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.155422465] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.155626259] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.155734300] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.155957349] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.156446239] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.156551965] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.156711957] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002207 seconds
+[move_group-4] [WARN] [1770706038.157318650] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.157465634] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.157513906] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.157641554] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.157692225] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.157809642] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.158070641] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.158192682] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.158343869] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001472 seconds
+[move_group-4] [WARN] [1770706038.158885788] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.159004671] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.159238743] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.159345323] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.159549528] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.159667772] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.159915334] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.160030990] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.160196276] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001696 seconds
+[move_group-4] [WARN] [1770706038.160825536] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.160949587] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.161101320] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.161265890] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.161310807] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.161494982] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.161651735] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.161828060] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.161977992] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001600 seconds
+[move_group-4] [WARN] [1770706038.162823911] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.163128945] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.163292396] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.163392409] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.163528855] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.163585110] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.163798379] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.164015746] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.164210311] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001743 seconds
+[move_group-4] [WARN] [1770706038.164982748] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.165151623] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.165443499] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.165567788] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.165679050] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.165838933] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.165980514] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.166104391] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.166311035] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001837 seconds
+[move_group-4] [WARN] [1770706038.167067825] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.167895930] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.168375508] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.168729788] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.168915739] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.169022238] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.169280487] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.169446256] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.169574928] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002881 seconds
+[move_group-4] [WARN] [1770706038.170378357] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.170578607] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.170746233] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.170896894] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.171110456] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.171298645] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.171521629] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.171637364] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.172018398] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002226 seconds
+[move_group-4] [WARN] [1770706038.172775353] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.172993595] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.173083169] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.173220717] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.173292016] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.174635131] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.174704816] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.174880512] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.175023031] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002654 seconds
+[move_group-4] [WARN] [1770706038.175858399] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.176005069] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.176282425] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.176405030] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.176639300] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.176754509] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.177110097] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.177270687] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.177429822] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.002150 seconds
+[move_group-4] [WARN] [1770706038.177897028] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.178191092] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.178314588] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.178522170] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.178626378] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.178845097] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.178988347] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.179094338] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.179294772] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001687 seconds
+[move_group-4] [WARN] [1770706038.179805739] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [WARN] [1770706038.180076685] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.180238741] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [ERROR] [1770706038.180346397] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.180557282] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.180690343] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.180841772] [ompl]: ./src/ompl/base/src/Planner.cpp:248 - arm/arm: Skipping invalid start state (invalid state)
+[move_group-4] [ERROR] [1770706038.180956428] [ompl]: ./src/ompl/geometric/planners/rrt/src/RRTConnect.cpp:219 - arm/arm: Motion planning start tree could not be initialized!
+[move_group-4] [WARN] [1770706038.181074978] [ompl]: ./src/ompl/tools/multiplan/src/ParallelPlan.cpp:138 - ParallelPlan::solve(): Unable to find solution by any of the threads in 0.001517 seconds
+[move_group-4] [INFO] [1770706038.181231014] [moveit.ompl_planning.model_based_planning_context]: Unable to solve the planning problem
+[move_group-4] [INFO] [1770706038.181358870] [moveit_move_group_default_capabilities.move_action_capability]: Catastrophic failure
+[rviz2-5] [INFO] [1770706038.183006888] [move_group_interface]: Plan and Execute request aborted
+[rviz2-5] [ERROR] [1770706038.183891754] [move_group_interface]: MoveGroupInterface::move() failed or timeout reached

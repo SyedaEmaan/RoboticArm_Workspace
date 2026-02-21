@@ -1,0 +1,69 @@
+[INFO] [launch]: All log files can be found below /home/rosdev/.ros/log/2026-02-10-06-41-19-878308-emaan-930MBE-9231
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [9234]
+[INFO] [robot_state_publisher-2]: process started with pid [9236]
+[INFO] [spawn_entity.py-3]: process started with pid [9238]
+[robot_state_publisher-2] Error:   Failed to build tree: child link [base_link] of joint [virtual_joint] not found
+[robot_state_publisher-2]          at line 252 in ./urdf_parser/src/model.cpp
+[robot_state_publisher-2] Failed to parse robot description using: urdf_xml_parser/URDFXMLParser
+[robot_state_publisher-2] terminate called after throwing an instance of 'std::runtime_error'
+[robot_state_publisher-2]   what():  Unable to initialize urdf::model from robot description
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[spawn_entity.py-3] [INFO] [1770705681.992052800] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1770705681.993982622] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-3] [INFO] [1770705682.001448572] [spawn_entity]: Waiting for entity xml on robot_description
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[gazebo-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.30.3.153[0m[1;32m
+[gazebo-1] [1;33m[Wrn] [GuiIface.cc:120] [0m[1;33mQStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'[0m[1;33m
+[gazebo-1] [0m[1;33m[0m[1;33m[0m[INFO] [1770705683.974712176] [gazebo_ros_node]: ROS was initialized without arguments.
+[INFO] [move_group-4]: process started with pid [9375]
+[move_group-4] Error:   Failed to build tree: child link [base_link] of joint [virtual_joint] not found
+[move_group-4]          at line 252 in ./urdf_parser/src/model.cpp
+[move_group-4] Failed to parse robot description using: urdf_xml_parser/URDFXMLParser
+[move_group-4] [INFO] [1770705686.460172271] [moveit_rdf_loader.rdf_loader]: Unable to parse URDF
+[move_group-4] [ERROR] [1770705686.513978372] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Robot model not loaded
+[move_group-4] [ERROR] [1770705686.515575060] [moveit.ros_planning_interface.moveit_cpp]: Planning scene not configured
+[move_group-4] [FATAL] [1770705686.515672932] [moveit.ros_planning_interface.moveit_cpp]: Unable to configure planning scene monitor
+[move_group-4] terminate called after throwing an instance of 'std::runtime_error'
+[move_group-4]   what():  Unable to configure planning scene monitor
+[move_group-4] Stack trace (most recent call last):
+[move_group-4] #12   Object "", at 0xffffffffffffffff, in 
+[move_group-4] #11   Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x5c6627656724, in 
+[move_group-4] #10   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x705d989d0e3f, in __libc_start_main
+[move_group-4] #9    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x705d989d0d8f, in 
+[move_group-4] #8    Object "/opt/ros/humble/lib/moveit_ros_move_group/move_group", at 0x5c66276552c2, in 
+[move_group-4] #7    Object "/opt/ros/humble/lib/libmoveit_cpp.so.2.5.9", at 0x705d993344c3, in 
+[move_group-4] #6    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x705d98c9e4d7, in __cxa_throw
+[move_group-4] #5    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x705d98c9e276, in std::terminate()
+[move_group-4] #4    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x705d98c9e20b, in 
+[move_group-4] #3    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x705d98c92b9d, in 
+[move_group-4] #2    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x705d989cf7f2, in abort
+[move_group-4] #1    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x705d989e9475, in raise
+[move_group-4] #0    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x705d98a3d9fc, in pthread_kill
+[move_group-4] Aborted (Signal sent by tkill() 9375 1000)
+[INFO] [rviz2-5]: process started with pid [9404]
+[rviz2-5] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'
+[ERROR] [robot_state_publisher-2]: process has died [pid 9236, exit code -6, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args --params-file /tmp/launch_params_a7l2hak4 --params-file /tmp/launch_params_40vy1yes'].
+[ERROR] [move_group-4]: process has died [pid 9375, exit code -6, cmd '/opt/ros/humble/lib/moveit_ros_move_group/move_group --ros-args --params-file /tmp/launch_params_wphpdg6c --params-file /tmp/launch_params_dgpc6dgz'].
+[rviz2-5] [INFO] [1770705687.510501083] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-5] [INFO] [1770705687.511224188] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-5] [INFO] [1770705687.592240170] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-5] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-5]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[rviz2-5] [ERROR] [1770705691.089419597] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[rviz2-5] [INFO] [1770705691.149121123] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[rviz2-5] Error:   Failed to build tree: child link [base_link] of joint [virtual_joint] not found
+[rviz2-5]          at line 252 in ./urdf_parser/src/model.cpp
+[rviz2-5] Failed to parse robot description using: urdf_xml_parser/URDFXMLParser
+[rviz2-5] [INFO] [1770705691.408492369] [moveit_rdf_loader.rdf_loader]: Unable to parse URDF
+[rviz2-5] [ERROR] [1770705691.461590084] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Robot model not loaded

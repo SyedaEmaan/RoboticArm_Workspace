@@ -1,5 +1,9 @@
 # MoveIt uses this configuration for controller management
 
+# Trajectory execution parameters
+trajectory_execution:
+  allowed_start_tolerance: 0.5  # Increase from default 0.01 to 0.5 radians
+
 moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
 
 moveit_simple_controller_manager:
@@ -18,11 +22,10 @@ moveit_simple_controller_manager:
       - link4_to_link5
       - link5_to_link6
       - link6_to_link6flange
-    action_ns: follow_joint_trajectory
-    default: true
+      
   grip_action_controller:
     type: GripperCommand
-    joints:
-      - gripper_controller
     action_ns: gripper_cmd
     default: true
+    joints:
+      - gripper_controller

@@ -1,35 +1,42 @@
 # Start from official ROS 2 Humble desktop image
 FROM osrf/ros:humble-desktop
-
-# Set environment variables
+# ----------------------------
+# Environment variables
+# ----------------------------
 ENV DEBIAN_FRONTEND=noninteractive
 ENV ROS_DISTRO=humble
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV TZ=UTC
-
-# Install prerequisites for Gazebo package source
+# ----------------------------
+# Basic utilities + lsb-release
+# ----------------------------
 RUN apt-get update && apt-get install -y \
     wget \
     lsb-release \
+    tmux \
+    gedit \
     && rm -rf /var/lib/apt/lists/*
-
-# Add OSRF Gazebo package source (alternative installation process)
+# ----------------------------
+# Gazebo repository
+# ----------------------------
 RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" > /etc/apt/sources.list.d/gazebo-stable.list' \
-    && wget https://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
-
-# Install Gazebo 11 and ROS-Gazebo integration
+    && wget -qO - https://packages.osrfoundation.org/gazebo.key | apt-key add -
+# ----------------------------
+# Gazebo + ROS–Gazebo integration
+# ----------------------------
 RUN apt-get update && apt-get install -y \
     gazebo \
     libgazebo-dev \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-ros-gz \
+    ros-humble-gazebo-ros2-control \
     ros-humble-py-binding-tools \
     ros-humble-pcl-ros \
-    ros-humble-gazebo-ros2-control \
     && rm -rf /var/lib/apt/lists/*
-
-# Install development tools
+# ----------------------------
+# Development tools
+# ----------------------------
 RUN apt-get update && apt-get install -y \
     build-essential \
     python3-colcon-common-extensions \
@@ -39,57 +46,43 @@ RUN apt-get update && apt-get install -y \
     nano \
     && rosdep update --rosdistro $ROS_DISTRO \
     && rm -rf /var/lib/apt/lists/*
-
-# Install X11 for GUI applications
+# ----------------------------
+# X11 / Qt support for GUI apps
+# ----------------------------
 RUN apt-get update && apt-get install -y \
     x11-apps \
-    && rm -rf /var/lib/apt/lists/*
-
-
-RUN apt-get update && apt-get install -y \
     libx11-xcb1 \
     libxcb-xfixes0 \
     libqt5x11extras5 \
     qtbase5-dev \
     && rm -rf /var/lib/apt/lists/*
-
-# Add ROS 2 apt repository
-RUN sh -c 'echo "deb http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list' \
-    && wget -qO - https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | apt-key add -
-
-
+# ----------------------------
+# ROS 2 core tools
+# ----------------------------
 RUN apt-get update && apt-get install -y \
     ros-humble-ros2-control \
     ros-humble-ros2-controllers \
     ros-humble-xacro \
     ros-humble-rviz2 \
-    && rm -rf /var/lib/apt/lists/*
-
-
-RUN apt-get update && apt-get install -y \
-    ros-humble-moveit \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install -y \
-    ros-humble-moveit-visual-tools \
-    && rm -rf /var/lib/apt/lists/*
-
-
-
-RUN sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" > /etc/apt/sources.list.d/gazebo-stable.list'
-
-RUN wget https://packages.osrfoundation.org/gazebo.key -O - | apt-key add -
-
-RUN apt-get update && apt-get install -y \
-    libgz-transport11-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install -y \
     ros-humble-joint-state-publisher \
     ros-humble-joint-state-publisher-gui \
     && rm -rf /var/lib/apt/lists/*
-
-# Create a non-root user
+# ----------------------------
+# MoveIt 2
+# ----------------------------
+RUN apt-get update && apt-get install -y \
+    ros-humble-moveit \
+    ros-humble-moveit-visual-tools \
+    && rm -rf /var/lib/apt/lists/*
+# ----------------------------
+# Gazebo transport (needed by some plugins)
+# ----------------------------
+RUN apt-get update && apt-get install -y \
+    libgz-transport11-dev \
+    && rm -rf /var/lib/apt/lists/*
+# ----------------------------
+# Create non-root user
+# ----------------------------
 ARG USERNAME=rosdev
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
@@ -97,27 +90,25 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
-
-
-
-
-
-# Create ROS 2 workspace as root
+# ----------------------------
+# Create ROS 2 workspace
+# ----------------------------
 WORKDIR /home/$USERNAME/arm_ws
 RUN mkdir -p src && chown -R $USERNAME:$USERNAME /home/$USERNAME
-
-# Now switch to non-root
+# ----------------------------
+# Switch to non-root user
+# ----------------------------
 USER $USERNAME
 WORKDIR /home/$USERNAME/arm_ws
-
-# Source ROS 2 and Gazebo in .bashrc
+# ----------------------------
+# Source ROS + Gazebo on startup
+# ----------------------------
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /home/$USERNAME/.bashrc \
-    && echo "source /usr/share/gazebo-11/setup.sh" >> /home/$USERNAME/.bashrc 
+    && echo "source /usr/share/gazebo-11/setup.sh" >> /home/$USERNAME/.bashrc
+# ----------------------------
+# Entrypoint
+# ----------------------------
 COPY docker/entrypoint.sh /entrypoint.sh
 RUN sudo chmod +x /entrypoint.sh
-
-
-# Entrypoint and default command
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]
-

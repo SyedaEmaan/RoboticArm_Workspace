@@ -1,0 +1,846 @@
+[INFO] [launch]: All log files can be found below /home/rosdev/.ros/log/2026-02-17-07-20-40-821495-emaan-930MBE-98
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [gazebo-1]: process started with pid [101]
+[INFO] [robot_state_publisher-2]: process started with pid [103]
+[INFO] [spawn_entity.py-3]: process started with pid [105]
+[robot_state_publisher-2] [INFO] [1771312850.164341684] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-2] [INFO] [1771312850.164751979] [robot_state_publisher]: got segment gripper_base
+[robot_state_publisher-2] [INFO] [1771312850.164794933] [robot_state_publisher]: got segment gripper_left1
+[robot_state_publisher-2] [INFO] [1771312850.164853992] [robot_state_publisher]: got segment gripper_left2
+[robot_state_publisher-2] [INFO] [1771312850.164876143] [robot_state_publisher]: got segment gripper_left3
+[robot_state_publisher-2] [INFO] [1771312850.164897165] [robot_state_publisher]: got segment gripper_right1
+[robot_state_publisher-2] [INFO] [1771312850.164917137] [robot_state_publisher]: got segment gripper_right2
+[robot_state_publisher-2] [INFO] [1771312850.164938272] [robot_state_publisher]: got segment gripper_right3
+[robot_state_publisher-2] [INFO] [1771312850.164958427] [robot_state_publisher]: got segment link1
+[robot_state_publisher-2] [INFO] [1771312850.164978737] [robot_state_publisher]: got segment link2
+[robot_state_publisher-2] [INFO] [1771312850.164999267] [robot_state_publisher]: got segment link3
+[robot_state_publisher-2] [INFO] [1771312850.165018440] [robot_state_publisher]: got segment link4
+[robot_state_publisher-2] [INFO] [1771312850.165037565] [robot_state_publisher]: got segment link5
+[robot_state_publisher-2] [INFO] [1771312850.165056733] [robot_state_publisher]: got segment link6
+[robot_state_publisher-2] [INFO] [1771312850.165076136] [robot_state_publisher]: got segment link6_flange
+[robot_state_publisher-2] [INFO] [1771312850.165095780] [robot_state_publisher]: got segment world
+[INFO] [move_group-4]: process started with pid [126]
+[INFO] [rviz2-5]: process started with pid [128]
+[spawn_entity.py-3] [INFO] [1771312853.323221225] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-3] [INFO] [1771312853.325628359] [spawn_entity]: Loading entity published on topic robot_description
+[spawn_entity.py-3] [INFO] [1771312854.098586286] [spawn_entity]: Waiting for entity xml on robot_description
+[spawn_entity.py-3] [INFO] [1771312854.305473030] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-3] [INFO] [1771312854.307557734] [spawn_entity]: Waiting for service /spawn_entity
+[move_group-4] [INFO] [1771312860.420269939] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0 seconds
+[move_group-4] [INFO] [1771312860.420453931] [moveit_robot_model.robot_model]: Loading robot model 'mycobot_280'...
+[move_group-4] [ERROR] [1771312861.389574620] [moveit_kinematics_base.kinematics_base]: Group 'arm_with_gripper' is not a chain
+[move_group-4] [ERROR] [1771312861.389647045] [kinematics_plugin_loader]: Kinematics solver of type 'kdl_kinematics_plugin/KDLKinematicsPlugin' could not be initialized for group 'arm_with_gripper'
+[move_group-4] [ERROR] [1771312861.389684304] [moveit_ros.robot_model_loader]: Kinematics solver could not be instantiated for joint group arm_with_gripper.
+[move_group-4] [INFO] [1771312863.837223672] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Publishing maintained planning scene on 'monitored_planning_scene'
+[move_group-4] [INFO] [1771312863.837745699] [moveit.ros_planning_interface.moveit_cpp]: Listening to 'joint_states' for joint states
+[move_group-4] [INFO] [1771312863.842735945] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[move_group-4] [INFO] [1771312863.886471266] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/attached_collision_object' for attached collision objects
+[move_group-4] [INFO] [1771312863.886575061] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[move_group-4] [INFO] [1771312863.890312980] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/planning_scene'
+[move_group-4] [INFO] [1771312863.890383265] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting world geometry update monitor for collision objects, attached objects, octomap updates.
+[move_group-4] [INFO] [1771312863.941165953] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'collision_object'
+[move_group-4] [INFO] [1771312863.994476372] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to 'planning_scene_world' for planning scene world geometry
+[move_group-4] [WARN] [1771312863.996006904] [moveit.ros.occupancy_map_monitor.middleware_handle]: Resolution not specified for Octomap. Assuming resolution = 0.1 instead
+[move_group-4] [ERROR] [1771312863.996337008] [moveit.ros.occupancy_map_monitor.middleware_handle]: Exception while loading octomap updater 'occupancy_map_monitor/PointCloudOctomapUpdater': According to the loaded plugin descriptions the class occupancy_map_monitor/PointCloudOctomapUpdater with base class type occupancy_map_monitor::OccupancyMapUpdater does not exist. Declared types are 
+[move_group-4] 
+[move_group-4] [ERROR] [1771312863.996430943] [moveit.ros.occupancy_map_monitor]: Failed to load sensor: `default_sensor` of type: `occupancy_map_monitor/PointCloudOctomapUpdater`
+[move_group-4] [INFO] [1771312864.755998196] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'ompl'
+[move_group-4] [INFO] [1771312867.271045822] [moveit.ros_planning.planning_pipeline]: Using planning interface 'OMPL'
+[move_group-4] [INFO] [1771312867.683594348] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.path_tolerance' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1771312867.683672624] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.resample_dt' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1771312867.683694622] [moveit_ros.add_time_optimal_parameterization]: Param 'ompl.min_angle_change' was not set. Using default value: 0.001000
+[move_group-4] [INFO] [1771312867.683777141] [moveit_ros.fix_workspace_bounds]: Param 'ompl.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-4] [INFO] [1771312867.683885745] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_bounds_error' was set to 0.100000
+[move_group-4] [INFO] [1771312867.683916914] [moveit_ros.fix_start_state_bounds]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1771312867.683963741] [moveit_ros.fix_start_state_collision]: Param 'ompl.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1771312867.683986964] [moveit_ros.fix_start_state_collision]: Param 'ompl.jiggle_fraction' was set to 0.050000
+[move_group-4] [INFO] [1771312867.684009126] [moveit_ros.fix_start_state_collision]: Param 'ompl.max_sampling_attempts' was not set. Using default value: 100
+[move_group-4] [INFO] [1771312867.684053857] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-4] [INFO] [1771312867.684158260] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-4] [INFO] [1771312867.684179174] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-4] [INFO] [1771312867.684193396] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-4] [INFO] [1771312867.684206886] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-4] [INFO] [1771312867.684220353] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-4] [INFO] [1771312868.070476383] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'chomp'
+[move_group-4] [INFO] [1771312868.927188047] [moveit.ros_planning.planning_pipeline]: Using planning interface 'CHOMP'
+[move_group-4] [INFO] [1771312868.933021379] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.path_tolerance' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1771312868.933065832] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.resample_dt' was not set. Using default value: 0.100000
+[move_group-4] [INFO] [1771312868.933085676] [moveit_ros.add_time_optimal_parameterization]: Param 'chomp.min_angle_change' was not set. Using default value: 0.001000
+[move_group-4] [INFO] [1771312868.933157523] [moveit_ros.fix_workspace_bounds]: Param 'chomp.default_workspace_bounds' was not set. Using default value: 10.000000
+[move_group-4] [INFO] [1771312868.933204872] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_bounds_error' was set to 0.100000
+[move_group-4] [INFO] [1771312868.933224159] [moveit_ros.fix_start_state_bounds]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1771312868.933266814] [moveit_ros.fix_start_state_collision]: Param 'chomp.start_state_max_dt' was not set. Using default value: 0.500000
+[move_group-4] [INFO] [1771312868.933287868] [moveit_ros.fix_start_state_collision]: Param 'chomp.jiggle_fraction' was set to 0.050000
+[move_group-4] [INFO] [1771312868.933304101] [moveit_ros.fix_start_state_collision]: Param 'chomp.max_sampling_attempts' was not set. Using default value: 100
+[move_group-4] [INFO] [1771312868.933342582] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Add Time Optimal Parameterization'
+[move_group-4] [INFO] [1771312868.933357607] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Resolve constraint frames to robot links'
+[move_group-4] [INFO] [1771312868.933370363] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Workspace Bounds'
+[move_group-4] [INFO] [1771312868.933382939] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Bounds'
+[move_group-4] [INFO] [1771312868.933394575] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State In Collision'
+[move_group-4] [INFO] [1771312868.933406284] [moveit.ros_planning.planning_pipeline]: Using planning request adapter 'Fix Start State Path Constraints'
+[move_group-4] [INFO] [1771312868.969938441] [moveit.ros_planning_interface.moveit_cpp]: Loading planning pipeline 'pilz_industrial_motion_planner'
+[move_group-4] [INFO] [1771312869.338853741] [moveit.pilz_industrial_motion_planner.joint_limits_aggregator]: Reading limits from namespace robot_description_planning
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[gazebo-1] Gazebo multi-robot simulator, version 11.10.2
+[gazebo-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gazebo-1] Released under the Apache 2 License.
+[gazebo-1] http://gazebosim.org
+[gazebo-1] 
+[rviz2-5] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'
+[gazebo-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.20.7.33[0m[1;32m
+[gazebo-1] [1;33m[Wrn] [GuiIface.cc:298] [0m[1;33mCouldn't locate specified .ini. Creating file at [0m[1;33m"/home/rosdev/.gazebo/gui.ini"[0m[1;33m
+[move_group-4] [INFO] [1771312870.862332576] [moveit.pilz_industrial_motion_planner]: Available plugins: pilz_industrial_motion_planner/PlanningContextLoaderCIRC pilz_industrial_motion_planner/PlanningContextLoaderLIN pilz_industrial_motion_planner/PlanningContextLoaderPTP 
+[move_group-4] [INFO] [1771312870.862408773] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderCIRC
+[move_group-4] [INFO] [1771312871.121432497] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [CIRC]
+[move_group-4] [INFO] [1771312871.121503574] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderLIN
+[move_group-4] [INFO] [1771312871.153213265] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [LIN]
+[move_group-4] [INFO] [1771312871.153368221] [moveit.pilz_industrial_motion_planner]: About to load: pilz_industrial_motion_planner/PlanningContextLoaderPTP
+[move_group-4] [INFO] [1771312871.161223413] [moveit.pilz_industrial_motion_planner]: Registered Algorithm [PTP]
+[move_group-4] [INFO] [1771312871.161313025] [moveit.ros_planning.planning_pipeline]: Using planning interface 'Pilz Industrial Motion Planner'
+[rviz2-5] [INFO] [1771312877.038720861] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-5] [INFO] [1771312877.039051050] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-5] [INFO] [1771312877.503898669] [rviz2]: Stereo is NOT SUPPORTED
+[gazebo-1] [0m[1;33m[0m[1;33m[0m[1;33m[Wrn] [GuiIface.cc:120] [0m[1;33mQStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-rosdev'[0m[1;33m
+[gazebo-1] [0m[1;33m[0m[1;33m[0m[INFO] [1771312879.876046193] [gazebo_ros_node]: ROS was initialized without arguments.
+[spawn_entity.py-3] [INFO] [1771312880.694634695] [spawn_entity]: Calling service /spawn_entity
+[rviz2-5] Warning: class_loader.impl: SEVERE WARNING!!! A namespace collision has occurred with plugin factory for class rviz_default_plugins::displays::InteractiveMarkerDisplay. New factory will OVERWRITE existing one. This situation occurs when libraries containing plugins are directly linked against an executable (the one running right now generating this message). Please separate plugins out into their own library or just don't link against the library and use either class_loader::ClassLoader/MultiLibraryClassLoader to open.
+[rviz2-5]          at line 253 in /opt/ros/humble/include/class_loader/class_loader/class_loader_core.hpp
+[move_group-4] [INFO] [1771312881.198278527] [moveit.plugins.moveit_simple_controller_manager]: Added FollowJointTrajectory controller for arm_controller
+[move_group-4] [INFO] [1771312881.198454084] [moveit.plugins.moveit_simple_controller_manager]: Max effort set to 0.0
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:11345[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m10.20.7.33[0m[1;32m
+[gazebo-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/usr/share/gazebo-11/worlds/empty.world[0m[1;32m][0m[1;32m
+[gazebo-1] [1;31m[Err] [Plugin.hh:212] [0m[1;31mFailed to load plugin gz_ros2_control-system: gz_ros2_control-system: cannot open shared object file: No such file or directory
+[spawn_entity.py-3] [INFO] [1771312881.783677846] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [mycobot_280]
+[gazebo-1] [0m[INFO] [1771312882.083298582] [gazebo_ros2_control]: Loading gazebo_ros2_control plugin
+[INFO] [spawn_entity.py-3]: process has finished cleanly [pid 105]
+[INFO] [spawner-6]: process started with pid [304]
+[spawner-6] [INFO] [1771312884.938308377] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[rviz2-5] [ERROR] [1771312886.294253711] [moveit_ros_visualization.motion_planning_frame]: Action server: /recognize_objects not available
+[move_group-4] [INFO] [1771312887.136626630] [moveit.plugins.moveit_simple_controller_manager]: Added GripperCommand controller for grip_action_controller
+[move_group-4] [INFO] [1771312887.137164459] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[move_group-4] [INFO] [1771312887.137268807] [moveit.plugins.moveit_simple_controller_manager]: Returned 2 controllers in list
+[gazebo-1] [INFO] [1771312887.340045418] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in namespace: /
+[gazebo-1] [INFO] [1771312887.340999186] [gazebo_ros2_control]: Starting gazebo_ros2_control plugin in ros 2 node: gazebo_ros2_control
+[move_group-4] [INFO] [1771312887.600521986] [moveit_ros.trajectory_execution_manager]: Trajectory execution is managing controllers
+[move_group-4] [INFO] [1771312887.600578073] [move_group.move_group]: MoveGroup debug mode is ON
+[gazebo-1] [INFO] [1771312893.724941933] [gazebo_ros2_control]: connected to service!! robot_state_publisher
+[gazebo-1] [INFO] [1771312893.741776761] [gazebo_ros2_control]: Received urdf from param server, parsing...
+[gazebo-1] [INFO] [1771312894.680247558] [gazebo_ros2_control]: Loading parameter files /home/rosdev/arm_ws/install/mycobot_gazebo/share/mycobot_gazebo/config/gazebo_controllers.yaml
+[rviz2-5] [INFO] [1771312894.785434796] [moveit_ros_visualization.motion_planning_frame]: MoveGroup namespace changed: / -> . Reloading params.
+[gazebo-1] [ERROR] [1771312894.831085531] [gazebo_ros2_control]: The plugin failed to load for some reason. Error: According to the loaded plugin descriptions the class gz_ros2_control/GazeboSimSystem with base class type gazebo_ros2_control::GazeboSystemInterface does not exist. Declared types are  gazebo_ros2_control/GazeboSystem
+[gazebo-1] 
+[spawner-6] [WARN] [1771312894.967639892] [spawner_joint_state_broadcaster]: Could not contact service /controller_manager/list_controllers
+[spawner-6] [INFO] [1771312894.973543365] [spawner_joint_state_broadcaster]: waiting for service /controller_manager/list_controllers to become available...
+[gazebo-1] [INFO] [1771312895.157509822] [gazebo_ros2_control]: Loading joint: link1_to_link2
+[gazebo-1] [INFO] [1771312895.157873136] [gazebo_ros2_control]: 	State:
+[gazebo-1] [INFO] [1771312895.158011627] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.158133256] [gazebo_ros2_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1771312895.158276587] [gazebo_ros2_control]: 		 velocity
+[gazebo-1] [INFO] [1771312895.158398276] [gazebo_ros2_control]: 	Command:
+[gazebo-1] [INFO] [1771312895.158543428] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.623714781] [gazebo_ros2_control]: Loading joint: link2_to_link3
+[gazebo-1] [INFO] [1771312895.623981621] [gazebo_ros2_control]: 	State:
+[gazebo-1] [INFO] [1771312895.624047416] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.624102639] [gazebo_ros2_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1771312895.624207110] [gazebo_ros2_control]: 		 velocity
+[gazebo-1] [INFO] [1771312895.624265899] [gazebo_ros2_control]: 	Command:
+[gazebo-1] [INFO] [1771312895.624318538] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.666251251] [gazebo_ros2_control]: Loading joint: link3_to_link4
+[gazebo-1] [INFO] [1771312895.666504504] [gazebo_ros2_control]: 	State:
+[gazebo-1] [INFO] [1771312895.666593346] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.666661653] [gazebo_ros2_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1771312895.666755722] [gazebo_ros2_control]: 		 velocity
+[gazebo-1] [INFO] [1771312895.666852206] [gazebo_ros2_control]: 	Command:
+[gazebo-1] [INFO] [1771312895.666916585] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.670676438] [gazebo_ros2_control]: Loading joint: link4_to_link5
+[gazebo-1] [INFO] [1771312895.670834468] [gazebo_ros2_control]: 	State:
+[gazebo-1] [INFO] [1771312895.670910432] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.670994931] [gazebo_ros2_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1771312895.671075120] [gazebo_ros2_control]: 		 velocity
+[gazebo-1] [INFO] [1771312895.671138584] [gazebo_ros2_control]: 	Command:
+[gazebo-1] [INFO] [1771312895.671201053] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.971109643] [gazebo_ros2_control]: Loading joint: link5_to_link6
+[gazebo-1] [INFO] [1771312895.971505028] [gazebo_ros2_control]: 	State:
+[gazebo-1] [INFO] [1771312895.971664263] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312895.972062348] [gazebo_ros2_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1771312895.972253147] [gazebo_ros2_control]: 		 velocity
+[gazebo-1] [INFO] [1771312895.972321456] [gazebo_ros2_control]: 	Command:
+[gazebo-1] [INFO] [1771312895.972442500] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312896.290564876] [gazebo_ros2_control]: Loading joint: link6_to_link6flange
+[gazebo-1] [INFO] [1771312896.290784512] [gazebo_ros2_control]: 	State:
+[gazebo-1] [INFO] [1771312896.291041304] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312896.291120830] [gazebo_ros2_control]: 			 found initial value: 0.000000
+[gazebo-1] [INFO] [1771312896.291211231] [gazebo_ros2_control]: 		 velocity
+[gazebo-1] [INFO] [1771312896.291277973] [gazebo_ros2_control]: 	Command:
+[gazebo-1] [INFO] [1771312896.291338865] [gazebo_ros2_control]: 		 position
+[gazebo-1] [INFO] [1771312896.499790966] [resource_manager]: Initialize hardware 'GazeboSystem' 
+[gazebo-1] [INFO] [1771312896.502009995] [resource_manager]: Successful initialization of hardware 'GazeboSystem'
+[gazebo-1] [INFO] [1771312896.503074054] [resource_manager]: 'configure' hardware 'GazeboSystem' 
+[gazebo-1] [INFO] [1771312896.503189650] [resource_manager]: Successful 'configure' of hardware 'GazeboSystem'
+[gazebo-1] [INFO] [1771312896.503270279] [resource_manager]: 'activate' hardware 'GazeboSystem' 
+[gazebo-1] [INFO] [1771312896.503327029] [resource_manager]: Successful 'activate' of hardware 'GazeboSystem'
+[gazebo-1] [INFO] [1771312896.503873358] [gazebo_ros2_control]: Loading controller_manager
+[rviz2-5] [INFO] [1771312898.933039627] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0 seconds
+[rviz2-5] [INFO] [1771312898.933170368] [moveit_robot_model.robot_model]: Loading robot model 'mycobot_280'...
+[gazebo-1] [WARN] [1771312899.045095771] [gazebo_ros2_control]:  Desired controller update period (0.01 s) is slower than the gazebo simulation period (0.001 s).
+[gazebo-1] [INFO] [1771312899.048988233] [gazebo_ros2_control]: Loaded gazebo_ros2_control.
+[gazebo-1] [INFO] [1771312899.070588131] [controller_manager]: Loading controller 'joint_state_broadcaster'
+[rviz2-5] [ERROR] [1771312899.201867981] [moveit_kinematics_base.kinematics_base]: Group 'arm_with_gripper' is not a chain
+[rviz2-5] [ERROR] [1771312899.201962897] [kinematics_plugin_loader]: Kinematics solver of type 'kdl_kinematics_plugin/KDLKinematicsPlugin' could not be initialized for group 'arm_with_gripper'
+[rviz2-5] [ERROR] [1771312899.202070354] [moveit_ros.robot_model_loader]: Kinematics solver could not be instantiated for joint group arm_with_gripper.
+[spawner-6] [INFO] [1771312899.411524628] [spawner_joint_state_broadcaster]: [94mLoaded [1mjoint_state_broadcaster[0m
+[gazebo-1] [INFO] [1771312899.420869373] [controller_manager]: Configuring controller 'joint_state_broadcaster'
+[gazebo-1] [INFO] [1771312899.426951104] [joint_state_broadcaster]: 'joints' or 'interfaces' parameter is empty. All available state interfaces will be published
+[spawner-6] [INFO] [1771312899.590021629] [spawner_joint_state_broadcaster]: [92mConfigured and activated [1mjoint_state_broadcaster[0m
+[rviz2-5] [INFO] [1771312899.793753809] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Starting planning scene monitor
+[rviz2-5] [INFO] [1771312900.006251116] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: Listening to '/monitored_planning_scene'
+[INFO] [spawner-6]: process has finished cleanly [pid 304]
+[INFO] [spawner-7]: process started with pid [343]
+[gazebo-1] [1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/marble_1_5cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/marble_1_5cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/arrow_red/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/arrow_red[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_base_4x8/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_base_4x8[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/collapsed_house/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/collapsed_house[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hatchback_blue/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hatchback_blue[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mass_on_rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mass_on_rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/box_target_red/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/box_target_red[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mud_box/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mud_box[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/prius_hybrid_sensors/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/prius_hybrid_sensors[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/office_building/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/office_building[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc_field_2015/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc_field_2015[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/vrc_driving_terrain/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/vrc_driving_terrain[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fountain/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fountain[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_hand_wheel_valve/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_hand_wheel_valve[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pioneer3at/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pioneer3at[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/zephyr_delta_wing/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/zephyr_delta_wing[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ladder_60deg_2rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ladder_60deg_2rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/reactor/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/reactor[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/house_2/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/house_2[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_simple_ramp_120/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_simple_ramp_120[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/create/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/create[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/washer/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/washer[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cloverleaf_interchange/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cloverleaf_interchange[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ladder_75deg_1rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ladder_75deg_1rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hammer/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hammer[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/iss_half/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/iss_half[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/walkway_metal_90/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/walkway_metal_90[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/gazebo/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/gazebo[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_maze_wall_120/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_maze_wall_120[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/scanse_sweep/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/scanse_sweep[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_maze_wall_triple_holes_120/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_maze_wall_triple_holes_120[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number1/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number1[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/submarine/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/submarine[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hokuyo/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hokuyo[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/kinect/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/kinect[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cordless_drill/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cordless_drill[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/bowl/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/bowl[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/utility_cart/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/utility_cart[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/beer/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/beer[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_ramparts/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_ramparts[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/orbbec_astra_camera/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/orbbec_astra_camera[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/demo_joint_friction/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/demo_joint_friction[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_yellow_parking_block/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_yellow_parking_block[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ksql_airport/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ksql_airport[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/sand_island/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/sand_island[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup14_spl_field/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup14_spl_field[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/collapsed_industrial/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/collapsed_industrial[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/saucepan/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/saucepan[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup_3Dsim_goal/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup_3Dsim_goal[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wooden_board/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wooden_board[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fast_food/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fast_food[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mpl_right_arm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mpl_right_arm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hoop_red/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hoop_red[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_wheel_valve_large/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_wheel_valve_large[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pulley_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pulley_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup14_spl_goal/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup14_spl_goal[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cart_rigid_suspension/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cart_rigid_suspension[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_ball_valve_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_ball_valve_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/follower_vehicle/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/follower_vehicle[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/parrot_bebop_2/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/parrot_bebop_2[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hinged_door/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hinged_door[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_truss/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_truss[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/monkey_wrench/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/monkey_wrench[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/demo_joint_types/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/demo_joint_types[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ladder_75deg_2rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ladder_75deg_2rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/standpipe/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/standpipe[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/person_standing/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/person_standing[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/calibration_plane/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/calibration_plane[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_ball/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_ball[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/winding_valley_heightmap/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/winding_valley_heightmap[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/tower_crane/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/tower_crane[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/construction_cone/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/construction_cone[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/grocery_store/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/grocery_store[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pine_tree/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pine_tree[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/quadrotor/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/quadrotor[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pier/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pier[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/water_tower/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/water_tower[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cinder_block_wide/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cinder_block_wide[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pioneer2dx/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pioneer2dx[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pr2/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pr2[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_2x4/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_2x4[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mars_rover/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mars_rover[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/starting_pen/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/starting_pen[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fire_hose_long_curled/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fire_hose_long_curled[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_blue_cylinder/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_blue_cylinder[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/yosemite/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/yosemite[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cessna/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cessna[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wooden_peg_board/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wooden_peg_board[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_moat/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_moat[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_wood_slats/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_wood_slats[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_handle_wheel_valve_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_handle_wheel_valve_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/sun/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/sun[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/asphalt_plane/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/asphalt_plane[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number4/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number4[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/round_tin_top/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/round_tin_top[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/t_brace_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/t_brace_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_angled_barrier_45/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_angled_barrier_45[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/iris_with_standoffs_demo/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/iris_with_standoffs_demo[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_lowbar/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_lowbar[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mailbox/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mailbox[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/irobot_hand/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/irobot_hand[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/demo_joint_stiffness/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/demo_joint_stiffness[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/u_joint_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/u_joint_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/double_pendulum_with_base/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/double_pendulum_with_base[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/osrf_elevator/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/osrf_elevator[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/submarine_sinking/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/submarine_sinking[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_ball_valve/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_ball_valve[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/arm_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/arm_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_valve_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_valve_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_hinged_door/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_hinged_door[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/oak_tree/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/oak_tree[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/collapsed_police_station/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/collapsed_police_station[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/baylands/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/baylands[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cinder_block_2/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cinder_block_2[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/table_marble/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/table_marble[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cart_soft_suspension/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cart_soft_suspension[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number5/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number5[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/stereo_camera/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/stereo_camera[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/metal_peg/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/metal_peg[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/police_station/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/police_station[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_4x4x40/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_4x4x40[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_white_jersey_barrier/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_white_jersey_barrier[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/stop_light/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/stop_light[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/box_target_green/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/box_target_green[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/stop_sign/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/stop_sign[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/radio_tower/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/radio_tower[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/polaris_ranger_xp900_no_roll_cage/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/polaris_ranger_xp900_no_roll_cage[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/collapsed_fire_station/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/collapsed_fire_station[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/lunar_tranquillitatis_pit/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/lunar_tranquillitatis_pit[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/husky/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/husky[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_stairs_120/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_stairs_120[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/metal_peg_board/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/metal_peg_board[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_drawbridge/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_drawbridge[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/apollo15_landing_site_1000x1000/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/apollo15_landing_site_1000x1000[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/iscas_museum/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/iscas_museum[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/turtlebot/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/turtlebot[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_orange_jersey_barrier/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_orange_jersey_barrier[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_ladder/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_ladder[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wood_cube_10cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wood_cube_10cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/postbox/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/postbox[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cross_joint_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cross_joint_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_fiducial_barrel/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_fiducial_barrel[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/gas_station/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/gas_station[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/tube_2_25cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/tube_2_25cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_elevated_floor_120/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_elevated_floor_120[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ladder_60deg_0rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ladder_60deg_0rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ur10/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ur10[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/simple_arm_gripper/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/simple_arm_gripper[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fire_hydrant/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fire_hydrant[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ladder_75deg_0rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ladder_75deg_0rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pickup/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pickup[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/intel_realsense_r200/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/intel_realsense_r200[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/bookshelf/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/bookshelf[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fire_truck/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fire_truck[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/euro_pallet/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/euro_pallet[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wooden_peg/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wooden_peg[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/textured_shapes/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/textured_shapes[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/construction_barrel/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/construction_barrel[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/brick_box_3x1x3/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/brick_box_3x1x3[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/breakable_test/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/breakable_test[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/pr2_gripper/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/pr2_gripper[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/law_office/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/law_office[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/table/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/table[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cabinet/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cabinet[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/asus_xtion_pro_camera/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/asus_xtion_pro_camera[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/gimbal_small_2d/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/gimbal_small_2d[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/prius_hybrid/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/prius_hybrid[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wood_block_10_2_1cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wood_block_10_2_1cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cafe_table/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cafe_table[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/simple_gripper/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/simple_gripper[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/piston_rod_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/piston_rod_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/stone_10_2_5_1cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/stone_10_2_5_1cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/school/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/school[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup_3Dsim_field/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup_3Dsim_field[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/region_event_box/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/region_event_box[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/iris_with_standoffs/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/iris_with_standoffs[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/nist_maze_wall_240/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/nist_maze_wall_240[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/salon/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/salon[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wood_cube_5cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wood_cube_5cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/walkway_metal_45/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/walkway_metal_45[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/simple_arm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/simple_arm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number8/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number8[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cinder_block/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cinder_block[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/telephone_pole/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/telephone_pole[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cardboard_box/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cardboard_box[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ladder_60deg_1rails/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ladder_60deg_1rails[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/demo_joint_damping/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/demo_joint_damping[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wooden_case/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wooden_case[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/lamp_post/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/lamp_post[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/warehouse_robot/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/warehouse_robot[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/gasket_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/gasket_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hatchback/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hatchback[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_hand_wheel_valve_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_hand_wheel_valve_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number3/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number3[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup_spl_ball/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup_spl_ball[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/iss/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/iss[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/first_2015_trash_can/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/first_2015_trash_can[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wooden_case_metal_peg/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wooden_case_metal_peg[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fire_station/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fire_station[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/person_walking/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/person_walking[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/camera/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/camera[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_handle_wheel_valve/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_handle_wheel_valve[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/youbot/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/youbot[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_wheel_valve_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_wheel_valve_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/control_console/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/control_console[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/osrf_first_office/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/osrf_first_office[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_weighted_door/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_weighted_door[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/door_handle/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/door_handle[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/playground/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/playground[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/plastic_cup/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/plastic_cup[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/car_wheel/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/car_wheel[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number7/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number7[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/house_1/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/house_1[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ambulance/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ambulance[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number9/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number9[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ground_plane/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ground_plane[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/coke_can/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/coke_can[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_block_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_block_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/house_3/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/house_3[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_rockwall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_rockwall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_roughterrain/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_roughterrain[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/truss_bridge/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/truss_bridge[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/willowgarage/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/willowgarage[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_field/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_field[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cart_front_steer/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cart_front_steer[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cricket_ball/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cricket_ball[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_angled_barrier_135/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_angled_barrier_135[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robonaut/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robonaut[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/bus/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/bus[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_door_4x8/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_door_4x8[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_portcullis/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_portcullis[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ball_bearing/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ball_bearing[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wood_cube_7_5cm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wood_cube_7_5cm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/spectrum_plane/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/spectrum_plane[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/ragdoll/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/ragdoll[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/velodyne_hdl32/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/velodyne_hdl32[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/polaris_ranger_xp900/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/polaris_ranger_xp900[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/fire_hose_long/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/fire_hose_long[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/jersey_barrier/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/jersey_barrier[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/wooden_case_wooden_peg/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/wooden_case_wooden_peg[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/kitchen_dining/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/kitchen_dining[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/parking_garage/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/parking_garage[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cafe/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cafe[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/stop_light_post/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/stop_light_post[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_wheel_valve/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_wheel_valve[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup09_spl_field/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup09_spl_field[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/gear_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/gear_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mcmillan_airfield/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mcmillan_airfield[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/src_doorway/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/src_doorway[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/tube_9_5mm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/tube_9_5mm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/grey_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/grey_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/mpl_right_forearm/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/mpl_right_forearm[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/walkway_metal_straight/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/walkway_metal_straight[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/r2_description/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/r2_description[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/dumpster/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/dumpster[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/polaris_ranger_ev/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/polaris_ranger_ev[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/number2/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/number2[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/post_office/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/post_office[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_sallyport/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_sallyport[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/thrift_shop/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/thrift_shop[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_wheel_valve_large_wall/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_wheel_valve_large_wall[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/powerplant/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/powerplant[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/robocup_3Dsim_ball/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/robocup_3Dsim_ball[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/frc2016_chevaldefrise/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/frc2016_chevaldefrise[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/cube_20k/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/cube_20k[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/grey_tote/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/grey_tote[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/round_tin_base/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/round_tin_base[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_4x4x20/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_4x4x20[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/disk_part/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/disk_part[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/sonoma_raceway/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/sonoma_raceway[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/trisphere_cycle/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/trisphere_cycle[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/depth_camera/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/depth_camera[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/suv/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/suv[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/drc_practice_2x6/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/drc_practice_2x6[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/hatchback_red/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/hatchback_red[0m[1;31m]
+[gazebo-1] [0m[1;33m[Wrn] [ModelDatabase.cc:212] [0m[1;33mUnable to connect to model database using [[0m[1;33mhttp://models.gazebosim.org/speed_limit_sign/model.config[0m[1;33m]. Only locally installed models will be available.
+[gazebo-1] [0m[1;31m[Err] [ModelDatabase.cc:394] [0m[1;31mUnable to get model name[[0m[1;31mhttp://models.gazebosim.org/speed_limit_sign[0m[1;31m]
+[gazebo-1] [0m[INFO] [1771312903.891506534] [controller_manager]: Loading controller 'arm_controller'
+[gazebo-1] 
+[gazebo-1] libcurl: (7) Failed to connect to fuel.ignitionrobotics.org port 443 after 7802 ms: No route to host
+[gazebo-1] [WARN] [1771312904.741042101] [arm_controller]: [Deprecated]: "allow_nonzero_velocity_at_trajectory_end" is set to true. The default behavior will change to false.
+[spawner-7] [INFO] [1771312904.974308369] [spawner_arm_controller]: [94mLoaded [1marm_controller[0m
+[gazebo-1] [INFO] [1771312904.981726532] [controller_manager]: Configuring controller 'arm_controller'
+[gazebo-1] [INFO] [1771312904.986969237] [arm_controller]: No specific joint names are used for command interfaces. Using 'joints' parameter.
+[gazebo-1] [INFO] [1771312904.988035219] [arm_controller]: Command interfaces are [position] and state interfaces are [position velocity].
+[gazebo-1] [INFO] [1771312904.988637542] [arm_controller]: Using 'splines' interpolation method.
+[gazebo-1] [INFO] [1771312905.013018584] [arm_controller]: Controller state will be published at 50.00 Hz.
+[gazebo-1] [INFO] [1771312905.192607678] [arm_controller]: Action status changes will be monitored at 20.00 Hz.
+[spawner-7] [INFO] [1771312905.320776511] [spawner_arm_controller]: [92mConfigured and activated [1marm_controller[0m
+[INFO] [spawner-7]: process has finished cleanly [pid 343]
+[rviz2-5] [INFO] [1771312908.180937030] [interactive_marker_display_102544323215104]: Connected on namespace: /rviz_moveit_motion_planning_display/robot_interaction_interactive_marker_topic
+[rviz2-5] [INFO] [1771312908.432794868] [interactive_marker_display_102544323215104]: Sending request for interactive markers
+[rviz2-5] [INFO] [1771312908.479978792] [interactive_marker_display_102544323215104]: Service response received for initialization
+[move_group-4] [INFO] [1771312922.995089573] [move_group.move_group]: 
+[move_group-4] 
+[move_group-4] ********************************************************
+[move_group-4] * MoveGroup using: 
+[move_group-4] *     - ApplyPlanningSceneService
+[move_group-4] *     - ClearOctomapService
+[move_group-4] *     - CartesianPathService
+[move_group-4] *     - ExecuteTrajectoryAction
+[move_group-4] *     - GetPlanningSceneService
+[move_group-4] *     - KinematicsService
+[move_group-4] *     - MoveAction
+[move_group-4] *     - MotionPlanService
+[move_group-4] *     - QueryPlannersService
+[move_group-4] *     - StateValidationService
+[move_group-4] ********************************************************
+[move_group-4] 
+[move_group-4] [INFO] [1771312922.995348345] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context using planning plugin ompl_interface/OMPLPlanner
+[move_group-4] [INFO] [1771312922.995438167] [moveit_move_group_capabilities_base.move_group_context]: MoveGroup context initialization complete
+[move_group-4] [96mLoading 'move_group/ApplyPlanningSceneService'...
+[move_group-4] [0m[96mLoading 'move_group/ClearOctomapService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupCartesianPathService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupExecuteTrajectoryAction'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupGetPlanningSceneService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupKinematicsService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupMoveAction'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupPlanService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupQueryPlannersService'...
+[move_group-4] [0m[96mLoading 'move_group/MoveGroupStateValidationService'...
+[move_group-4] [0m[92m
+[move_group-4] You can start planning now!
+[move_group-4] 
+[rviz2-5] [INFO] [1771312931.989583962] [moveit_ros.planning_scene_monitor.planning_scene_monitor]: GetPlanningScene service call to get_planning_scene timed out. at ./planning_scene_monitor/src/planning_scene_monitor.cpp:586
+[rviz2-5] [INFO] [1771312931.990098804] [moveit_ros_visualization.motion_planning_frame]: group arm
+[rviz2-5] [INFO] [1771312931.990163206] [moveit_ros_visualization.motion_planning_frame]: Constructing new MoveGroup connection for group 'arm' in namespace ''
+[rviz2-5] [INFO] [1771312954.708071513] [move_group_interface]: Ready to take commands for planning group arm.
+[rviz2-5] [INFO] [1771312955.455569139] [moveit_ros_visualization.motion_planning_frame]: group arm
+[rviz2-5] [WARN] [1771312955.474421051] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 101
+[rviz2-5] [WARN] [1771312955.475196299] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 102
+[rviz2-5] [WARN] [1771312955.475485405] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 103
+[rviz2-5] [WARN] [1771312955.475650477] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 104
+[rviz2-5] [WARN] [1771312955.475796508] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 105
+[rviz2-5] [WARN] [1771312955.475979311] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 106
+[rviz2-5] [WARN] [1771312955.476120899] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 107
+[rviz2-5] [WARN] [1771312955.476285672] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 108
+[rviz2-5] [WARN] [1771312955.476440865] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 109
+[rviz2-5] [WARN] [1771312955.476598121] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 110
+[rviz2-5] [WARN] [1771312955.476763801] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 111
+[rviz2-5] [WARN] [1771312955.477241223] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 112
+[rviz2-5] [WARN] [1771312955.477585183] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 113
+[rviz2-5] [WARN] [1771312955.477835290] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 114
+[rviz2-5] [WARN] [1771312955.478062860] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 115
+[rviz2-5] [WARN] [1771312955.478240648] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 116
+[rviz2-5] [WARN] [1771312955.478436781] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 117
+[rviz2-5] [WARN] [1771312955.478627305] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 118
+[rviz2-5] [WARN] [1771312955.478833017] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 119
+[rviz2-5] [WARN] [1771312955.479029256] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 120
+[rviz2-5] [WARN] [1771312955.479209690] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 121
+[rviz2-5] [WARN] [1771312955.479393058] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 122
+[rviz2-5] [WARN] [1771312955.479571429] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 123
+[rviz2-5] [WARN] [1771312955.479750319] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 124
+[rviz2-5] [WARN] [1771312955.479994839] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 125
+[rviz2-5] [WARN] [1771312955.480159150] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 126
+[rviz2-5] [WARN] [1771312955.480341672] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 127
+[rviz2-5] [WARN] [1771312955.480541309] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 128
+[rviz2-5] [WARN] [1771312955.480732235] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 129
+[rviz2-5] [WARN] [1771312955.580534146] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 130
+[rviz2-5] [WARN] [1771312955.581338824] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 131
+[rviz2-5] [WARN] [1771312955.583144510] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 132
+[rviz2-5] [WARN] [1771312955.590038309] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 133
+[rviz2-5] [WARN] [1771312955.593530169] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 134
+[rviz2-5] [WARN] [1771312955.598493439] [interactive_marker_display_102544323215104]: Update queue too large. Erasing message with sequence number 135
+[ERROR] [rviz2-5]: process has died [pid 128, exit code -11, cmd '/opt/ros/humble/lib/rviz2/rviz2 -d /home/rosdev/arm_ws/install/mycobot_moveit_config/share/mycobot_moveit_config/config/moveit.rviz --ros-args --params-file /tmp/launch_params_fa5ic0zh --params-file /tmp/launch_params_n9l3s3lh --params-file /tmp/launch_params_0rqov3mm --params-file /tmp/launch_params_5ffk2_w_ --params-file /tmp/launch_params_gg3uxybm'].

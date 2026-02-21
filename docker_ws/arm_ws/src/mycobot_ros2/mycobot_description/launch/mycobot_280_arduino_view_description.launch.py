@@ -14,7 +14,7 @@ def generate_launch_description():
 
     # Define filenames    
     urdf_package = 'mycobot_description'
-    urdf_filename = 'mycobot_280_urdf.xacro'
+    urdf_filename = 'Kera_urdf.urdf.xacro'
     rviz_config_filename = 'mycobot_280_arduino_view_description.rviz'
 
     # Set paths to important files

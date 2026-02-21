@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="mycobot_280">
+
+  <!-- Disable gravity for all links -->
+    <gazebo>
+        <gravity>0 0 0</gravity>
+    </gazebo>
+    
+    
+    <!-- Include the complete robot model from gazebo directory -->
+    <xacro:include filename="$(find mycobot_gazebo)/urdf/ros2_control/gazebo/mycobot_280.urdf.xacro"/>
+    
+    <!-- Gazebo Joint State Publisher Plugin -->
+    <gazebo>
+        <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+            <update_rate>100</update_rate>
+            <joint_name>link1_to_link2</joint_name>
+            <joint_name>link2_to_link3</joint_name>
+            <joint_name>link3_to_link4</joint_name>
+            <joint_name>link4_to_link5</joint_name>
+            <joint_name>link5_to_link6</joint_name>
+            <joint_name>link6_to_link6flange</joint_name>
+        </plugin>
+    </gazebo>
+    
+    <!-- Gazebo Position Controllers for each joint -->
+    <gazebo>
+        <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+            <update_rate>100</update_rate>
+            <joint_name>link1_to_link2</joint_name>
+            <joint_name>link2_to_link3</joint_name>
+            <joint_name>link3_to_link4</joint_name>
+            <joint_name>link4_to_link5</joint_name>
+            <joint_name>link5_to_link6</joint_name>
+            <joint_name>link6_to_link6flange</joint_name>
+        </plugin>
+    </gazebo>
+    
+    <!-- Add PID gains for each joint to fight gravity and hold positions -->
+    <gazebo reference="link1_to_link2">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+    
+    <gazebo reference="link2_to_link3">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+    
+    <gazebo reference="link3_to_link4">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+    
+    <gazebo reference="link4_to_link5">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+    
+    <gazebo reference="link5_to_link6">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+    
+    <gazebo reference="link6_to_link6flange">
+        <implicitSpringDamper>true</implicitSpringDamper>
+    </gazebo>
+    
+</robot>
