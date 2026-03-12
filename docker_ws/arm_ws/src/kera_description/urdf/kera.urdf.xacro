@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<robot name="my_robot_arm">
+
+  <!-- ===================== -->
+  <!-- BASE LINK (YOUR BASE) -->
+  <!-- ===================== -->
+  <link name="base_link">
+  <visual>
+      <origin xyz="-0.082 -0.082 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kera_description/meshes/base.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  <inertial>
+    <!-- Center of mass from SolidWorks (converted mm -> m) -->
+    <origin xyz="0 0 0.094" rpy="0 0 0"/>
+
+    <!-- Mass converted grams -> kg -->
+    <mass value="4.28"/>
+    <!-- Inertia converted (grams*mm^2 -> kg*m^2) -->
+    <inertia 
+      ixx="0.01"
+      iyy="0.01"
+      izz="0.01"
+      ixy="0.0"
+      ixz="0.0"
+      iyz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.01"/>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+    <!-- <collision>
+      <origin xyz="-0.082 -0.082 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="base.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision> -->
+  </link>
+  <link name="link1">
+  <visual>
+    <geometry>
+    <mesh filename="package://kera_description/meshes/shoulder_joint.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <origin xyz="-0.0441 0.079 0.1525" rpy="1.57 0 0"/>
+    <material name="blue"/>
+  </visual>
+  <inertial>
+    <!-- Center of mass from SolidWorks (converted mm -> m) -->
+    <origin xyz="0.01 -0.0013 0.252" rpy="0 0 0"/>
+    <mass value="4.11"/>
+      <!-- Inertia converted (grams*mm^2 -> kg*m^2) -->
+      <inertia
+        ixx="0.01"
+        iyy="0.01"
+        izz="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.01 -0.0013 0.252"/>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+</link>
+<link name="link2">
+  <visual>
+    <geometry>
+    <mesh filename="package://kera_description/meshes/elbow_joint.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <origin xyz="0.034 0.077 -0.066" rpy="0 0 -1.57"/>
+    <material name="blue"/>
+  </visual>
+  <inertial>
+    <!-- Center of mass from SolidWorks (converted mm -> m) -->
+    <origin xyz="0.08 0.012 0.31" rpy="0 0 0"/>
+    <mass value="5.9"/>
+      <!-- Inertia converted (grams*mm^2 -> kg*m^2) -->
+      <inertia
+        ixx="0.016"
+        iyy="0.016"
+        izz="0.01"
+        ixy="0.0"
+        ixz="0.0"
+        iyz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.08 0.012 0.31"/>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+</link>
+<link name="link3">
+  <visual>
+    <geometry>
+    <mesh filename="package://kera_description/meshes/wrist3.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <origin xyz="0.062 -0.064 -0.068" rpy="-1.57 3.14 0"/>
+    <material name="blue"/>
+  </visual>
+  <inertial>
+    <!-- Center of mass from SolidWorks (converted mm -> m) -->
+    <origin xyz="0.01 0.0 0.17" rpy="0 0 0"/>
+    <mass value="3.11"/>
+      <!-- Inertia converted (grams*mm^2 -> kg*m^2) -->
+      <inertia
+        ixx="0.05"
+        iyy="0.04"
+        izz="0.00"
+        ixy="0.0"
+        ixz="0.0"
+        iyz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.01 0.0 0.17"/>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+</link>
+<link name="link4">
+  <visual>
+    <geometry>
+    <mesh filename="package://kera_description/meshes/wrist2.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <origin xyz="0.004 -0.077 0.005" rpy="-1.57 3.14 -0.87"/>
+    <material name="blue"/>
+  </visual>
+  <inertial>
+    <!-- Center of mass from SolidWorks (converted mm -> m) -->
+    <origin xyz="0.01 0 0.1" rpy="0 0 0"/>
+    <mass value="1.56"/>
+      <!-- Inertia converted (grams*mm^2 -> kg*m^2) -->
+      <inertia
+        ixx="0.00198"
+        iyy="0.00193"
+        izz="0.001315"
+        ixy="0.0"
+        ixz="0.0"
+        iyz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.01 0 0.1"/>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+</link>
+<link name="link5">
+  <visual>
+    <geometry>
+    <mesh filename="package://kera_description/meshes/wrist1.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <origin xyz="0.076 -0.05 -0.05" rpy="0 -1.57 0"/>
+    <material name="blue"/>
+  </visual>
+  <inertial>
+    <origin xyz="0.01 0 0.08" rpy="0 0 0"/>
+    <mass value="0.5"/>
+    <inertia
+      ixx="0.001"
+      iyy="0.001"
+      izz="0.001"
+      ixy="0.0"
+      ixz="0.0"
+      iyz="0.0"/>
+  </inertial>
+</link>
+<link name="link6">
+  <visual>
+    <geometry>
+    <mesh filename="package://kera_description/meshes/weights.STL" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <origin xyz="-0.045 -0.045 -0.01" rpy="0 0 0"/>
+    <material name="blue"/>
+  </visual>
+  <inertial>
+    <!-- Center of mass from SolidWorks (converted mm -> m) -->
+    <origin xyz="0.08 -0.01 0.07" rpy="0 0 0"/>
+    <mass value="1.26"/>
+      <!-- Inertia converted (grams*mm^2 -> kg*m^2) -->
+      <inertia
+        ixx="0.00"
+        iyy="0.00"
+        izz="0.00"
+        ixy="0.0"
+        ixz="0.0"
+        iyz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.002 -0.002 0.07"/>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="red"/>
+    </visual>
+</link>
+
+<!-- JOINTS -->
+<joint name="joint1" type="revolute">
+  <parent link="base_link"/>
+  <child link="link1"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="0" upper="1.57" effort="10" velocity="1.0"/>
+</joint>
+<joint name="joint2" type="revolute">
+  <parent link="link1"/>
+  <child link="link2"/>
+  <origin xyz="0 0 0.264" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="0" upper="1.57" effort="10" velocity="1.0"/>
+</joint>
+<joint name="joint3" type="revolute">
+  <parent link="link2"/>
+  <child link="link3"/>
+  <origin xyz="0 0.0026 0.43" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="0" upper="1.57" effort="10" velocity="1.0"/>
+</joint>
+<joint name="joint4" type="revolute">
+  <parent link="link3"/>
+  <child link="link4"/>
+  <origin xyz="0 0 0.3" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="0" upper="1.57" effort="10" velocity="1.0"/>
+</joint>
+<joint name="joint5" type="revolute">
+  <parent link="link4"/>
+  <child link="link5"/>
+  <origin xyz="0 0 0.11" rpy="0 0 0"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="0" upper="1.57" effort="10" velocity="1.0"/>
+</joint>
+<joint name="joint6" type="revolute">
+  <parent link="link5"/>
+  <child link="link6"/>
+  <origin xyz="0.02 0 0.16" rpy="0 0 0"/>
+  <axis xyz="0 0 1"/>
+  <limit lower="0" upper="1.57" effort="10" velocity="1.0"/>
+</joint>
+
+</robot>

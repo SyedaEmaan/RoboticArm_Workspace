@@ -75,6 +75,30 @@ RUN apt-get update && apt-get install -y \
     ros-humble-moveit-visual-tools \
     && rm -rf /var/lib/apt/lists/*
 # ----------------------------
+# EtherCAT / SOEM support
+# ----------------------------
+RUN apt-get update && apt-get install -y \
+    can-utils \
+    iproute2 \
+    net-tools \
+    ethtool \
+    libnet1-dev \
+    cmake \
+    python3-click \
+    && rm -rf /var/lib/apt/lists/*
+
+# Build SOEM from source
+# Build SOEM from source (v1.4.0 - compatible with CMake 3.22)
+RUN cd /tmp \
+    && git clone --branch v1.4.0 https://github.com/OpenEtherCATsociety/SOEM.git \
+    && cd SOEM \
+    && mkdir build && cd build \
+    && cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local \
+    && make -j$(nproc) \
+    && make install \
+    && ldconfig \
+    && rm -rf /tmp/SOEM
+
 # Gazebo transport (needed by some plugins)
 # ----------------------------
 RUN apt-get update && apt-get install -y \
@@ -104,7 +128,8 @@ WORKDIR /home/$USERNAME/arm_ws
 # Source ROS + Gazebo on startup
 # ----------------------------
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> /home/$USERNAME/.bashrc \
-    && echo "source /usr/share/gazebo-11/setup.sh" >> /home/$USERNAME/.bashrc
+    && echo "source /usr/share/gazebo-11/setup.sh" >> /home/$USERNAME/.bashrc \
+    && echo "source /home/rosdev/ethercat_ws/install/setup.bash" >> /home/$USERNAME/.bashrc
 # ----------------------------
 # Entrypoint
 # ----------------------------
